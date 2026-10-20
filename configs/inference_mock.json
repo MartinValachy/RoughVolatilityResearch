@@ -1,0 +1,8 @@
+{
+ "classification": "inference implementation mock, not a power-calibrated final procedure",
+ "seed": 20261024, "independent_series": 30, "dates": 500,
+ "DGP": "stationary zero-mean Gaussian AR(1),rho0.8,stationary variance1, represents paired loss differences",
+ "bootstrap_draws": 4999, "mean_block_length": 44, "CI_level": 0.9,
+ "equivalence_margin": null,
+ "purpose": "Show dependence-aware intervals and report coverage uncertainty; no significance-to-equivalence conversion"
+}

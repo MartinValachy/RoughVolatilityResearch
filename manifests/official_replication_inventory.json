@@ -1,0 +1,10 @@
+{
+  "author_landing_page": "https://lingnan.sysu.edu.cn/en/faculty/ZhangChen",
+  "link_label": "Data for Shi, Yu, Zhang, Realized Volatility Forecasting",
+  "url": "https://lingnan.sysu.edu.cn/lingnan-prod/sites/default/files/inline-files/data.zip",
+  "retrieved_utc": "2026-10-20T20:53:49.848330+00:00",
+  "status": "blocked_or_unavailable",
+  "policy": "Inspect ZIP filenames only; never open data members or evaluate2020-2025 values",
+  "http_status": 403,
+  "failure": "HTTPError('403 Client Error: Forbidden for url: https://lingnan.sysu.edu.cn/lingnan-prod/sites/default/files/inline-files/data.zip')"
+}

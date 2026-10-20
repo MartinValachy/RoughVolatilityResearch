@@ -1,0 +1,28 @@
+{
+  "original_package": "C:/Users/valac/.codex/.chatgpt-projects/g-p-6908f1c9d0a4819196768eef128fb143/outputs/Rough_or_Just_Noisy_Research_Plan_2026-10-20.zip",
+  "user_request_attachment": "C:/Users/valac/.codex/attachments/2d1ae9a4-326b-4561-9a64-2d84f32ce812/Pasted text.txt",
+  "Notion": [
+    {
+      "url": "https://app.notion.com/p/3ff65199416f81ee9baff9c65b0867e0",
+      "role": "backup draft plan",
+      "operation": "read_only",
+      "tool_reported_as_of": "2026-10-20T20:25:31.252Z"
+    },
+    {
+      "url": "https://app.notion.com/p/3fb65199416f81f1a80fd091e66595b3",
+      "role": "earlier proposal, superseded where in conflict with execution protocol/user steering",
+      "operation": "read_only",
+      "tool_reported_as_of": "2026-10-16T17:59:55.441Z"
+    }
+  ],
+  "later_user_changes": [
+    "Save progress to supplied GitHub repository where useful",
+    "Treat project as independent research intended for publication, not a thesis"
+  ],
+  "repository": {
+    "url": "https://github.com/MartinValachy/RoughVolatilityResearch",
+    "visibility_verified": "private",
+    "initial_state": "empty",
+    "verified_permissions": "admin,push,pull via connector; local Git credentials used only for authorized repository operations"
+  }
+}

@@ -1,0 +1,2 @@
+# Preserve exact recorded bytes and input hashes across Windows/Linux checkouts.
+* -text

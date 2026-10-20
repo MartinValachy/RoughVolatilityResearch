@@ -1,0 +1,18 @@
+{
+  "protocol_version": "1.1-pilot-independent-research",
+  "classification": "illustrative and implementation validation; not production",
+  "base_seed": 20261020,
+  "paths_per_cell": 100,
+  "sample_sizes": [1250, 5000],
+  "ou_half_lives": [5, 22, 126],
+  "rough_H": [0.05, 0.1, 0.2, 0.35],
+  "rough_covariance": "BLP generalized Cauchy, beta=0.5, half-correlation time=22 days",
+  "stationary_log_variance": 0.25,
+  "noise_q_over_latent_lag1_increment_variance": [0, 0.25, 1, 4],
+  "noise_stress_cells": ["heteroskedastic_exogenous", "AR1_rho0.5", "latent_correlated"],
+  "lag_bands": [5, 10, 22],
+  "nlls": "BLP source p14; primary lag 10 only; descriptive, uncalibrated",
+  "power": "descriptive Hhat<0.2 frequency only; not a size-controlled test",
+  "final_test_start": "2020-01-01",
+  "production_allowed": false
+}

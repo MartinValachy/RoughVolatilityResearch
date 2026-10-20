@@ -1,0 +1,1733 @@
+{
+  "audit_stage": "acquisition and metadata; claim audit separately in evidence cards",
+  "sources": [
+    {
+      "id": "S01",
+      "priority": 1,
+      "publication_or_version_year": 2018,
+      "authors": "Gatheral; Jaisson; Rosenbaum",
+      "title": "Volatility is rough",
+      "primary_url": "https://arxiv.org/abs/1410.3394",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/1410.3394",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Original scaling/forecasting framework",
+      "next_action": "Extract observation definitions; reproduce one selected scaling figure.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "7e3ef4c07c56e2a137f7486609f06405e2166740de3655f6645db65d6a185368",
+      "local_path": "literature\\raw\\S01.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "Volatility is rough",
+        "citation_author": "Rosenbaum, Mathieu",
+        "citation_date": "2014/10/13",
+        "citation_online_date": "2014/10/13",
+        "citation_pdf_url": "https://arxiv.org/pdf/1410.3394",
+        "citation_arxiv_id": "1410.3394",
+        "citation_abstract": "Estimating volatility from recent high frequency data, we revisit the question of the smoothness of the volatility process. Our main result is that log-volatility behaves essentially as a fractional Brownian motion with Hurst exponent H of order 0.1, at any reasonable time scale. This leads us to adopt the fractional stochastic volatility (FSV) model of Comte and Renault. We call our model Rough FSV (RFSV) to underline that, in contrast to FSV, H&lt;1/2. We demonstrate that our RFSV model is remarkably consistent with financial time series data; one application is that it enables us to obtain improved forecasts of realized volatility. Furthermore, we find that although volatility is not long memory in the RFSV model, classical statistical procedures aiming at detecting volatility persistence tend to conclude the presence of long memory in data generated from it. This sheds light on why long memory of volatility has been widely accepted as a stylized fact. Finally, we provide a quantitative market microstructure-based foundation for our findings, relating the roughness of volatility to high frequency trading and order splitting.",
+        "authors": [
+          "Gatheral, Jim",
+          "Jaisson, Thibault",
+          "Rosenbaum, Mathieu"
+        ]
+      },
+      "metadata_sha256": "06172a89108f2819cd19053a252ad532521b4e70bc24a4aba56f6c6b9007519b",
+      "metadata_path": "literature\\raw\\S01_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/1410.3394v1",
+      "download_bytes": 1588932,
+      "retrieved_utc": "2026-10-20T20:34:44.794962+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "title": "Rough Volatility",
+          "DOI": "10.1007/978-981-99-6441-3_86",
+          "authors": [
+            {
+              "given": "Lida",
+              "family": "Zeng",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "Applied Economics and Policy Studies",
+            "Proceedings of the 2nd International Conference on Business and Policy Studies"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2023
+              ]
+            ]
+          },
+          "score_title_match": 0.5714285714285714,
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2023,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2023-01-01T00:00:00Z",
+                "timestamp": 1672531200000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2023,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2023-01-01T00:00:00Z",
+                "timestamp": 1672531200000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+            }
+          ],
+          "type": "book-chapter"
+        },
+        {
+          "title": "Rough Volatility",
+          "DOI": "10.1137/1.9781611977783",
+          "authors": null,
+          "container": null,
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                1
+              ]
+            ]
+          },
+          "score_title_match": 0.5714285714285714,
+          "license": null,
+          "type": "monograph"
+        },
+        {
+          "title": "Local volatility under rough volatility",
+          "DOI": "10.1111/mafi.12392",
+          "authors": [
+            {
+              "given": "Florian",
+              "family": "Bourgey",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "CMAP, CNRS, Ecole Polytechnique Institut Polytechnique de Paris  France"
+                },
+                {
+                  "name": "Bloomberg L.P. Quantitative Research  New York USA"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-1161-736X",
+              "authenticated-orcid": false,
+              "given": "Stefano",
+              "family": "De Marco",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "CMAP, CNRS, Ecole Polytechnique Institut Polytechnique de Paris  France"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Peter K.",
+              "family": "Friz",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Technische Universität Berlin and Weierstraß‐Institut  Berlin Germany"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-1124-6896",
+              "authenticated-orcid": false,
+              "given": "Paolo",
+              "family": "Pigato",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Department of Economics and Finance Università Roma Tor Vergata  Rome Italy"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "Mathematical Finance"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                5,
+                24
+              ]
+            ]
+          },
+          "score_title_match": 0.5862068965517241,
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2023,
+                    5,
+                    24
+                  ]
+                ],
+                "date-time": "2023-05-24T00:00:00Z",
+                "timestamp": 1684886400000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "http://onlinelibrary.wiley.com/termsAndConditions#vor"
+            }
+          ],
+          "type": "journal-article"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 41,
+      "arxiv_local_version": "1410.3394v1",
+      "targeted_method_audit": true,
+      "journal_identity": {
+        "year": 2018,
+        "DOI": "10.1080/14697688.2017.1393551",
+        "verification": "Publisher record inspected20October2026; downloaded author version separately identified"
+      },
+      "cover_first_line": "Volatility is rough"
+    },
+    {
+      "id": "S02",
+      "priority": 1,
+      "publication_or_version_year": 2024,
+      "authors": "Cont; Das",
+      "title": "Rough Volatility: Fact or Artefact?",
+      "primary_url": "https://link.springer.com/article/10.1007/s13571-024-00322-2",
+      "candidate_acquisition_url": "https://ora.ox.ac.uk/objects/uuid%3Aa3f9156d-b170-42f8-9585-94c84fcb8a35",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Artefact argument and normalized variation estimator",
+      "next_action": "Audit distinction between RV estimation error and price noise; reproduce one known-truth result.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": "ed57f8bb51dcf783e58134322372b898c602a9639d5f9406d9c7b0452850d8e3",
+      "local_path": "literature\\raw\\S02.pdf",
+      "draft_entry": true,
+      "acquisition_attempts": [
+        {
+          "url": "https://ora.ox.ac.uk/objects/uuid%3Aa3f9156d-b170-42f8-9585-94c84fcb8a35",
+          "error": "ValueError('Response is not PDF')"
+        }
+      ],
+      "crossref_candidates": [
+        {
+          "title": "Rough Volatility: Fact or Artefact?",
+          "DOI": "10.2139/ssrn.4065951",
+          "authors": [
+            {
+              "given": "Rama",
+              "family": "Cont",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-2692-969X",
+              "authenticated-orcid": true,
+              "given": "Purba",
+              "family": "Das",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "container": null,
+          "published": {
+            "date-parts": [
+              [
+                2022
+              ]
+            ]
+          },
+          "score_title_match": 1.0,
+          "license": null,
+          "type": "posted-content"
+        },
+        {
+          "title": "Rough Volatility: Fact or Artefact?",
+          "DOI": "10.1007/s13571-024-00322-2",
+          "authors": [
+            {
+              "given": "Rama",
+              "family": "Cont",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Purba",
+              "family": "Das",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "Sankhya B"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                2,
+                21
+              ]
+            ]
+          },
+          "score_title_match": 1.0,
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    2,
+                    21
+                  ]
+                ],
+                "date-time": "2024-02-21T00:00:00Z",
+                "timestamp": 1708473600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    2,
+                    21
+                  ]
+                ],
+                "date-time": "2024-02-21T00:00:00Z",
+                "timestamp": 1708473600000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            }
+          ],
+          "type": "journal-article"
+        },
+        {
+          "title": "Fact and Artefact",
+          "DOI": "10.1080/00405006908629953",
+          "authors": [
+            {
+              "given": "R. D.B.",
+              "family": "Fraser",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "T. P.",
+              "family": "MacRae",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "G. R.",
+              "family": "Millward",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "Journal of the Textile Institute"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                1969,
+                11
+              ]
+            ]
+          },
+          "score_title_match": 0.5384615384615384,
+          "license": null,
+          "type": "journal-article"
+        }
+      ],
+      "download_bytes": 1077001,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "download_url": "https://arxiv.org/pdf/2203.13820v3",
+      "version_note": "Lawful arXiv author version; journal DOI 10.1007/s13571-024-00322-2",
+      "pdf_pages": 30,
+      "arxiv_local_version": "2203.13820v3",
+      "targeted_method_audit": true,
+      "cover_first_line": "Rough volatility: fact or artefact?"
+    },
+    {
+      "id": "S03",
+      "priority": 1,
+      "publication_or_version_year": 2022,
+      "authors": "Fukasawa; Takabatake; Westphal",
+      "title": "Consistent estimation for fractional stochastic volatility model under high-frequency asymptotics / Is Volatility Rough?",
+      "primary_url": "https://arxiv.org/abs/1905.04852",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/1905.04852",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Noise-aware inference supporting roughness",
+      "next_action": "Resolve 2022 journal version; extract observation-error distribution and quasi-likelihood.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "bf9960e009f365b15c512a4facaca8855252fe5a1f0ad5364dc319c880cb74f8",
+      "local_path": "literature\\raw\\S03.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "Is Volatility Rough ?",
+        "citation_author": "Westphal, Rebecca",
+        "citation_date": "2019/05/13",
+        "citation_online_date": "2019/05/17",
+        "citation_pdf_url": "https://arxiv.org/pdf/1905.04852",
+        "citation_arxiv_id": "1905.04852",
+        "citation_abstract": "Rough volatility models are continuous time stochastic volatility models where the volatility process is driven by a fractional Brownian motion with the Hurst parameter smaller than half, and have attracted much attention since a seminal paper titled &#34;Volatility is rough&#34; was posted on SSRN in 2014 showing that the log realized volatility time series of major stock indices have the same scaling property as such a rough fractional Brownian motion has. We however find by simulations that the impressive approach tends to suggest the same roughness irrespectively whether the volatility is actually rough or not; an overlooked estimation error of latent volatility often results in an illusive scaling property. Motivated by this preliminary finding, here we develop a statistical theory for a continuous time fractional stochastic volatility model to examine whether the Hurst parameter is indeed estimated smaller than half, that is, whether the volatility is really rough. We construct a quasi-likelihood estimator and apply it to realized volatility time series. Our quasi-likelihood is based on the error distribution of the realized volatility and a Whittle-type approximation to the auto-covariance of the log-volatility process. We prove the consistency of our estimator under high frequency asymptotics, and examine by simulations its finite sample performance. Our empirical study suggests that the volatility is indeed rough; actually it is even rougher than considered in the literature.",
+        "authors": [
+          "Fukasawa, Masaaki",
+          "Takabatake, Tetsuya",
+          "Westphal, Rebecca"
+        ]
+      },
+      "metadata_sha256": "9e1ae7a3f307446f8da89fbfcf04355c1ec740150080cb44aca07fb65a5a581d",
+      "metadata_path": "literature\\raw\\S03_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/1905.04852v2",
+      "download_bytes": 598769,
+      "retrieved_utc": "2026-10-20T20:34:44.447948+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "journal_successor": {
+        "title": "Consistent estimation for fractional stochastic volatility model under high-frequency asymptotics",
+        "DOI": "10.1111/mafi.12354",
+        "year": 2022,
+        "journal": "Mathematical Finance",
+        "volume": 32,
+        "issue": 4,
+        "pages": "1086-1132"
+      },
+      "pdf_pages": 51,
+      "arxiv_local_version": "1905.04852v2",
+      "targeted_method_audit": true,
+      "cover_first_line": "arXiv:1905.04852v2  [math.ST]  17 May 2019"
+    },
+    {
+      "id": "S04",
+      "priority": 1,
+      "publication_or_version_year": 2023,
+      "authors": "Bolko; Christensen; Pakkanen; Veliyev",
+      "title": "A GMM approach to estimate the roughness of stochastic volatility",
+      "primary_url": "https://arxiv.org/abs/2010.04610",
+      "candidate_acquisition_url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/08b323f8-395c-48af-bbdb-e786f92d9789/content",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Noise-aware inference counterevidence",
+      "next_action": "Extract corrected moments and integration conventions; audit finite-sample inference.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "e31726762cb7e61d3fd603c6678130aa919442f36fc9998e939d43c60c30786b",
+      "local_path": "literature\\raw\\S04.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "A GMM approach to estimate the roughness of stochastic volatility",
+        "citation_author": "Veliyev, Bezirgen",
+        "citation_doi": "10.1016/j.jeconom.2022.06.009",
+        "citation_date": "2020/10/09",
+        "citation_online_date": "2026/01/15",
+        "citation_pdf_url": "https://arxiv.org/pdf/2010.04610",
+        "citation_arxiv_id": "2010.04610",
+        "citation_abstract": "We develop a GMM approach for estimation of log-normal stochastic volatility models driven by a fractional Brownian motion with unrestricted Hurst exponent. We show that a parameter estimator based on the integrated variance is consistent and, under stronger conditions, asymptotically normally distributed. We inspect the behavior of our procedure when integrated variance is replaced with a noisy measure of volatility calculated from discrete high-frequency data. The realized estimator contains sampling error, which skews the fractal coefficient toward &#34;illusive roughness.&#34; We construct an analytical approach to control the impact of measurement error without introducing nuisance parameters. In a simulation study, we demonstrate convincing small sample properties of our approach based both on integrated and realized variance over the entire memory spectrum. We show the bias correction attenuates any systematic deviance in the parameter estimates. Our procedure is applied to empirical high-frequency data from numerous leading equity indexes. With our robust approach the Hurst index is estimated around 0.05, confirming roughness in stochastic volatility.",
+        "authors": [
+          "Bolko, Anine E.",
+          "Christensen, Kim",
+          "Pakkanen, Mikko S.",
+          "Veliyev, Bezirgen"
+        ]
+      },
+      "metadata_sha256": "49b6c7f70a501b0e95e7883ba24b2788c139a8b9d654117e8891fae834837524",
+      "metadata_path": "literature\\raw\\S04_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/2010.04610v5",
+      "download_bytes": 1391856,
+      "retrieved_utc": "2026-10-20T20:34:46.205936+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 54,
+      "arxiv_local_version": "2010.04610v5",
+      "targeted_method_audit": true,
+      "journal_identity": {
+        "year": 2023,
+        "DOI": "10.1016/j.jeconom.2022.06.009",
+        "verification": "Publisher record inspected20October2026; author version remains separate"
+      },
+      "cover_first_line": "A GMM approach to estimate"
+    },
+    {
+      "id": "S05",
+      "priority": 2,
+      "publication_or_version_year": 2022,
+      "authors": "Bennedsen; Lunde; Pakkanen",
+      "title": "Decoupling the Short- and Long-Term Behavior of Stochastic Volatility",
+      "primary_url": "https://arxiv.org/abs/1610.00332",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/1610.00332",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Roughness versus persistence",
+      "next_action": "Extract covariance classes; noise-robust estimation; forecasting specification.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "758eb625cb9d9c06014fdd06141dbedf6afb5c2a42737dbf57039bd8d143023a",
+      "local_path": "literature\\raw\\S05.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "Decoupling the short- and long-term behavior of stochastic volatility",
+        "citation_author": "Pakkanen, Mikko S.",
+        "citation_date": "2016/10/02",
+        "citation_online_date": "2021/01/05",
+        "citation_pdf_url": "https://arxiv.org/pdf/1610.00332",
+        "citation_arxiv_id": "1610.00332",
+        "citation_abstract": "We introduce a new class of continuous-time models of the stochastic volatility of asset prices. The models can simultaneously incorporate roughness and slowly decaying autocorrelations, including proper long memory, which are two stylized facts often found in volatility data. Our prime model is based on the so-called Brownian semistationary process and we derive a number of theoretical properties of this process, relevant to volatility modeling. Applying the models to realized volatility measures covering a vast panel of assets, we find evidence consistent with the hypothesis that time series of realized measures of volatility are both rough and very persistent. Lastly, we illustrate the utility of the models in an extensive forecasting study; we find that the models proposed in this paper outperform a wide array of benchmarks considerably, indicating that it pays off to exploit both roughness and persistence in volatility forecasting.",
+        "authors": [
+          "Bennedsen, Mikkel",
+          "Lunde, Asger",
+          "Pakkanen, Mikko S."
+        ]
+      },
+      "metadata_sha256": "2a1617342af1b75bebfba28f0dbed3f0d626c79b50d403d234edc47cadaeea2d",
+      "metadata_path": "literature\\raw\\S05_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/1610.00332v3",
+      "download_bytes": 1101438,
+      "retrieved_utc": "2026-10-20T20:34:46.116625+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 48,
+      "arxiv_local_version": "1610.00332v3",
+      "targeted_method_audit": true,
+      "journal_identity": {
+        "year": 2022,
+        "DOI": "10.1093/jjfinec/nbaa049",
+        "verification": "Author/institution publication record inspected20October2026"
+      },
+      "cover_first_line": "Decoupling the short- and long-term behavior of stochastic"
+    },
+    {
+      "id": "S06",
+      "priority": 2,
+      "publication_or_version_year": 2026,
+      "authors": "Bennedsen; Christensen; Christensen",
+      "title": "To be or not to be: Roughness or long memory in volatility?",
+      "primary_url": "https://arxiv.org/abs/2403.12653",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/2403.12653",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Dependence structure and composite likelihood",
+      "next_action": "Audit Cauchy versus fOU specifications; use methodology without adding crypto empirical work.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "a0f3a0656d5076e1a370da0c5c17663a0dd6dcd72b1c945150388b0d0806ef3c",
+      "local_path": "literature\\raw\\S06.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "To be or not to be: Roughness or long memory in volatility?",
+        "citation_author": "Christensen, Peter",
+        "citation_date": "2024/03/19",
+        "citation_online_date": "2026/01/20",
+        "citation_pdf_url": "https://arxiv.org/pdf/2403.12653",
+        "citation_arxiv_id": "2403.12653",
+        "citation_abstract": "We develop a framework for composite likelihood estimation of parametric continuous-time stationary Gaussian processes. We derive the asymptotic theory of the associated maximum composite likelihood estimator. We implement our approach on a pair of models that have been proposed to describe the random log-spot variance of financial asset returns. A simulation study shows that it delivers good performance in these settings and improves upon a method-of-moments estimation. In an empirical investigation, we inspect the dynamic of an intraday measure of the spot log-realized variance computed with high-frequency data from the cryptocurrency market. The evidence supports a mechanism, where the short- and long-term correlation structure of stochastic volatility are decoupled in order to capture its properties at different time scales. This is further backed by an analysis of the associated spot log-trading volume.",
+        "authors": [
+          "Bennedsen, Mikkel",
+          "Christensen, Kim",
+          "Christensen, Peter"
+        ]
+      },
+      "metadata_sha256": "300926f4adbb38e8fe60ac0778e11f26284dc66e0de6d29c673646dbb2c640ea",
+      "metadata_path": "literature\\raw\\S06_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/2403.12653v2",
+      "download_bytes": 1246512,
+      "retrieved_utc": "2026-10-20T20:34:47.202143+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 60,
+      "arxiv_local_version": "2403.12653v2",
+      "targeted_method_audit": true,
+      "cover_first_line": "To be or not to be:"
+    },
+    {
+      "id": "S07",
+      "priority": 2,
+      "publication_or_version_year": 2026,
+      "authors": "Bennedsen; Christensen; Christensen; Yu; Zhang",
+      "title": "The \"Rough\" HAR Model",
+      "primary_url": "https://arxiv.org/abs/2609.21587",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/2609.21587",
+      "inspection_status": "targeted_evidence_card",
+      "role": "New parsimonious comparator",
+      "next_action": "Retrieve full text; verify MA structure and exact forecasting equations; locate official replication.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "bcd4c80e075fca0c035cba7ab1a63c959c393c14689aea1a08e03cd2f28b9622",
+      "local_path": "literature\\raw\\S07.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "The &#34;Rough&#34; HAR Model",
+        "citation_author": "Zhang, Chen",
+        "citation_date": "2026/09/18",
+        "citation_online_date": "2026/09/18",
+        "citation_pdf_url": "https://arxiv.org/pdf/2609.21587",
+        "citation_arxiv_id": "2609.21587",
+        "citation_abstract": "This paper proposes discrete-time approximations to rough continuous-time models of realized variance (RV). The leading rough models can be viewed as autoregressive processes driven by fractional Gaussian noise. We show that the Wold representation of this noise concentrates its dependence at the first lag when the Hurst parameter is below one half. Augmenting the autoregressive (AR) and heterogeneous autoregressive (HAR) models with a first-order moving-average (MA(1)) component therefore approximates the roughness, and the MA coefficient maps almost linearly into the Hurst parameter. We refer to these extensions as the &#34;rough&#34; AR and &#34;rough&#34; HAR models. Estimating them on the log RV of ten ETFs, we find negative MA coefficients for every asset, and the implied Hurst parameters align closely with the estimates from the continuous-time models. In the HAR literature, the negative MA(1) component is a significant feature that has been largely overlooked. In out-of-sample comparisons, the &#34;rough&#34; models outperform their classical counterparts for nearly every asset and horizon, with the largest gains at short horizons, and their accuracy is comparable to that of the rough continuous-time models but much easier to estimate by standard off-the-shelf software.",
+        "authors": [
+          "Bennedsen, Mikkel",
+          "Christensen, Kim",
+          "Christensen, Peter Korsbakke",
+          "Yu, Jun",
+          "Zhang, Chen"
+        ]
+      },
+      "metadata_sha256": "5188d875bc11fa208eedc83d91638b7357d068937ec521082ccdbf98e884479a",
+      "metadata_path": "literature\\raw\\S07_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/2609.21587v1",
+      "download_bytes": 538990,
+      "retrieved_utc": "2026-10-20T20:34:47.227108+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 42,
+      "arxiv_local_version": "2609.21587v1",
+      "targeted_method_audit": true,
+      "cover_first_line": "The “Rough” HAR model∗"
+    },
+    {
+      "id": "S08",
+      "priority": 1,
+      "publication_or_version_year": 2026,
+      "authors": "Mouti",
+      "title": "Rough Volatility Across Assets",
+      "primary_url": "https://arxiv.org/html/2608.16749v1",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/2608.16749",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Closest newly found overlap",
+      "next_action": "Audit simulation, additive-noise correction, mean-reversion formula, and decision-analysis overlap.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "af309e997c261b0e8be55be7365c0fa03c970a01c7b102da35280f9d44ba8c16",
+      "local_path": "literature\\raw\\S08.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "Rough Volatility Across Assets",
+        "citation_author": "Mouti, Saad",
+        "citation_date": "2026/08/17",
+        "citation_online_date": "2026/08/17",
+        "citation_pdf_url": "https://arxiv.org/pdf/2608.16749",
+        "citation_arxiv_id": "2608.16749",
+        "citation_abstract": "We measure volatility roughness across asset classes using a common data infrastructure and pipeline. Our data covers 3,926 United States equities, 34 CME futures roots, rates, FX, and commodities, and options on 44 underlyings over 2010-2025. Realized volatility is rough everywhere. The class-median Hurst estimate ranges from $0.05$ (livestock) through $0.07-0.10$ (rates, FX, agriculture, energy, metals) to $0.13$ (single stocks) and $0.20$ (equity indices). The option-implied measure identifies $H$ only where the leverage effect produces a clean skew term structure. For the equity indices, implied estimates of $0.21-0.28$ are just above realized volatility $H$, while for rates and FX the ATM skew regression fails with an R-squared near zero even though realized volatility remains rough. We also show a mean-reversion contamination formula for the second-moment estimator of the roughness for the stationary fractional Ornstein-Uhlenbeck process. The local slope of the increment second moment deviates from $2H$ by $(1-H)\\Gamma(2H+1)(\\kappa\\Delta)^{2-2H}$ for all $H\\in(0,1)$. A correction framework for the second moment, when the log realized volatility measure has additive noise, raised the $H$ estimate slightly but nowhere near the Brownian diffusion framework. Finally, a failure taxonomy discusses where rough-volatility methods apply and where they fail, suggesting alternative paths to further explore the rough-volatility paradigm.",
+        "authors": [
+          "Mouti, Saad"
+        ]
+      },
+      "metadata_sha256": "8dfba3e602979e7d2bda7055c9d347164d491fba99e5a34dd61007de00a04ea3",
+      "metadata_path": "literature\\raw\\S08_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/2608.16749v1",
+      "download_bytes": 891832,
+      "retrieved_utc": "2026-10-20T20:34:47.356461+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 29,
+      "arxiv_local_version": "2608.16749v1",
+      "targeted_method_audit": true,
+      "cover_first_line": "Rough Volatility Across Assets"
+    },
+    {
+      "id": "S09",
+      "priority": 2,
+      "publication_or_version_year": 2025,
+      "authors": "Shi; Yu; Zhang",
+      "title": "Realized Volatility Forecasting: Continuous versus Discrete Time Models",
+      "primary_url": "https://fba.um.edu.mo/wp-content/uploads/2025/10/VolatilityForecast_draft8.pdf",
+      "candidate_acquisition_url": "https://fba.um.edu.mo/wp-content/uploads/2025/10/VolatilityForecast_draft8.pdf",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Forecasting and utility overlap",
+      "next_action": "Find latest lawful author version; verify economic-value and noise-treatment claims before using.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": "c5daa459e603451a3911f0e0735a847530b0b6f4feb1901055a3c8526bf89e5e",
+      "local_path": "literature\\raw\\S09.pdf",
+      "draft_entry": true,
+      "acquisition_attempts": [
+        {
+          "url": "https://fba.um.edu.mo/wp-content/uploads/2025/10/VolatilityForecast_draft8.pdf",
+          "error": "IncompleteRead(2601123 bytes read, 1124335 more expected)"
+        },
+        {
+          "url": "https://fba.um.edu.mo/wp-content/uploads/RePEc/doc/202537.pdf",
+          "error": "First retrieval IncompleteRead (2683159 received,1042299 remaining); retry recorded separately"
+        }
+      ],
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "download_bytes": 3725458,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 43,
+      "targeted_method_audit": true,
+      "download_url": "https://fba.um.edu.mo/wp-content/uploads/RePEc/doc/202537.pdf",
+      "successful_retrieval_log": "manifests/S09_retrieval_log.json",
+      "cover_first_line": "Realized Volatility Forecasting: Continuous versus Discrete Time"
+    },
+    {
+      "id": "S10",
+      "priority": 2,
+      "publication_or_version_year": 2009,
+      "authors": "Corsi",
+      "title": "A Simple Approximate Long-Memory Model of Realized Volatility",
+      "primary_url": "https://doi.org/10.1093/jjfinec/nbp001",
+      "candidate_acquisition_url": null,
+      "inspection_status": "targeted_evidence_card",
+      "role": "HAR baseline",
+      "next_action": "Extract level/log definitions and direct horizon specification.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": "18c305635feefc152a0522791de67677b5db037dd10958a09134c7d55cf222e5",
+      "local_path": "literature\\raw\\S10.pdf",
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "download_bytes": 1058248,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 23,
+      "download_url": "https://statmath.wu.ac.at/~hauser/LVs/FinEtricsQF/References/Corsi2009JFinEtrics_LMmodelRealizedVola.pdf",
+      "targeted_method_audit": true,
+      "cover_first_line": "Journal of Financial Econometrics, 2009, Vol. 7, No. 2, 174–196"
+    },
+    {
+      "id": "S11",
+      "priority": 2,
+      "publication_or_version_year": 2016,
+      "authors": "Bollerslev; Patton; Quaedvlieg",
+      "title": "Exploiting the errors: A simple approach for improved volatility forecasting",
+      "primary_url": "https://scholars.duke.edu/publication/1072550",
+      "candidate_acquisition_url": "https://pure.au.dk/ws/portalfiles/portal/85674324/rp15_14.pdf",
+      "inspection_status": "targeted_evidence_card",
+      "role": "HARQ baseline",
+      "next_action": "Audit exact regression and quarticity scaling; reconcile working paper with journal.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": "9ace1ef9c070945d8fc9a33b9a56d418aef2969cdfc4c0b177e28946c6b48fb3",
+      "local_path": "literature\\raw\\S11.pdf",
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "download_url": "https://pure.au.dk/ws/portalfiles/portal/85674324/rp15_14.pdf",
+      "download_bytes": 676887,
+      "retrieved_utc": "2026-10-20T20:34:48.106792+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "title": "Exploiting the errors: A simple approach for improved volatility forecasting",
+          "DOI": "10.1016/j.jeconom.2015.10.007",
+          "authors": [
+            {
+              "given": "Tim",
+              "family": "Bollerslev",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Andrew J.",
+              "family": "Patton",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Rogier",
+              "family": "Quaedvlieg",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "Journal of Econometrics"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2016,
+                5
+              ]
+            ]
+          },
+          "score_title_match": 1.0,
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2016,
+                    5,
+                    1
+                  ]
+                ],
+                "date-time": "2016-05-01T00:00:00Z",
+                "timestamp": 1462060800000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            }
+          ],
+          "type": "journal-article"
+        },
+        {
+          "title": "Adding Dummy Variables: A Simple Approach for Improved Volatility Forecasting in Electricity Market",
+          "DOI": "10.2139/ssrn.4070569",
+          "authors": [
+            {
+              "given": "Gong",
+              "family": "Xu",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Boqiang",
+              "family": "Lin",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "SSRN Electronic Journal"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2022
+              ]
+            ]
+          },
+          "score_title_match": 0.6971428571428572,
+          "license": null,
+          "type": "journal-article"
+        },
+        {
+          "title": "Adding dummy variables: A simple approach for improved volatility forecasting in electricity market",
+          "DOI": "10.1016/j.jmse.2022.09.001",
+          "authors": [
+            {
+              "ORCID": "https://orcid.org/0000-0002-0862-2766",
+              "authenticated-orcid": false,
+              "given": "Xu",
+              "family": "Gong",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Boqiang",
+              "family": "Lin",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "Journal of Management Science and Engineering"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2023,
+                6
+              ]
+            ]
+          },
+          "score_title_match": 0.6971428571428572,
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2023,
+                    6,
+                    1
+                  ]
+                ],
+                "date-time": "2023-06-01T00:00:00Z",
+                "timestamp": 1685577600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2023,
+                    6,
+                    1
+                  ]
+                ],
+                "date-time": "2023-06-01T00:00:00Z",
+                "timestamp": 1685577600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2022,
+                    11,
+                    11
+                  ]
+                ],
+                "date-time": "2022-11-11T00:00:00Z",
+                "timestamp": 1668124800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+            }
+          ],
+          "type": "journal-article"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 49,
+      "targeted_method_audit": true,
+      "cover_first_line": ""
+    },
+    {
+      "id": "S12",
+      "priority": 2,
+      "publication_or_version_year": 2011,
+      "authors": "Patton",
+      "title": "Volatility forecast comparison using imperfect volatility proxies",
+      "primary_url": "https://www.sciencedirect.com/science/article/pii/S030440761000076X",
+      "candidate_acquisition_url": "https://public.econ.duke.edu/~ap172/Patton_vol_proxies_JoE_2011.pdf",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Proxy-robust evaluation",
+      "next_action": "Extract conditional-unbiasedness conditions, admissible loss forms and inference limits.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": "bfcc630f931a01e5c678c77d0f98240aa538af0bc5d1153f657d45c12b0ab64a",
+      "local_path": "literature\\raw\\S12.pdf",
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "download_url": "https://public.econ.duke.edu/~ap172/Patton_vol_proxies_JoE_2011.pdf",
+      "download_bytes": 460480,
+      "retrieved_utc": "2026-10-20T20:34:49.588843+00:00",
+      "http_last_modified": "Sun, 05 Dec 2010 18:37:59 GMT",
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 11,
+      "targeted_method_audit": true,
+      "cover_first_line": "JournalofEconometrics160(2011)246–256"
+    },
+    {
+      "id": "S13",
+      "priority": 3,
+      "publication_or_version_year": 2011,
+      "authors": "Andersen; Bollerslev; Meddahi",
+      "title": "Realized Volatility Forecasting and Market Microstructure Noise",
+      "primary_url": "https://www.tse-fr.eu/publications/journal-article/realized-volatility-forecasting-and-market-microstructure-noise",
+      "candidate_acquisition_url": null,
+      "inspection_status": "targeted_evidence_card",
+      "role": "Observation error and forecasting",
+      "next_action": "Map observation processes and robust realized measures into study design.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": "eaa197e356734143f5641b8f1ada76918446ceacfaa395136b745a03d6cdace1",
+      "local_path": "literature\\raw\\S13.pdf",
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [
+        {
+          "title": "Realized volatility forecasting and market microstructure noise",
+          "DOI": "10.1016/j.jeconom.2010.03.032",
+          "authors": [
+            {
+              "given": "Torben G.",
+              "family": "Andersen",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Tim",
+              "family": "Bollerslev",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Nour",
+              "family": "Meddahi",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "Journal of Econometrics"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2011,
+                1
+              ]
+            ]
+          },
+          "score_title_match": 1.0,
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2011,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2011-01-01T00:00:00Z",
+                "timestamp": 1293840000000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            }
+          ],
+          "type": "journal-article"
+        },
+        {
+          "title": "Decimalization, Realized Volatility, and Market Microstructure Noise",
+          "DOI": "10.2139/ssrn.1131265",
+          "authors": [
+            {
+              "given": "Tommi A.",
+              "family": "Vuorenmaa",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "container": null,
+          "published": {
+            "date-parts": [
+              [
+                2008
+              ]
+            ]
+          },
+          "score_title_match": 0.7786259541984732,
+          "license": null,
+          "type": "posted-content"
+        },
+        {
+          "title": "Stationary bootstrapping realized volatility under market microstructure noise",
+          "DOI": "10.1214/13-ejs834",
+          "authors": [
+            {
+              "given": "Eunju",
+              "family": "Hwang",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Dong Wan",
+              "family": "Shin",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "container": [
+            "Electronic Journal of Statistics"
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2013,
+                1,
+                1
+              ]
+            ]
+          },
+          "score_title_match": 0.7092198581560284,
+          "license": null,
+          "type": "journal-article"
+        }
+      ],
+      "download_bytes": 371851,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 15,
+      "download_url": "https://public.econ.duke.edu/~boller/Published_Papers/joe_11b.pdf",
+      "targeted_method_audit": true,
+      "cover_first_line": "JournalofEconometrics160(2011)220–234"
+    },
+    {
+      "id": "S14",
+      "priority": 3,
+      "publication_or_version_year": 2008,
+      "authors": "Barndorff-Nielsen; Hansen; Lunde; Shephard",
+      "title": "Designing Realised Kernels to Measure the Ex-Post Variation of Equity Prices in the Presence of Noise",
+      "primary_url": "https://ora.ox.ac.uk/objects/uuid%3A6d31a2ea-e395-4626-8699-c829a4869eea",
+      "candidate_acquisition_url": null,
+      "inspection_status": "targeted_evidence_card",
+      "role": "Noise-robust realized measure",
+      "next_action": "Extract implementation, bandwidth, boundary effects and assumptions.",
+      "full_text_downloaded": false,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": null,
+      "local_path": null,
+      "draft_entry": true,
+      "acquisition_attempts": [
+        {
+          "url": "https://shephard.scholars.harvard.edu/sites/g/files/omnuum7741/files/ecta08.pdf",
+          "error": "Local HTTP403; publishedPDF accessible via web reader, first4PDFpages inspected; no local acquisition claimed"
+        }
+      ],
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "targeted_method_audit": true
+    },
+    {
+      "id": "S15",
+      "priority": 3,
+      "publication_or_version_year": 2024,
+      "authors": "Chong; Hoffmann; Liu; Rosenbaum; Szymanski",
+      "title": "Statistical inference for rough volatility: Central limit theorems",
+      "primary_url": "https://arxiv.org/abs/2210.01216",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/2210.01216",
+      "inspection_status": "acquired_not_yet_audited",
+      "role": "Valid high-frequency H inference",
+      "next_action": "Assess feasibility; do not import asymptotics into daily slopes without assumptions.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "fba7834617027d2038d5ac7fb1c41f02cdefeef8b86baf323d9d507a511f7710",
+      "local_path": "literature\\raw\\S15.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "Statistical inference for rough volatility: Central limit theorems",
+        "citation_author": "Szymanski, Grégoire",
+        "citation_doi": "10.1214/23-AAP2002",
+        "citation_date": "2022/10/03",
+        "citation_online_date": "2024/06/14",
+        "citation_pdf_url": "https://arxiv.org/pdf/2210.01216",
+        "citation_arxiv_id": "2210.01216",
+        "citation_abstract": "In recent years, there has been a substantive interest in rough volatility models. In this class of models, the local behavior of stochastic volatility is much more irregular than semimartingales and resembles that of a fractional Brownian motion with Hurst parameter $H &lt; 0.5$. In this paper, we derive a consistent and asymptotically mixed normal estimator of $H$ based on high-frequency price observations. In contrast to previous works, we work in a semiparametric setting and do not assume any a priori relationship between volatility estimators and true volatility. Furthermore, our estimator attains a rate of convergence that is known to be optimal in a minimax sense in parametric rough volatility models.",
+        "authors": [
+          "Chong, Carsten",
+          "Hoffmann, Marc",
+          "Liu, Yanghui",
+          "Rosenbaum, Mathieu",
+          "Szymanski, Grégoire"
+        ]
+      },
+      "metadata_sha256": "d93dc4d28a68a7ede279c326971562daa7b08058944fa2ce36876f15acc9c9ad",
+      "metadata_path": "literature\\raw\\S15_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/2210.01216v3",
+      "download_bytes": 566040,
+      "retrieved_utc": "2026-10-20T20:34:48.997481+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 49,
+      "arxiv_local_version": "2210.01216v3",
+      "targeted_method_audit": false,
+      "cover_first_line": "arXiv:2210.01216v3  [math.ST]  14 Jun 2024"
+    },
+    {
+      "id": "S16",
+      "priority": 3,
+      "publication_or_version_year": 2024,
+      "authors": "Chong; Hoffmann; Liu; Rosenbaum; Szymanski",
+      "title": "Statistical inference for rough volatility: Minimax Theory",
+      "primary_url": "https://arxiv.org/abs/2210.01214",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/2210.01214",
+      "inspection_status": "acquired_not_yet_audited",
+      "role": "Statistical limits",
+      "next_action": "Read relevant lower-bound assumptions and consequences; journal status to resolve.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+      "sha256": "f6029bf56e0c7d9e0ddb7fd6c856e2d364833f16d7530ff9ce81e6eb5f53e25c",
+      "local_path": "literature\\raw\\S16.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "Statistical inference for rough volatility: Minimax Theory",
+        "citation_author": "Szymanski, Grégoire",
+        "citation_date": "2022/10/03",
+        "citation_online_date": "2024/02/15",
+        "citation_pdf_url": "https://arxiv.org/pdf/2210.01214",
+        "citation_arxiv_id": "2210.01214",
+        "citation_abstract": "Rough volatility models have gained considerable interest in the quantitative finance community in recent years. In this paradigm, the volatility of the asset price is driven by a fractional Brownian motion with a small value for the Hurst parameter $H$. In this work, we provide a rigorous statistical analysis of these models. To do so, we establish minimax lower bounds for parameter estimation and design procedures based on wavelets attaining them. We notably obtain an optimal speed of convergence of $n^{-1/(4H+2)}$ for estimating $H$ based on n sampled data, extending results known only for the easier case $H&gt;1/2$ so far. We therefore establish that the parameters of rough volatility models can be inferred with optimal accuracy in all regimes.",
+        "authors": [
+          "Chong, Carsten",
+          "Hoffmann, Marc",
+          "Liu, Yanghui",
+          "Rosenbaum, Mathieu",
+          "Szymanski, Grégoire"
+        ]
+      },
+      "metadata_sha256": "50b8fa69159303f4a61aa17f0e0ce04922bb73aca812d3ea8435a74bb178bed4",
+      "metadata_path": "literature\\raw\\S16_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/2210.01214v2",
+      "download_bytes": 647046,
+      "retrieved_utc": "2026-10-20T20:34:49.739024+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 61,
+      "arxiv_local_version": "2210.01214v2",
+      "targeted_method_audit": false,
+      "cover_first_line": "arXiv:2210.01214v2  [math.ST]  15 Feb 2024"
+    },
+    {
+      "id": "S17",
+      "priority": 3,
+      "publication_or_version_year": 1995,
+      "authors": "Diebold; Mariano",
+      "title": "Comparing Predictive Accuracy",
+      "primary_url": "https://www.nber.org/papers/t0169",
+      "candidate_acquisition_url": null,
+      "inspection_status": "acquired_not_yet_audited",
+      "role": "Paired forecast comparisons",
+      "next_action": "Document applicability under refitting, overlap and loss dependence.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": "a071dcc079fb98ed2799f9b619c75cbcacc8bc93a65cd79ffe62fe72d1212190",
+      "local_path": "literature\\raw\\S17.pdf",
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "download_bytes": 886795,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "download_url": "https://www.nber.org/system/files/working_papers/t0169/t0169.pdf",
+      "pdf_pages": 35,
+      "targeted_method_audit": false,
+      "cover_first_line": "Image-only cover; OCR not performed"
+    },
+    {
+      "id": "S18",
+      "priority": 3,
+      "publication_or_version_year": 1994,
+      "authors": "Politis; Romano",
+      "title": "The Stationary Bootstrap",
+      "primary_url": "https://doi.org/10.1080/01621459.1994.10476870",
+      "candidate_acquisition_url": null,
+      "inspection_status": "metadata_or_access_block_only",
+      "role": "Dependence-preserving resampling",
+      "next_action": "Audit block-length selection and validity for study's dependence regimes.",
+      "full_text_downloaded": false,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": null,
+      "local_path": null,
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "targeted_method_audit": false
+    },
+    {
+      "id": "S19",
+      "priority": 3,
+      "publication_or_version_year": 2011,
+      "authors": "Hansen; Lunde; Nason",
+      "title": "The Model Confidence Set",
+      "primary_url": "https://doi.org/10.3982/ECTA5771",
+      "candidate_acquisition_url": null,
+      "inspection_status": "metadata_or_access_block_only",
+      "role": "Multiple-model comparison",
+      "next_action": "Retrieve official supplement/code; distinguish inclusion from equivalence.",
+      "full_text_downloaded": false,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": null,
+      "local_path": null,
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "targeted_method_audit": false
+    },
+    {
+      "id": "S20",
+      "priority": 3,
+      "publication_or_version_year": 2017,
+      "authors": "Moreira; Muir",
+      "title": "Volatility-Managed Portfolios",
+      "primary_url": "https://www.nber.org/papers/w22208",
+      "candidate_acquisition_url": null,
+      "inspection_status": "acquired_not_yet_audited",
+      "role": "Economic application context",
+      "next_action": "Differentiate inverse-variance management from constant-volatility sizing.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": "be1ea92102e1394e9ddec9545489902f45e5a07b42bd4c42faf8ee372e99fa7a",
+      "local_path": "literature\\raw\\S20.pdf",
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [
+        {
+          "lookup_failure": "<HTTPError 429: 'Too Many Requests'>"
+        }
+      ],
+      "download_bytes": 1013730,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "download_url": "https://www.nber.org/system/files/working_papers/w22208/w22208.pdf",
+      "pdf_pages": 57,
+      "targeted_method_audit": false,
+      "cover_first_line": "NBER WORKING PAPER SERIES"
+    },
+    {
+      "id": "D01",
+      "priority": 2,
+      "publication_or_version_year": 2026,
+      "authors": "Cipollini; Cruciani; Gallo; Insana; Otranto; Spagnolo",
+      "title": "VOLatility Archive for Realized Estimates (VOLARE)",
+      "primary_url": "https://arxiv.org/abs/2602.19732",
+      "candidate_acquisition_url": "https://arxiv.org/pdf/2602.19732",
+      "inspection_status": "targeted_evidence_card",
+      "role": "Data definitions and pipeline",
+      "next_action": "Audit estimator inventory; frequencies; coverage; redistribution.",
+      "full_text_downloaded": true,
+      "method_audited": false,
+      "replicated": false,
+      "license": "http://creativecommons.org/licenses/by/4.0/",
+      "sha256": "b736cd1cbb1e35c2d72e38f12a93df4448f24054c28de8326cd69b75139cad1d",
+      "local_path": "literature\\raw\\D01.pdf",
+      "draft_entry": true,
+      "verified_metadata": {
+        "citation_title": "VOLatility Archive for Realized Estimates (VOLARE)",
+        "citation_author": "Spagnolo, Fabio",
+        "citation_date": "2026/02/23",
+        "citation_online_date": "2026/02/23",
+        "citation_pdf_url": "https://arxiv.org/pdf/2602.19732",
+        "citation_arxiv_id": "2602.19732",
+        "citation_abstract": "VOLARE (VOLatility Archive for Realized Estimates - https://volare.unime.it) is an open research infrastructure providing standardized realized volatility and covariance measures constructed from ultra-high-frequency financial data. The platform processes tick-level observations across equities, exchange rates, and futures using an asset-specific pipeline that addresses heterogeneous trading calendars, microstructure noise, and timestamp precision. For equities, price series are cleaned using a documented outlier detection procedure and sampled at regular intervals. VOLARE delivers a comprehensive set of realized estimators, including realized variance, range-based measures, bipower variation, semivariances, realized quarticity, realized kernels, and multivariate covariance measures, ensuring methodological consistency and cross-asset comparability. In addition to bulk dataset download, the platform supports interactive visualization and real-time estimation of established volatility models such as HAR and MEM specifications.",
+        "authors": [
+          "Cipollini, Fabrizio",
+          "Cruciani, Giulia",
+          "Gallo, Giampiero M.",
+          "Insana, Alessandra",
+          "Otranto, Edoardo",
+          "Spagnolo, Fabio"
+        ]
+      },
+      "metadata_sha256": "cabf5dc1efecd752edd9429eb3f9e1421eda20f8a35c193ebf8ee3a201e7112d",
+      "metadata_path": "literature\\raw\\D01_arxiv_metadata.html",
+      "acquisition_attempts": [],
+      "download_url": "https://arxiv.org/pdf/2602.19732v1",
+      "download_bytes": 5765413,
+      "retrieved_utc": "2026-10-20T20:34:52.237090+00:00",
+      "http_last_modified": null,
+      "crossref_candidates": [],
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 48,
+      "arxiv_local_version": "2602.19732v1",
+      "targeted_method_audit": true,
+      "cover_first_line": "VOLatility Archive for Realized Estimates"
+    },
+    {
+      "id": "D02",
+      "priority": 2,
+      "publication_or_version_year": null,
+      "authors": "VOLARE",
+      "title": "Official VOLARE platform",
+      "primary_url": "https://volare.unime.it/",
+      "candidate_acquisition_url": null,
+      "inspection_status": "metadata_or_access_block_only",
+      "role": "Public pilot access",
+      "next_action": "Inspect actual downloads and metadata; test tiny lawful pilot.",
+      "full_text_downloaded": false,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": null,
+      "local_path": null,
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [],
+      "targeted_method_audit": false
+    },
+    {
+      "id": "D03",
+      "priority": 2,
+      "publication_or_version_year": null,
+      "authors": "WRDS",
+      "title": "NYSE Trade and Quote (TAQ)",
+      "primary_url": "https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/nyse-trade-and-quote-taq/",
+      "candidate_acquisition_url": null,
+      "inspection_status": "metadata_or_access_block_only",
+      "role": "Raw-price validation route",
+      "next_action": "Verify subscription, symbol coverage, quote/trade filters and permitted extraction.",
+      "full_text_downloaded": false,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": null,
+      "local_path": null,
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [],
+      "targeted_method_audit": false
+    },
+    {
+      "id": "D04",
+      "priority": 2,
+      "publication_or_version_year": null,
+      "authors": "WRDS",
+      "title": "WRDS Intraday Indicators",
+      "primary_url": "https://wrds-www.wharton.upenn.edu/pages/grid-items/wrds-intraday-indicators/",
+      "candidate_acquisition_url": null,
+      "inspection_status": "metadata_or_access_block_only",
+      "role": "Potential cleaning-saving intermediate data",
+      "next_action": "Verify entitlements; field definitions; available grids and estimator compatibility.",
+      "full_text_downloaded": false,
+      "method_audited": false,
+      "replicated": false,
+      "license": "Not established; public reading does not grant redistribution rights",
+      "sha256": null,
+      "local_path": null,
+      "draft_entry": true,
+      "acquisition_attempts": [],
+      "crossref_candidates": [],
+      "targeted_method_audit": false
+    },
+    {
+      "id": "D05",
+      "title": "Analyzing Intraday Financial Data in R: The highfrequency Package",
+      "authors": "Boudt; Kleen; Sjoerup",
+      "primary_url": "https://www.jstatsoft.org/article/download/v104i08/4398",
+      "download_url": "https://www.jstatsoft.org/article/download/v104i08/4398",
+      "full_text_downloaded": true,
+      "priority": "targeted_addition",
+      "license": "Not established; public reading does not grant redistribution rights",
+      "acquisition_attempts": [],
+      "crossref_candidates": [],
+      "local_path": "literature\\raw\\D05.pdf",
+      "sha256": "0a700320ed7f7204de1d1fbb463684a9a7a4e41d65e9e36ff9aacc84345e99ad",
+      "download_bytes": 971022,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 36,
+      "method_audited": false,
+      "targeted_method_audit": true,
+      "inspection_status": "targeted_evidence_card",
+      "cover_first_line": "JSS"
+    },
+    {
+      "id": "S21",
+      "title": "Multi-factor approximation of rough volatility models",
+      "authors": "Abi Jaber; El Euch",
+      "primary_url": "https://arxiv.org/pdf/1801.10359v3",
+      "download_url": "https://arxiv.org/pdf/1801.10359v3",
+      "full_text_downloaded": true,
+      "priority": "targeted_addition",
+      "license": "Not established; public reading does not grant redistribution rights",
+      "acquisition_attempts": [],
+      "crossref_candidates": [],
+      "local_path": "literature\\raw\\S21.pdf",
+      "sha256": "444d576c968c7280486a26ce21ce6a3f4a2260d63bcd0a8111af7cbf4abde0d2",
+      "download_bytes": 758240,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 40,
+      "arxiv_local_version": "1801.10359v3",
+      "method_audited": false,
+      "targeted_method_audit": true,
+      "inspection_status": "targeted_evidence_card",
+      "cover_first_line": "Multi-factor approximation of rough volatility models"
+    },
+    {
+      "id": "S22",
+      "title": "Things we think we know",
+      "authors": "L.C.G.Rogers",
+      "primary_url": "https://www.skokholm.co.uk/wp-content/uploads/2019/11/TWTWKpaper.pdf",
+      "download_url": "https://www.skokholm.co.uk/wp-content/uploads/2019/11/TWTWKpaper.pdf",
+      "full_text_downloaded": true,
+      "priority": "targeted_addition",
+      "license": "Not established; public reading does not grant redistribution rights",
+      "acquisition_attempts": [],
+      "crossref_candidates": [],
+      "local_path": "literature\\raw\\S22.pdf",
+      "sha256": "01b1c6d94789df17e18f59dda3d4a0bda7514640fc8c09a6ab844d23e10de433",
+      "download_bytes": 826360,
+      "version_policy": "Exact local bytes hashed; arXiv author version is distinct from journal version. Crossref candidates require author/title reconciliation.",
+      "pdf_pages": 12,
+      "method_audited": false,
+      "targeted_method_audit": true,
+      "inspection_status": "targeted_evidence_card",
+      "cover_first_line": "Things we think we know"
+    }
+  ],
+  "audit_date": "2026-10-20",
+  "source_version_policy": "Preserve draft register as original; current corpus and targeted evidence audit here"
+}

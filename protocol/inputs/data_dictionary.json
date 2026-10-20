@@ -1,0 +1,181 @@
+{
+  "version": "1.0",
+  "status": "field_requirements_not_actual_data",
+  "fields": [
+    {
+      "name": "asset_id",
+      "type": "string",
+      "layer": "all",
+      "definition": "Stable provider/security identifier; ticker mapping versioned"
+    },
+    {
+      "name": "date",
+      "type": "ISO date",
+      "layer": "all",
+      "definition": "Exchange trading date, not naive UTC calendar date"
+    },
+    {
+      "name": "session_id",
+      "type": "string",
+      "layer": "all",
+      "definition": "Regular, overnight or combined; never mix implicitly"
+    },
+    {
+      "name": "RV",
+      "type": "positive float",
+      "layer": "daily_measures",
+      "definition": "Variance in squared decimal returns per stated interval; not annualized unless flag says so"
+    },
+    {
+      "name": "sampling_minutes",
+      "type": "integer_or_null",
+      "layer": "daily_measures",
+      "definition": "Required for simple RV; robust measure gets its own method field"
+    },
+    {
+      "name": "RQ",
+      "type": "nonnegative float_or_null",
+      "layer": "daily_measures",
+      "definition": "Record whether M/3 sum r^4 or another convention"
+    },
+    {
+      "name": "M",
+      "type": "integer_or_null",
+      "layer": "daily_measures",
+      "definition": "Actual sampling increment count; early-close days handled"
+    },
+    {
+      "name": "robust_measure",
+      "type": "nonnegative float_or_null",
+      "layer": "daily_measures",
+      "definition": "Kernel/preaveraged variance with implementation metadata"
+    },
+    {
+      "name": "measure_method",
+      "type": "string",
+      "layer": "daily_measures",
+      "definition": "Estimator, bandwidth and boundary convention"
+    },
+    {
+      "name": "return_decimal",
+      "type": "float_or_null",
+      "layer": "returns",
+      "definition": "Return interval and total-return convention must match policy"
+    },
+    {
+      "name": "overnight_return",
+      "type": "float_or_null",
+      "layer": "returns",
+      "definition": "Close-to-open return with adjustment convention"
+    },
+    {
+      "name": "cash_return",
+      "type": "float_or_null",
+      "layer": "economics",
+      "definition": "Cash return for the holding interval; source and availability lag"
+    },
+    {
+      "name": "borrowing_rate",
+      "type": "float_or_null",
+      "layer": "economics_extension",
+      "definition": "Required for leverage above one"
+    },
+    {
+      "name": "timestamp",
+      "type": "timezone_aware_datetime",
+      "layer": "raw_price_validation",
+      "definition": "Original precision and timezone retained"
+    },
+    {
+      "name": "price",
+      "type": "positive float",
+      "layer": "raw_price_validation",
+      "definition": "Trade or quote-side price; corporate action handling recorded"
+    },
+    {
+      "name": "bid",
+      "type": "positive float_or_null",
+      "layer": "quote_validation",
+      "definition": "Quote filters and crossed/locked status documented"
+    },
+    {
+      "name": "ask",
+      "type": "positive float_or_null",
+      "layer": "quote_validation",
+      "definition": "Quote filters and crossed/locked status documented"
+    },
+    {
+      "name": "size",
+      "type": "nonnegative_float_or_null",
+      "layer": "raw_price_validation",
+      "definition": "Units and aggregation rule"
+    },
+    {
+      "name": "condition_code",
+      "type": "string_or_null",
+      "layer": "raw_price_validation",
+      "definition": "Document admissible trade/quote conditions"
+    },
+    {
+      "name": "missing_fraction",
+      "type": "float_0_to_1",
+      "layer": "quality",
+      "definition": "Grid points not supported by usable observations"
+    },
+    {
+      "name": "stale_gap_seconds",
+      "type": "nonnegative_float_or_null",
+      "layer": "quality",
+      "definition": "Maximum time since last usable observation"
+    },
+    {
+      "name": "calendar_version",
+      "type": "string",
+      "layer": "provenance",
+      "definition": "Exchange calendar, DST and early-close rules"
+    },
+    {
+      "name": "adjustment_convention",
+      "type": "string",
+      "layer": "provenance",
+      "definition": "Splits, distributions and return construction"
+    },
+    {
+      "name": "source_version",
+      "type": "string",
+      "layer": "provenance",
+      "definition": "Provider snapshot/version and retrieval date"
+    },
+    {
+      "name": "source_sha256",
+      "type": "hex_string",
+      "layer": "provenance",
+      "definition": "Hash of unchanged source bytes"
+    },
+    {
+      "name": "quality_flags",
+      "type": "array_of_strings",
+      "layer": "quality",
+      "definition": "Missing/outlier/halt/early-close/exclusion flags"
+    },
+    {
+      "name": "information_available_at",
+      "type": "timezone_aware_datetime",
+      "layer": "forecasting",
+      "definition": "When feature/measure could actually be used"
+    },
+    {
+      "name": "target_start",
+      "type": "date",
+      "layer": "forecasting",
+      "definition": "First date in h-day target"
+    },
+    {
+      "name": "target_end",
+      "type": "date",
+      "layer": "forecasting",
+      "definition": "Final date; must have matured before fitting labels"
+    }
+  ]
+}
+

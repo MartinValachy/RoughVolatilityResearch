@@ -1,0 +1,11 @@
+{
+ "classification": "illustrative known-truth daily Gaussian forecast pipeline; not empirical model selection",
+ "seed": 20261023, "paths": 100, "days": 1522,
+ "origins": [1250, 1499], "rolling_training_window": 1250,
+ "refit_every": 22, "horizons": [1, 5, 22],
+ "DGP": "stationary OU log daily IV, half life22, stationary variance0.25, mean daily IV0.0001",
+ "observation": "RV=IV*exp(e-q/2), iid Gaussian e with q=2/78; unbiased LEVEL proxy",
+ "models": ["last_RV", "EWMA_lambda0.94", "direct_log_HAR_training_smearing"],
+ "primary_contest": false,
+ "inference": "paired independent-path Monte Carlo SEs; no date-independence assumption"
+}

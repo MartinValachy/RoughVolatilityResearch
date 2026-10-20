@@ -1,0 +1,126 @@
+"""Create an executable, source-referenced mathematical audit notebook."""
+from pathlib import Path
+import json
+R=Path(__file__).resolve().parents[1]
+cells=[]
+def md(s):cells.append({'cell_type':'markdown','metadata':{},'source':s})
+def code(s):cells.append({'cell_type':'code','execution_count':None,'metadata':{},'outputs':[],'source':s})
+md(r'''# Formula audit: roughness, observation error and forecast decisions
+Independent research, protocol 1.1. These are derivations and numerical checks, not empirical evidence of a mechanism. Source references use downloaded PDF page numbers. Raw papers stay local; source URLs and hashes are in `manifests/source_register_audited.json`.
+
+Objects: spot variance $v_s$ (variance per trading day), daily integrated variance $IV_t=\int_{t-1}^t v_s ds$, realized **variance** $RV_t=\sum_i r_{t,i}^2$, realized **volatility** $\sqrt{RV_t}$. $\log IV_t$ is not log spot variance. In a Gaussian daily toy, we define log daily IV directly; that is a reduced-form observation model.
+
+References: S05 Bennedsen–Lunde–Pakkanen, pp6,13–14; S03 Fukasawa–Takabatake–Westphal, pp5–7; S11 Bollerslev–Patton–Quaedvlieg, pp6–7; S12 Patton, journal pp247–250 / PDF pp2–5; S08 Mouti (preprint), p9; S07 Rough HAR (preprint), pp22–24. All were retrieved on 20 October 2026. No human mastery or paper-wide audit is implied.''')
+code('''from pathlib import Path
+import sys, numpy as np
+from scipy import special, stats, integrate
+ROOT=Path.cwd()
+if ROOT.name=='notebooks': ROOT=ROOT.parent
+sys.path.insert(0,str(ROOT/'src'))
+from roughnoisy.core import *
+checks={}
+rng=np.random.default_rng(20261020)
+''')
+md(r'''## 1. General noisy variogram
+Write $y_t=x_t+e_t$. Expanding the squared increment gives, with no independence assumption,
+$$m_y(k)=m_x(k)+E[(\Delta_k e_t)^2]+2E[\Delta_k x_t\Delta_k e_t].$$
+For a stationary error, its mean cancels in increments and $E[(\Delta_k e)^2]=2(\gamma_e(0)-\gamma_e(k))$. The cross term is $2\{E[x_{t+k}e_{t+k}]-E[x_{t+k}e_t]-E[x_te_{t+k}]+E[x_te_t]\}$ after centering. It vanishes under independence; it must not be assumed away under endogenous error.
+
+For centered exogenous errors with time-varying variances, the pair-specific term is $q_t+q_{t+k}-2\operatorname{Cov}(e_t,e_{t+k})$. Conditional mean errors introduce additional squared mean-increment terms. BLP p13, (3.2)–(3.3), is the iid independent special case. Negative corrected empirical moments are reported as invalid, never clipped to create an estimate.''')
+code('''x=simulate_ou(200000,.03,rng)
+e=.3*x+simulate_ou(len(x),.2,rng,variance=.1)
+err=[]
+for k in (1,5,22):
+ dx=x[k:]-x[:-k]; de=e[k:]-e[:-k]
+ err.append(abs(np.mean((dx+de)**2)-np.mean(dx**2)-np.mean(de**2)-2*np.mean(dx*de)))
+checks['general_variogram_identity_max_error']=max(err)
+assert max(err)<1e-12
+checks
+''')
+md(r'''## 2. Apparent slope attenuation
+Only if the latent moment is $m_x(\Delta)=c\Delta^{2H}$ and independent iid error has variance $q$, $m_y=c\Delta^{2H}+2q$. Differentiating with respect to $\log\Delta$,
+$$H_{eff}(\Delta)=\frac12\frac{\Delta m_y'(\Delta)}{m_y(\Delta)}=H\frac{c\Delta^{2H}}{c\Delta^{2H}+2q}.$$
+It tends to $H$ as $q\to0$, and to zero as noise dominates. A multi-lag OLS slope is a weighted finite-band average, not this pointwise derivative. Constant subtraction is justified only in the iid exogenous case. A Gaussian Cauchy or OU process need not have an exact power variogram at daily lags.''')
+code('''H=.1;c=.4;q=.2;d=np.array([.1,1,5,22]);eps=1e-5
+analytic=H*c*d**(2*H)/(c*d**(2*H)+2*q)
+numeric=(np.log(c*(d*np.exp(eps))**(2*H)+2*q)-np.log(c*(d*np.exp(-eps))**(2*H)+2*q))/(4*eps)
+checks['attenuation_derivative_error']=float(np.max(abs(analytic-numeric)))
+np.testing.assert_allclose(analytic,numeric,rtol=1e-8)
+list(zip(d,analytic))
+''')
+md(r'''## 3. Stationary Brownian OU and finite-lag scaling
+For $dX_s=-\kappa(X_s-\mu)ds+\nu dB_s$, the stationary representation is $X_s-\mu=\nu\int_{-\infty}^s e^{-\kappa(s-u)}dB_u$. Ito isometry gives $C(h)=\nu^2e^{-\kappa|h|}/(2\kappa)$. Therefore
+$$m_X(h)=\frac{\nu^2}{\kappa}(1-e^{-\kappa h}),\quad H_{eff}(h)=\frac12\frac{\kappa h}{e^{\kappa h}-1}.$$
+The exact discrete transition is $X_{t+\delta}-\mu=e^{-\kappa\delta}(X_t-\mu)+\sqrt{\nu^2(1-e^{-2\kappa\delta})/(2\kappa)}Z_t$. Initialize from the stationary normal law. Near zero $H_{eff}=1/2-\kappa h/4+O((\kappa h)^2)$. Brownian OU is nondifferentiable and nonrough in this comparison. Finite-band corrected estimates need not equal 0.5. S08 p9 Corollary 1 agrees in the Brownian case; no acceptance of all its fOU claims is implied.''')
+code('''bands={}
+for hl in [5,22,126]:
+ k=np.log(2)/hl; m=ou_variogram(np.arange(1,23),k)
+ bands[hl]={str(b):apparent_h(m,b) for b in [5,10,22]}
+checks['OU_band_slopes']=bands
+assert abs(ou_effective_h(1e-9,.1)-.5)<1e-9
+bands
+''')
+md(r'''## 4. Finite sampling, quarticity, and what the approximation excludes
+With independent efficient-price Brownian increments and integrated interval variances $a_i=\int_{I_i}v_s ds$, $E[RV\mid v]=\sum a_i=IV$ and $\operatorname{Var}(RV\mid v)=2\sum a_i^2$. On a fine equal grid of $M$ returns, $\sum a_i^2\approx IQ/M$, where $IQ=\int v_s^2 ds$. Further $RQ=(M/3)\sum r_i^4$ estimates IQ under the regular diffusion assumptions (S11 pp6–7, eqs2–5).
+
+Taylor expansion at IV gives
+$$E[\log RV-\log IV\mid v]\approx-\frac{IQ}{M IV^2},\qquad\operatorname{Var}(\log RV-\log IV\mid v)\approx\frac{2IQ}{M IV^2}.$$
+The plug-in $2RQ/(M RV^2)$ is a diagnostic. It is not a universal price-noise estimate and needs actual $M$, not an assumed full-day count. Under constant v, $RV/IV\sim\chi_M^2/M$, so the exact log-error mean is $\psi(M/2)-\log(M/2)$ and variance $\psi_1(M/2)$. These also show finite-M non-Gaussianity and negative mean. S03 p5 assumes centered Gaussian error as a local approximation under shrinking-day/increasing-M asymptotics; a fixed daily window with strongly varying v is not that asymptotic experiment.
+
+Independent price errors $\eta_i$ instead add $\Delta\eta_i$ to returns. For iid level errors with variance $\omega^2$, $E[RV_{obs}-RV_{eff}]=2M\omega^2$, plus cross terms if endogenous. Noise-robust kernels/pre-averaging require their own variance theory. Nested sampling grids share returns and hence create correlated proxy errors. Jumps change IV into quadratic variation.''')
+code('''quart=[]
+for M in [13,26,78,390]:
+ exactmean=special.digamma(M/2)-np.log(M/2);exactvar=special.polygamma(1,M/2)
+ quart.append(dict(M=M,exact_log_bias=float(exactmean),bias_approx=-1/M,exact_log_var=float(exactvar),var_approx=2/M))
+checks['quarticity_constant_variance_limits']=quart
+assert abs(quart[-1]['exact_log_var']-2/390)<2e-5
+quart
+''')
+md(r'''## 5. Gaussian conditional projection and observation noise
+For a jointly Gaussian future vector $X_f$ and observed history $Y$, define
+$$a=\mu_f+K_{fY}K_{YY}^{-1}(Y-\mu_Y),\quad B=K_{ff}-K_{fY}K_{YY}^{-1}K_{Yf}.$$
+The residual $X_f-a$ has zero covariance with Y, so is independent of Y under joint Gaussianity; this proves the conditional formula. Add the full observation-error covariance to $K_{YY}$. Cross-correlated latent/error terms also alter $K_{fY}$ and $K_{YY}$. Solve Cholesky systems instead of explicitly inverting matrices. A Kalman filter is exact only for a valid linear Gaussian state-observation specification. S07 p23, eq4.2 is an example with known noise variance. The general identity here is derived, not attributed as a new finding.''')
+code('''cov=lambda k:ou_cov(k,.03)
+a,B=gaussian_projection([.4],cov,horizon=22,noise_variance=.25)
+assert np.min(np.linalg.eigvalsh(B))>0
+assert abs(a[0]-.4*np.exp(-.03)/2)<1e-12
+checks['projection_min_eigenvalue']=float(np.min(np.linalg.eigvalsh(B)))
+checks['projection_one_observation_mean']=float(a[0])
+''')
+md(r'''## 6. Retransformation and horizon aggregation
+The Gaussian moment-generating function yields $E[e^{X_j}\mid Y]=e^{a_j+B_{jj}/2}$. For $h\in\{1,5,22\}$,
+$$V_{t,h}=h^{-1}\sum_{j=1}^h IV_{t+j},\qquad\widehat V_{t,h}=h^{-1}\sum_{j=1}^h e^{a_j+B_{jj}/2}.$$
+Cross-horizon covariance affects uncertainty in the sum but not its conditional mean. Exponentiating an average log forecast produces a different estimand. If X is spot log variance, integrate expected **levels** over each session; `exp(mean log spot)` is not integrated variance. For log-HAR, fit a horizon-specific log average-future-variance label using only matured outcomes, then estimate smearing using that same training set. Our baseline is a declared direct log-HAR variant, not HARQ.
+
+No future label may enter training before its last day is observed: origin s is eligible at fit t only if s+h<=t. All preprocessing and noise calibration obey the same cutoff.''')
+code('''checks['horizon_mean_variance_forecasts']={str(h):variance_forecast(a[:h],B[:h,:h]) for h in [1,5,22]}
+assert variance_forecast(a,B)>np.exp(np.mean(a))
+v=np.exp(rng.normal(-9,.5,400));p,end=loghar_predict(v,300,22,250)
+v[301:]*=10000
+assert loghar_predict(v,300,22,250)[0]==p and end==300
+checks['future_contamination_invariance']=True
+checks['horizon_mean_variance_forecasts']
+''')
+md(r'''## 7. QLIKE, units, annualization and risk sizing
+Use $L(\widetilde V,f)=\log f+\widetilde V/f$, with positive finite f and nonnegative finite proxy. For two available-information forecasts f,g, the expected loss difference is unchanged by a proxy if its conditional mean is the target conditional mean. This is a condition, not a property of every realized estimator (S12 PDF p3 Definition1 and eq6, pp5–7). Multiplying both target and forecasts by a unit conversion adds a common log constant, preserving paired differences. Absolute QLIKE levels may be negative and must not define a percentage equivalence margin.
+
+For positive proxy, the nonnegative ratio form is $\widetilde V/f-\log(\widetilde V/f)-1$. Define any numerical equivalence margin on validation data and freeze it before final evaluation; zeros require an explicit policy. A nonsignificant paired difference is inconclusive, not equivalence.
+
+If f is average variance per trading day, annualized volatility is $\sqrt{252f}$, not $\sqrt{252hf}$. A constant-volatility long-only allocation is $w_t=\min(w_{max},\sigma_*/\sqrt{252f_{t,1}})$. For h-day total variance the conversion is $\sqrt{252f_{total}/h}$. Moreira–Muir inverse-variance management has a different rule.
+
+The simulation risk-tracking score is $(252w_t^2 IV_{t+1}-\sigma_*^2)^2$. Economic returns require matched sessions, overnight treatment, cash, execution delay and drifted pretrade turnover. No empirical CE or implementable trading performance is reported in this checkpoint.''')
+code('''y=np.array([0,.0001,.0005]);f=np.array([.0002,.0002,.0002]);g=f*1.3
+np.testing.assert_allclose(qlike(y,f)-qlike(y,g),qlike(100*y,100*f)-qlike(100*y,100*g),atol=1e-14)
+checks['qlike_unit_invariance']=True
+checks['annualized_vol_at_target']=float(np.sqrt(252*(.1**2/252)))
+assert abs(risk_weight(.1**2/252)-1)<1e-12
+import json
+(ROOT/'results/formula_checks.json').write_text(json.dumps(checks,indent=2))
+checks
+''')
+md('''## Readiness limitations
+These checks establish identities and implementation consistency. They do not establish finite-sample coverage for a latent-H estimator, an identified empirical mechanism, implementable trading performance, or a novel contribution. The pilot's NLLS fit uses BLP's offset form descriptively. Its exact power-variogram theorem is not asserted for fixed-day mean-reverting data. A flexible finite-factor OU control is mandatory before a rough forecast advantage is interpreted. The final 2020–2025 period remains sealed.''')
+nb={'cells':cells,'metadata':{'kernelspec':{'display_name':'Python 3 (research venv)','language':'python','name':'python3'},'language_info':{'name':'python','version':'3.12'}},'nbformat':4,'nbformat_minor':5}
+for i,c in enumerate(cells):c['id']=f'formula-{i:02d}'
+(R/'notebooks/formula_audit.ipynb').write_text(json.dumps(nb,indent=2,ensure_ascii=False),encoding='utf8')
+print('notebooks/formula_audit.ipynb',len(cells),'cells')

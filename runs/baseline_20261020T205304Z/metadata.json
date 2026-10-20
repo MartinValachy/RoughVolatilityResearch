@@ -1,0 +1,37 @@
+{
+  "run_id": "baseline_20261020T205304Z",
+  "status": "completed",
+  "config": {
+    "classification": "illustrative known-truth daily Gaussian forecast pipeline; not empirical model selection",
+    "seed": 20261023,
+    "paths": 100,
+    "days": 1522,
+    "origins": [
+      1250,
+      1499
+    ],
+    "rolling_training_window": 1250,
+    "refit_every": 22,
+    "horizons": [
+      1,
+      5,
+      22
+    ],
+    "DGP": "stationary OU log daily IV, half life22, stationary variance0.25, mean daily IV0.0001",
+    "observation": "RV=IV*exp(e-q/2), iid Gaussian e with q=2/78; unbiased LEVEL proxy",
+    "models": [
+      "last_RV",
+      "EWMA_lambda0.94",
+      "direct_log_HAR_training_smearing"
+    ],
+    "primary_contest": false,
+    "inference": "paired independent-path Monte Carlo SEs; no date-independence assumption"
+  },
+  "seconds": 13.324843100002909,
+  "forecasts": 225000,
+  "positivity_failures": 0,
+  "matured_label_failures": 0,
+  "config_sha256": "513d678f8f1531e805cd134da36095c53069b9b63017803999be0822bf64ce5b",
+  "code_sha256": "9b1fd17d33cd5e66e02ab2b35af9f20716cda4c0e29a767b84bc5683aa799bca",
+  "qualification": "No fitted rough/nonrough contest. Refitting every22 origins; horizon-specific train-only smearing. HAR predictors need21 pre-window warmup observations. Risk economics not evaluated."
+}

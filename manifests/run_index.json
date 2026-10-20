@@ -1,0 +1,110 @@
+[
+  {
+    "run_id": "baseline_20261020T205304Z",
+    "metadata_path": "runs/baseline_20261020T205304Z/metadata.json",
+    "metadata_sha256": "976814d022160dde1c2c99a611ef0c5c0de82ff62940baa8482cfa64c3e723a1",
+    "status": "completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "covariance_20261020T205105Z",
+    "metadata_path": "runs/covariance_20261020T205105Z/metadata.json",
+    "metadata_sha256": "e0af3251f180ff217b8889624a5769e0f72e19ba4cbc4585d8ec0aa3f5a27674",
+    "status": "completed",
+    "is_current_checkpoint_run": false,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "covariance_20261020T205535Z",
+    "metadata_path": "runs/covariance_20261020T205535Z/metadata.json",
+    "metadata_sha256": "e3de7c25e8267110be8e63e9c07505449b85f1b5c350aca7b2bd89f6edc1f9a8",
+    "status": "completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "data_audit_20261020T210140Z",
+    "metadata_path": "runs/data_audit_20261020T210140Z/metadata.json",
+    "metadata_sha256": "acc644a15350afaaa7349f6ad4444bc3f6c7ade73283a3dd59a06ff70d3cd8de",
+    "status": "audit_completed",
+    "is_current_checkpoint_run": false,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "data_audit_20261020T211210Z",
+    "metadata_path": "runs/data_audit_20261020T211210Z/metadata.json",
+    "metadata_sha256": "07d49a1cc42e7b31dc40508a79612c2c7a7ca4c00e3f5723d308f87201f9148c",
+    "status": "audit_completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "efficient_20261020T204744Z",
+    "metadata_path": "runs/efficient_20261020T204744Z/metadata.json",
+    "metadata_sha256": "1a19288a6382ef1f3c12437b2106a8ed6c9c2f5be1cac8dd096cca456769e923",
+    "status": "completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "formulas_20261020T210146Z",
+    "metadata_path": "runs/formulas_20261020T210146Z/metadata.json",
+    "metadata_sha256": "a8be5e041e56cc44352517867ea0c1a553bb3057cbfa8dc2a3e8cf5ed13157d4",
+    "status": "completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "inference_20261020T205351Z",
+    "metadata_path": "runs/inference_20261020T205351Z/metadata.json",
+    "metadata_sha256": "8d4ee1a3669d306ae13e3e293ef4e33b155b6b87c84c107b1b93ee9d91221a41",
+    "status": "completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "mouti_audit_20261020T205536Z",
+    "metadata_path": "runs/mouti_audit_20261020T205536Z/metadata.json",
+    "metadata_sha256": "feca49762017276c654b1f2369c024c4149bc9ab303dba50047dcb76c9bb6647",
+    "status": "completed",
+    "is_current_checkpoint_run": false,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "mouti_audit_20261020T205609Z",
+    "metadata_path": "runs/mouti_audit_20261020T205609Z/metadata.json",
+    "metadata_sha256": "d631d3b72cb6903dd0dd319c05946d336862e9814f6286040b70b7f3091e6534",
+    "status": "completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "pilot_20261020T204559Z",
+    "metadata_path": "runs/pilot_20261020T204559Z/metadata.json",
+    "metadata_sha256": "20ac37e00017bb187ec1f56fa1072018e3c039eca201726b37a69eba648e1a44",
+    "status": "completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  },
+  {
+    "run_id": "replication_patton_20261020T204503Z",
+    "metadata_path": "runs/replication_patton_20261020T204503Z/metadata.json",
+    "metadata_sha256": "c1473277c38abb058ec3523eca78bc3a85f02bd3da9440e0dbf8c2d650e2b84c",
+    "status": "completed",
+    "is_current_checkpoint_run": true,
+    "checkpoint_environment": "manifests/environment.json",
+    "environment_capture_note": "Captured at checkpoint; numerical dependencies installed in the same session before runs. Initial core snapshot retained where later multidimensional-bootstrap enhancement changed the source hash."
+  }
+]

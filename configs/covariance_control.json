@@ -1,0 +1,14 @@
+{
+ "classification": "oracle finite-grid identification/prediction/risk diagnostic; no feasible fitted-model ranking",
+ "seed": 20261022,
+ "H": 0.1, "beta": 0.5, "half_life": 22, "log_variance": 0.25,
+ "matching_lags": [0, 1, 2, 3, 4, 5, 10, 22, 44, 66, 126],
+ "two_factor_half_lives": [5, 126],
+ "flexible_half_lives": [0.005, 0.02, 0.1, 0.5, 2, 10, 50, 250, 1250, 6250],
+ "history_for_projection": 128, "forecast_horizons": [1, 5, 22],
+ "projection_independent_histories": 1000,
+ "known_noise_variance": 0.02564102564102564,
+ "power_sequence_length": 1250, "power_null_calibration_paths": 1000,
+ "power_evaluation_paths_per_DGP": 100, "test_size": 0.05,
+ "caveat": "Simple hypotheses with known covariance/noise, and moment matching informed by true rough covariance. Not a composite latent-roughness test; not a primary result."
+}

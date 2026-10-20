@@ -1,0 +1,31 @@
+{
+  "run_id": "efficient_20261020T204744Z",
+  "config": {
+    "classification": "illustrative Level B construction and numerical refinement pilot",
+    "seed": 20261021,
+    "paths": 100,
+    "days": 250,
+    "fine_steps_per_session": 1560,
+    "session_minutes": 390,
+    "OU_half_life_days": 22,
+    "stationary_log_variance": 0.25,
+    "mean_daily_variance": 0.0001,
+    "sampling_minutes": [
+      1,
+      5,
+      15,
+      30
+    ],
+    "no_leverage_no_drift_no_jumps": true,
+    "numerical_gate": "paired coarse/fine average absolute IV relative error <0.001; no empirical calibration claim",
+    "microstructure_noise_demo_std": 0.0001
+  },
+  "status": "completed",
+  "seconds": 6.298121300002094,
+  "benchmark_5_paths_seconds": 0.07536280000203988,
+  "config_sha256": "6e8c716fa8a26019cba64d3ce921beaf7825abed031de82fc12851aa574c6b41",
+  "code_sha256": "58b013b6f051b4afe4bf9b239ae47c569904cb1dc0bdbcb560a50077075172f0",
+  "refinement_gate_passed": true,
+  "maximum_path_average_IV_refinement_relative_error": 4.999313181061491e-05,
+  "qualification": "Exact stationary OU at grid nodes; price/IV integrals use explicit left-point refinement. No actual raw-price replication. Price noise is an illustrative addition."
+}

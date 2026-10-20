@@ -1,0 +1,75 @@
+[
+  {
+    "claim": "Daily Gaussian pilot count and allH bias/MCSE/invalid-correction summaries",
+    "run": "pilot_20261020T204559Z",
+    "table": "results/toy_summary.csv",
+    "config": "configs/pilot.json"
+  },
+  {
+    "claim": "Known-law matching, KL/power bound, likelihood-ratio size/power",
+    "run": "covariance_20261020T205535Z",
+    "table": "results/latest_covariance.json",
+    "config": "configs/covariance_control.json"
+  },
+  {
+    "claim": "Paired forecast/RTE/exposure diagnostic",
+    "run": "covariance_20261020T205535Z",
+    "table": "results/covariance_forecast_diagnostics.csv",
+    "config": "configs/covariance_control.json"
+  },
+  {
+    "claim": "Brownian efficient-price refinement and nested measurement error",
+    "run": "efficient_20261020T204744Z",
+    "table": "results/efficient_price_summary.csv",
+    "config": "configs/efficient_price.json"
+  },
+  {
+    "claim": "Baseline forecast counts, positivity/maturity, paired path losses",
+    "run": "baseline_20261020T205304Z",
+    "table": "results/baseline_forecast_summary.csv",
+    "config": "configs/baseline_pilot.json"
+  },
+  {
+    "claim": "Stationary-bootstrap mock coverage",
+    "run": "inference_20261020T205351Z",
+    "table": "results/latest_inference.json",
+    "config": "configs/inference_mock.json"
+  },
+  {
+    "claim": "Published Patton Table1 replication25/27",
+    "run": "replication_patton_20261020T204503Z",
+    "table": "results/patton_table1_replication.csv",
+    "config": "configs/replication_patton.json",
+    "source": "S12PDFp5 /journal250"
+  },
+  {
+    "claim": "Mouti preprint Table2 audit35/48 and independent numerical checks",
+    "run": "mouti_audit_20261020T205609Z",
+    "table": "results/mouti_table2_audit.csv",
+    "config": "configs/mouti_table2.json",
+    "source": "S08PDFpp9-10"
+  },
+  {
+    "claim": "SPY coverage, missing early closes, scaling flags and final-test sealing",
+    "run": "data_audit_20261020T211210Z",
+    "table": "results/data_quality.json",
+    "config": "scripts/audit_data.py",
+    "source": "D05PDFpp23-26; SPYRM.Rd"
+  },
+  {
+    "claim": "Formula identities/limits, conditional-minus implementation and leakage check",
+    "run": "formulas_20261020T210146Z",
+    "table": "results/formula_checks.json",
+    "source": "Source-referenced notebook"
+  },
+  {
+    "claim": "Substantive literature claims and novelty overlap",
+    "source": "literature/evidence_cards.json",
+    "locations": "Per-card precise PDFpages/sections; targeted scope, no abstract-omission claims"
+  },
+  {
+    "claim": "Printed stationary conditional-variance sign in S09",
+    "source": "S09PDFp22 beloweq35",
+    "verification": "Visually inspected tmp/S09_p22.png; no author-execution-code inference"
+  }
+]

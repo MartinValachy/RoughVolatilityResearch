@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0",
+  "protocol_version": "1.0-draft",
+  "created": "2026-10-20",
+  "status": "specification_only_no_pipeline_implemented",
+  "freeze_required_before_production": true,
+  "project": "Rough or Just Noisy?",
+  "scope": {
+    "core": [
+      "identification",
+      "forecasting",
+      "risk_sizing"
+    ],
+    "excluded": [
+      "crypto",
+      "commodities",
+      "deep_learning",
+      "full_option_surface_calibration"
+    ]
+  },
+  "data": {
+    "provider_priority": [
+      "VOLARE",
+      "official_replication",
+      "entitled_WRDS"
+    ],
+    "personal_access_verified": false,
+    "primary_asset_candidate": "SPY",
+    "panel_candidates": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "EFA",
+      "TLT"
+    ],
+    "candidate_start": "2007-01-01",
+    "candidate_end": "2025-12-31",
+    "dates_coverage_verified": false,
+    "candidate_split": {
+      "train": [
+        "2007-01-01",
+        "2016-12-31"
+      ],
+      "validation": [
+        "2017-01-01",
+        "2019-12-31"
+      ],
+      "test": [
+        "2020-01-01",
+        "2025-12-31"
+      ]
+    },
+    "primary_session": "regular_trading_hours",
+    "overnight_alignment": "unresolved_gate_before_strategy",
+    "primary_evaluation_proxy": "select_and_freeze_from_data_audit"
+  },
+  "simulation": {
+    "levels": [
+      "daily_toy",
+      "efficient_prices",
+      "observed_prices"
+    ],
+    "rough_H": [
+      0.05,
+      0.1,
+      0.2,
+      0.35
+    ],
+    "nonrough_local_H": 0.5,
+    "toy_noise_to_increment_variance_ratio": [
+      0,
+      0.25,
+      1,
+      4
+    ],
+    "half_life_days": [
+      5,
+      22,
+      126
+    ],
+    "daily_sample_sizes": [
+      1250,
+      5000
+    ],
+    "RV_grid_minutes": [
+      1,
+      5,
+      15,
+      30
+    ],
+    "lag_bands_days": [
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        1,
+        22
+      ]
+    ],
+    "primary_lag_band": [
+      1,
+      10
+    ],
+    "dgp_families": [
+      "rough_fOU",
+      "one_factor_OU",
+      "two_factor_OU",
+      "flexible_finite_factor_OU"
+    ],
+    "design": "small_frozen_crossed_grid_plus_targeted_stress_not_full_cartesian_product",
+    "pilot_paths_per_cell": 100,
+    "default_production_paths_per_cell": 2500,
+    "maximum_paths_per_cell": 10000,
+    "replication_rule": "freeze counts or precision rule before production; no significance-based stopping",
+    "noise_aware_ablation_for_both_structural_families": true,
+    "matching_targets": [
+      "mean_variance",
+      "stationary_log_variance_dispersion",
+      "selected_training_ACFs"
+    ],
+    "base_seed": null,
+    "seed_policy": "assign_and_record_independent_replicate_streams_before_execution",
+    "validation": [
+      "analytic_OU",
+      "toy_variogram",
+      "covariance_check",
+      "independent_simulator_subset",
+      "grid_refinement",
+      "latent_IV_truth"
+    ]
+  },
+  "forecast": {
+    "horizons_days": [
+      1,
+      5,
+      22
+    ],
+    "target": "average_future_daily_variance",
+    "rolling_train_days": 1250,
+    "refit_every_days": 22,
+    "purge_unmatured_h_step_labels": true,
+    "models": [
+      "last_RV",
+      "EWMA",
+      "log_HAR",
+      "source_faithful_HARQ",
+      "rough_projection_with_noise",
+      "two_factor_state_space_with_noise",
+      "flexible_finite_factor_with_noise",
+      "source_faithful_rough_HAR_if_validated"
+    ],
+    "primary_comparison": [
+      "rough_projection_with_noise",
+      "two_factor_state_space_with_noise"
+    ],
+    "Gaussian_daily_log_IV_approximation_requires_simulation_validation": true,
+    "retransformation": "conditional_lognormal_or_training_only_smearing_by_horizon"
+  },
+  "inference": {
+    "primary_forecast_horizon": 1,
+    "primary_loss": "QLIKE_log_forecast_plus_proxy_over_forecast",
+    "joint_resampling_by_date": true,
+    "bootstrap_type": "stationary",
+    "bootstrap_draws": 4999,
+    "provisional_mean_block_days": 44,
+    "block_sensitivity_days": [
+      22,
+      66
+    ],
+    "primary_family_correction": "Holm",
+    "equivalence": {
+      "status": "provisional_margins_require_registration",
+      "test_level": 0.05,
+      "corresponding_CI_level": 0.9,
+      "QLIKE_margin": "1_percent_of_validation_mean_nonnegative_ratio_form_then_freeze_numeric_value",
+      "net_CE_margin_annual": 0.0025,
+      "risk_tracking_margin": null
+    }
+  },
+  "economics": {
+    "annual_target_volatility": 0.1,
+    "annualization_days": 252,
+    "core_leverage_cap": 1,
+    "extension_leverage_cap": 2,
+    "core_rebalance": "daily",
+    "h5_h22_strategy": "secondary_nonoverlapping_schedules",
+    "illustrative_one_way_cost_bps": [
+      0,
+      1,
+      5,
+      10
+    ],
+    "mean_variance_gamma": 5,
+    "gamma_sensitivity": [
+      2,
+      10
+    ],
+    "cash_and_borrowing_inputs": "required_before_implementation",
+    "execution_time": "unresolved_gate",
+    "primary_endpoint": "risk_tracking_error",
+    "secondary_endpoints": [
+      "net_CE",
+      "turnover",
+      "cap_binding",
+      "drawdown",
+      "realized_volatility"
+    ]
+  },
+  "execution_gates": [
+    "G0_novelty",
+    "G1_formulas",
+    "G2_data",
+    "G3_simulation_validation",
+    "G4_frozen_protocol"
+  ],
+  "human_hour_budget": 540
+}
+

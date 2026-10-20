@@ -1,0 +1,52 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/jonathancornelissen/highfrequency/eb0e84898ce1c44142726412529bbcf9e296a066/data/SPYRM.rda",
+    "commit": "eb0e84898ce1c44142726412529bbcf9e296a066",
+    "path": "data/raw/SPYRM.rda",
+    "bytes": 134520,
+    "sha256": "93601d2712c8317d9528491e6c182debca5c060f0504da3a023340c414f6e013",
+    "retrieved_utc": "2026-10-20T20:41:37.495756+00:00",
+    "license": "Package license in DESCRIPTION; dataset-specific provenance/redistribution unresolved",
+    "purpose": "local pilot only"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/jonathancornelissen/highfrequency/eb0e84898ce1c44142726412529bbcf9e296a066/man/SPYRM.Rd",
+    "commit": "eb0e84898ce1c44142726412529bbcf9e296a066",
+    "path": "data/raw/SPYRM.Rd",
+    "bytes": 482,
+    "sha256": "97513a2dda394f13bca46f87dca1b3b63ff035be69210dd23eab73d69bba35a1",
+    "retrieved_utc": "2026-10-20T20:41:37.803746+00:00",
+    "license": "Package license in DESCRIPTION; dataset-specific provenance/redistribution unresolved",
+    "purpose": "local pilot only"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/jonathancornelissen/highfrequency/eb0e84898ce1c44142726412529bbcf9e296a066/DESCRIPTION",
+    "commit": "eb0e84898ce1c44142726412529bbcf9e296a066",
+    "path": "data/raw/highfrequency_DESCRIPTION",
+    "bytes": 1603,
+    "sha256": "d8d98b0df5ea59c9488f6af78a6246dbbbabb593d56ef92e84eb7516dadce0b3",
+    "retrieved_utc": "2026-10-20T20:41:38.166306+00:00",
+    "license": "Package license in DESCRIPTION; dataset-specific provenance/redistribution unresolved",
+    "purpose": "local pilot only"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/jonathancornelissen/highfrequency/eb0e84898ce1c44142726412529bbcf9e296a066/R/data.R",
+    "commit": "eb0e84898ce1c44142726412529bbcf9e296a066",
+    "path": "data/raw/highfrequency_data.R",
+    "bytes": 4031,
+    "sha256": "918c775ead0bb91ef67f675bacd5890f2af4e5de91d93337dabf0eb0527cc6cf",
+    "retrieved_utc": "2026-10-20T20:41:38.527717+00:00",
+    "license": "Package license in DESCRIPTION; dataset-specific provenance/redistribution unresolved",
+    "purpose": "local pilot only"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/jonathancornelissen/highfrequency/eb0e84898ce1c44142726412529bbcf9e296a066/data/sampleOneMinuteData.rda",
+    "commit": "eb0e84898ce1c44142726412529bbcf9e296a066",
+    "path": "data/raw/sampleOneMinuteData.rda",
+    "bytes": 39576,
+    "sha256": "73e34c1a22e301cc9f75ca9f9ef1bbf7e18814494fab0d24aa8e46abce7cf85e",
+    "retrieved_utc": "2026-10-20T20:41:39.074850+00:00",
+    "license": "Package license in DESCRIPTION; dataset-specific provenance/redistribution unresolved",
+    "purpose": "local pilot only"
+  }
+]

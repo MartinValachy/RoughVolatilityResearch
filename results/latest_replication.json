@@ -1,0 +1,29 @@
+{
+  "run_id": "replication_patton_20261020T204503Z",
+  "status": "completed",
+  "source_pdf_sha256": "bfcc630f931a01e5c678c77d0f98240aa538af0bc5d1153f657d45c12b0ab64a",
+  "config_sha256": "d8b453498bdca6a5c7b5fc1511307569200c376138dce40fe17ae10e11ac71f6",
+  "code_sha256": "206d9be606541e72130b35c222a017877a07a5129bd090f476ddc385c226d580",
+  "seconds": 0.6005743999994593,
+  "checks": [
+    {
+      "column": "t6",
+      "log_moment_quadrature_vs_closed_abs_error": 3.524958103184872e-15,
+      "fourth_moment_quadrature_vs_closed_abs_error": 2.6645352591003757e-15
+    },
+    {
+      "column": "t10",
+      "log_moment_quadrature_vs_closed_abs_error": 8.326672684688674e-16,
+      "fourth_moment_quadrature_vs_closed_abs_error": 8.881784197001252e-16
+    },
+    {
+      "column": "normal",
+      "log_moment_quadrature_vs_closed_abs_error": 1.3877787807814457e-15,
+      "fourth_moment_quadrature_vs_closed_abs_error": 5.329070518200751e-15
+    }
+  ],
+  "cells": 27,
+  "passed_cells": 25,
+  "max_absolute_error": 0.09160222910326565,
+  "interpretation": "Numerical reproduction of published theoretical table; MAE-prop was approximate in source."
+}

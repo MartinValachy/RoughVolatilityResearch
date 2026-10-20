@@ -1,0 +1,22 @@
+{
+  "run_id": "inference_20261020T205351Z",
+  "status": "completed",
+  "config": {
+    "classification": "inference implementation mock, not a power-calibrated final procedure",
+    "seed": 20261024,
+    "independent_series": 30,
+    "dates": 500,
+    "DGP": "stationary zero-mean Gaussian AR(1),rho0.8,stationary variance1, represents paired loss differences",
+    "bootstrap_draws": 4999,
+    "mean_block_length": 44,
+    "CI_level": 0.9,
+    "equivalence_margin": null,
+    "purpose": "Show dependence-aware intervals and report coverage uncertainty; no significance-to-equivalence conversion"
+  },
+  "coverage": 0.8,
+  "MCSE_coverage": 0.07302967433402215,
+  "seconds": 47.61232729999756,
+  "code_sha256": "e687cc798eadc54ed723c738b6ee8ea458aa1b15b9e0af4e7ac979340f0d1c63",
+  "config_sha256": "e1374b8c4409135fef7190942b0939639a64eb26df392173e3b7536551ad99dc",
+  "gate": "Mock completed; 30 paths too few to establish coverage, block22/66 and refitting/long-memory calibration pending"
+}

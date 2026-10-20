@@ -1,0 +1,10 @@
+model,horizon,independent_histories,mean_QLIKE_difference_vs_true_cov_projection,MCSE_QLIKE_difference,mean_absolute_exposure_difference,mean_RTE_difference,MCSE_RTE_difference,role
+rough_Cauchy,1,1000,0.0,0.0,0.0,0.0,0.0,"known-covariance diagnostic, NOT estimated feasible competitor"
+OU_two_factor,1,1000,0.007816797095715197,0.0014098684374663458,0.032099487224848455,2.5351016071940016e-06,4.363512308460681e-07,"known-covariance diagnostic, NOT estimated feasible competitor"
+OU_flexible_10,1,1000,-1.496274144034082e-06,5.654122378598835e-06,0.00013765344598824596,-5.066426887651088e-10,1.8452037223205442e-09,"known-covariance diagnostic, NOT estimated feasible competitor"
+rough_Cauchy,5,1000,0.0,0.0,0.0,,,"known-covariance diagnostic, NOT estimated feasible competitor"
+OU_two_factor,5,1000,0.006333403334526457,0.0009416725268657769,0.02968586654847843,,,"known-covariance diagnostic, NOT estimated feasible competitor"
+OU_flexible_10,5,1000,-4.959410259204766e-06,5.045400267082944e-06,0.00017922254599850507,,,"known-covariance diagnostic, NOT estimated feasible competitor"
+rough_Cauchy,22,1000,0.0,0.0,0.0,,,"known-covariance diagnostic, NOT estimated feasible competitor"
+OU_two_factor,22,1000,0.0023573842400117615,0.00048348790647109084,0.019370669868147977,,,"known-covariance diagnostic, NOT estimated feasible competitor"
+OU_flexible_10,22,1000,-2.623270826704882e-06,4.6767745247345726e-06,0.00020206541530970356,,,"known-covariance diagnostic, NOT estimated feasible competitor"

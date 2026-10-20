@@ -1,0 +1,17 @@
+{
+  "url": "https://fba.um.edu.mo/wp-content/uploads/RePEc/doc/202537.pdf",
+  "attempts": [
+    {
+      "attempt": 0,
+      "status": 200,
+      "content_range": null,
+      "content_length": "3725458"
+    },
+    {
+      "result": "success",
+      "bytes": 3725458,
+      "pages": 43,
+      "sha256": "c5daa459e603451a3911f0e0735a847530b0b6f4feb1901055a3c8526bf89e5e"
+    }
+  ]
+}

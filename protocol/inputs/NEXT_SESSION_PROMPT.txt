@@ -1,0 +1,22 @@
+Continue Martin Valachy's bachelor thesis project "Rough or Just Noisy?" using the attached Thesis_Execution_Plan.md as protocol v1.0 and the companion source_register.json, experiment_plan.json and data_dictionary.json.
+
+This request authorizes the research preparation stage: acquire lawful papers/supplements/official code, inspect public data and obtain a small pilot, audit methods and formulas, implement validated toy simulations, and attempt one published-result replication. Read the latest instructions and use available tools. Preserve all synced sources as read-only.
+
+First inspect current institutional rules and clarify any material submission restriction from official evidence. Keep thesis authorship, understanding and permitted AI use explicit. Do not contact supervisors, send messages, buy data, bypass subscriptions or publish materials under this instruction. Use already-authorized public/entitled access where available; record failures.
+
+Do not assume the thesis is novel or that noise explains roughness. Prioritize Cont & Das; Fukasawa–Takabatake–Westphal; Bolko et al.; Gatheral–Jaisson–Rosenbaum; Mouti (2026); Bennedsen et al.'s Rough HAR and Shi–Yu–Zhang. Some register entries were discovered only from metadata; acquire full text and record exact versions before relying on equations or claimed omissions.
+
+Execution order:
+1. Save a dated checkpoint and inspect existing files to avoid duplicate work.
+2. Acquire/deduplicate lawful documents and code; record source, license, SHA-256, version, access date and status.
+3. Create evidence cards and the novelty matrix. Deliver a two-page positioning/feasibility memo. Revise scope if the contribution is already covered.
+4. Derive and numerically verify the noisy variogram, OU finite-lag slope, quarticity scaling, conditional Gaussian projection and retransformation. Separate spot variance, integrated variance, RV sampling error and price noise.
+5. Verify actual VOLARE inventory and definitions. Download a small documented slice, audit units/calendar/missingness, and produce a data card.
+6. Implement the daily Gaussian toy experiment and analytic checks. Add an efficient-price simulation only after these checks pass.
+7. Attempt one prespecified published figure/table replication. Report discrepancies and failure rates openly.
+8. Stop the preparation stage at a concrete checkpoint: source cards, formula notebook, novelty memo, data card, runnable toy code, replication result and revised protocol. Do not quietly launch the full production grid before G0–G4 are satisfied.
+
+Use compute for independent Monte Carlo paths, numerical refinement, coverage/power and bootstrap precision. Keep the primary model/hypothesis set small. Do not tune to the final empirical test, select favorable seeds, treat bootstrap draws as new market observations, or call an insignificant difference equivalence.
+
+Every claim must point to a source/page or reproducible run. Distinguish actual results, illustrative simulations, proposals, unresolved assumptions and blocked access. Keep a machine-readable checkpoint with files, completed gates, commands, environment, seeds and exact next actions. Save deliverables persistently and return concise links plus material findings.
+

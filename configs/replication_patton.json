@@ -1,0 +1,18 @@
+{
+  "registered_before_execution": "2026-10-20",
+  "source": "S12: Patton (2011), Journal of Econometrics 160, 246-256, Table 1, journal p250 / downloaded PDF p5",
+  "target": "All 9 loss-function rows and the nu=6, nu=10, Normal columns; sigma squared=1",
+  "design": "Analytical and numerical integration reproduction; no fitted or simulated market data",
+  "accuracy_absolute_tolerance": 0.015,
+  "reason_for_tolerance": "Source rounds to 2 decimal places; MAE-prop source is an explicit numerical approximation",
+  "columns": ["t6", "t10", "normal"],
+  "printed_targets": {
+    "MSE": [1, 1, 1], "QLIKE": [1, 1, 1],
+    "MSE-LOG": [0.22, 0.25, 0.28], "MSE-SD": [0.56, 0.60, 0.64],
+    "MSE-prop": [6, 4, 3], "MAE": [0.34, 0.39, 0.45],
+    "MAE-LOG": [0.34, 0.39, 0.45], "MAE-SD": [0.34, 0.39, 0.45],
+    "MAE-prop": [2.73, 2.55, 2.36]
+  },
+  "independent_check": "Quadrature of standardized return densities for E|r|, E log(r^2), E r^4 and size-biased median; compare closed forms",
+  "not_claimed": "This is a foundational noisy-proxy loss replication, not a replication of a roughness estimator or market forecast contest"
+}
