@@ -5,7 +5,7 @@
   "licensed_observation_files_included": false,
   "private_local_history_included": false,
   "visibility": "private",
-  "existing_release_HEAD": "a01053dff3e1135b1c09c0e7159ba72be5e7529d",
+  "existing_release_HEAD": "91a8fd61c56c957207892bcec97bf759d093f6f9",
   "code_sha256": "995745c9c79b1ec608f5981f2f335db94ee09b2121924935a851b3c6887d48d2",
   "scope": "Staged allowlisted source,synthetic artifacts,paper/lecture and aggregate summaries; scoped path/credential/binary checks, not a universal secret detector",
   "files_sha256": [
@@ -16,8 +16,8 @@
     },
     {
       "path": ".github/workflows/synthetic.yml",
-      "bytes": 615,
-      "sha256": "200f4903cb128fc21e1ca6cd22ccd2b0ddbafa21f98384eb5d32b1d9a65e44ff"
+      "bytes": 638,
+      "sha256": "3977e1f91e114ceb2bac2d3bfd3a78643be1679e04cbe064eadce0e40b56fc4a"
     },
     {
       "path": ".gitignore",
@@ -281,8 +281,8 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 789,
-      "sha256": "14a4e7e170db4e7dbec3bce3c0c6002348411692bd451e70f3162df25cb6663d"
+      "bytes": 803,
+      "sha256": "92a0c421a5b6c383fb5d91c15f886fee5bbc32815f14f71d5d86667e5f4f264d"
     },
     {
       "path": "results/paper_derivation_check.json",

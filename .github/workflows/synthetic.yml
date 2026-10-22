@@ -4,6 +4,7 @@ jobs:
   synthetic:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         python: ['3.12', '3.13']
     steps:
