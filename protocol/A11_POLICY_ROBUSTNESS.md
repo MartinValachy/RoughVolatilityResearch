@@ -1,0 +1,15 @@
+# A11 - Post-result risk-policy and cap sensitivity
+
+22 October 2026. Authorized by Martin's request to continue and improve the project, including his prior scope/approval override. Frozen locally before computing these sensitivities. The A10 result has already been seen: this is explicitly post-result robustness, not a preregistered confirmation, untouched validation or replacement primary endpoint. A10 remains unchanged.
+
+Question: are the source-dependent risk-input differences specific to the chosen EWMA/target/cap, and how much of apparently small five-minute weight disagreement is caused by both sources hitting the exposure cap?
+
+Reuse only the verified A10 SPY daily aggregates, all 398 existing sessions. No new data acquisition, no source cleaning changes, no outlier omission, no fitted parameters or returns. Four nonreference constructions versus modern time/flags; all six grids. Discovery dates remain in all state paths. Fixed config: configs/source_policy_robustness.json.
+
+Compute every combination of EWMA decay 0.90/0.94/0.97, annual target 5%/10%/15%, cap 50%/100%/200%, with the same first-RV initialization and 126-session warmup as A10. These values span simple plausible scenarios, with no claim that any is optimal. Weights formed after session t are next-session inputs. Report all 27 policies, not the most favorable one. Strict complete-date history required; do not compress missing sessions. No significance tests, trading or forecasting superiority claim.
+
+Before capping, report scale-free source weight ratios sqrt(reference EWMA / candidate EWMA): median/p95/max absolute log ratio and origins outside [1/1.1,1.1]. For every capped policy report mean/max absolute weight gap, origins and contiguous episodes >=5pp, longest episode, each source's saturation and both-capped fraction. Report uncapped mean gap too, and 1 - capped mean gap / uncapped mean gap as descriptive attenuation; use missing if both gaps vanish. A zero capped gap is not source agreement.
+
+For each grid/decay/construction report chronological block counts/mean gaps and source-state shock concentration. Decompose the EWMA state gap linearly into each date's signed RV difference propagated to every evaluated origin. Attribute L1 potential influence using absolute shock times total nonnegative propagation mass over evaluated origins. Top-one/top-five shares describe concentration of this triangle-bound measure, not a causal share of nonlinear weight differences; cancellation is reported separately via actual state-gap L1 / triangle bound. Never delete influential dates or reinterpret them as independent shocks.
+
+Acceptance: all expected matrices complete; primary A10 lambda=.94/target=.10/cap=1 results reproduced numerically; independent standard-library direct-convolution checks for all state paths and all capped policy summaries; closed-form/synthetic tests for scaling, cap attenuation, causality and decomposition; planted altered output rejected. Produce a private addendum and scientific figure, retain the original report, queue three ownership questions, checkpoint and local commit. No sealed periods or online release.

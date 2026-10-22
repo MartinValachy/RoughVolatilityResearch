@@ -1,0 +1,77 @@
+{
+  "status": "passed_checks",
+  "config": {
+    "version": "A08-portfolio-v1",
+    "seed": 20262723,
+    "paths": 128,
+    "days": 504,
+    "fine_steps_per_day": 1560,
+    "session_minutes": 390,
+    "models": [
+      "OU",
+      "Cauchy_H01",
+      "Cauchy_H03"
+    ],
+    "local_H": [
+      0.5,
+      0.1,
+      0.3
+    ],
+    "half_correlation_days": 22,
+    "cauchy_beta": 0.5,
+    "stationary_log_variance": 0.25,
+    "mean_daily_variance": 0.0001,
+    "sampling_minutes": [
+      1,
+      5,
+      15,
+      30
+    ],
+    "log_price_noise_sd": [
+      0.0,
+      0.0001,
+      0.0003
+    ],
+    "lag_bands": [
+      5,
+      10,
+      22
+    ],
+    "primary_lag_band": 10,
+    "production_allowed": false,
+    "classification": "Known-truth simulation sensitivity study; no latent empirical H inference"
+  },
+  "paths_per_model": 16,
+  "mean_H_difference_tolerance": 0.01,
+  "path_H_difference_tolerance": 0.03,
+  "rows": [
+    {
+      "model": "Cauchy_H01",
+      "paths": 16,
+      "mean_delta_H": -1.161227711522772e-06,
+      "mcse_delta_H": 0.00011089735468694287,
+      "max_absolute_path_delta_H": 0.0008153589364665315,
+      "mean_absolute_relative_IV_error": 0.0029890247147232093
+    },
+    {
+      "model": "Cauchy_H03",
+      "paths": 16,
+      "mean_delta_H": -4.3998137140018045e-05,
+      "mcse_delta_H": 2.0642525759856424e-05,
+      "max_absolute_path_delta_H": 0.0001807147297350209,
+      "mean_absolute_relative_IV_error": 0.000395470121863253
+    },
+    {
+      "model": "OU",
+      "paths": 16,
+      "mean_delta_H": 1.066532100593709e-06,
+      "mcse_delta_H": 2.627779536712029e-06,
+      "max_absolute_path_delta_H": 2.3729564603391928e-05,
+      "mean_absolute_relative_IV_error": 4.519246032675368e-05
+    }
+  ],
+  "code_sha256": "d541af25712231dcef073b857a2e27b05538770e485f3786956a31ebfbcfce6b",
+  "seconds": 16.263774100000774,
+  "meaning": "Coupled numerical-resolution diagnostic only; no continuous-time convergence proof or empirical H inference.",
+  "run_id": "side_project_refinement_20261021T214206Z"
+}

@@ -1,9 +1,0 @@
-{
-  "run_id": "formulas_20261020T210146Z",
-  "status": "completed",
-  "python_executable": "D:\\AICorner\\Rough_or_Just_Noisy\\.venv\\Scripts\\python.exe",
-  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
-  "code_cells_executed": 8,
-  "notebook_sha256": "232d1ea513ebb801c60d50e133e70c12cd622dd39f17e02e60b615bfae6cffd9",
-  "runner_sha256": "7abbd9e44e2a30f7b1554b822bb917a91bf99e4cc498ac637fae8741140e673a"
-}

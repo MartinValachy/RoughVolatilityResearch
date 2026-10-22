@@ -1,0 +1,17 @@
+{
+  "status": "passed_checks",
+  "identities_checked": 655,
+  "methods": [
+    "exact Gaussian polynomial quadrature",
+    "Gamma-function moments and circle integration",
+    "finite differences of log variograms",
+    "recursion versus direct convolution",
+    "scale and cap boundary cases"
+  ],
+  "planted_wrong_initialization_rejected": true,
+  "empirical_data_read": false,
+  "code_sha256": "fe83d862a2680c00f9c7abde549172e9b56f37f43b427e38e9cbab0b85a7585f",
+  "theory_source_sha256": "8974adb5929da3bc28989205752c9d2e4fe0656883b8afd66b3bdc20bbb08759",
+  "interpretation": "Selected mathematical identities passed these checks; not a proof of empirical model assumptions.",
+  "run_id": "paper_derivation_check_20261022T141720Z"
+}

@@ -1,0 +1,23 @@
+{
+  "version": "A13-training-breadth-1",
+  "start": "2013-01-02",
+  "end": "2014-07-31",
+  "panel": ["QQQ", "IWM", "EFA", "TLT"],
+  "already_observed_month": "2014-01",
+  "pilot_day": "2013-02-01",
+  "pilot_month": "2013-02",
+  "discovery_dates": ["2014-01-02", "2014-07-03"],
+  "frequencies_seconds": [15, 30, 60, 300, 900, 1800],
+  "RV_material_factor": 1.1,
+  "RQ_material_factor": 2.0,
+  "EWMA_lambda": 0.94,
+  "EWMA_warmup": 126,
+  "target_annual_volatility": 0.1,
+  "weight_cap": 1.0,
+  "annual_sessions": 252,
+  "bootstrap_draws": 3999,
+  "date_blocks": [22, 11, 44],
+  "bootstrap_seed": 20261024,
+  "production_allowed": false,
+  "classification": "Fixed follow-up exploratory breadth study; no latent-H, independent-fund, profitability or untouched-validation claim"
+}

@@ -1,0 +1,19 @@
+name: Synthetic study checks
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[test]"
+      - run: python -m pytest -q
+      - run: python scripts/check_undergraduate_paper.py
+      - run: python scripts/check_paper_derivations.py
+      - run: python scripts/source_audit_demo.py
+      - run: python scripts/run_study.py --pilot

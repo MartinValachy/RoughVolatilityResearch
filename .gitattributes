@@ -1,2 +1,7 @@
-# Preserve exact recorded bytes and input hashes across Windows/Linux checkouts.
-* -text
+* text=auto eol=lf
+*.pdf binary
+*.pptx binary
+*.png binary
+*.jpg binary
+*.xlsx binary
+*.ipynb text eol=lf

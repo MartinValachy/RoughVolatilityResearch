@@ -4,10 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "roughnoisy"
-version = "0.1.0"
-description = "Independent roughness, observation error and volatility forecast research pilot"
+version = "0.3.0"
+description = "Reproducible volatility roughness sensitivity and daily source compatibility diagnostics"
 requires-python = ">=3.12"
-dependencies = ["numpy", "scipy", "pandas", "matplotlib", "requests", "pypdf"]
+dependencies = ["numpy>=1.26", "scipy>=1.12", "pandas>=2.2", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "exchange_calendars>=4.5", "duckdb>=1.5", "nbformat>=5.10"]
+demo = ["pytest>=8", "nbformat>=5.10", "nbclient>=0.10", "ipykernel>=6", "markdown>=3.6"]
+research = ["requests", "pypdf", "exchange_calendars", "sqlalchemy", "wrds", "duckdb", "pyarrow"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

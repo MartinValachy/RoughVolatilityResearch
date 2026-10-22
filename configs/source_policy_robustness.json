@@ -1,0 +1,18 @@
+{
+  "version": "A11-post-result-policy-robustness-1",
+  "source_run_id": "source_replication_analysis_20261022T014736Z",
+  "start": "2013-01-02",
+  "end": "2014-07-31",
+  "symbol": "SPY",
+  "frequencies_seconds": [15, 30, 60, 300, 900, 1800],
+  "decays": [0.90, 0.94, 0.97],
+  "annual_targets": [0.05, 0.10, 0.15],
+  "weight_caps": [0.5, 1.0, 2.0],
+  "warmup": 126,
+  "annual_sessions": 252,
+  "large_gap": 0.05,
+  "relative_factor": 1.1,
+  "chronological_blocks": [["2013-01-02", "2013-06-30"], ["2013-07-01", "2013-12-31"], ["2014-01-01", "2014-06-30"], ["2014-07-01", "2014-07-31"]],
+  "production_allowed": false,
+  "classification": "Post-result descriptive sensitivity; all policies reported, no model selection or new validation"
+}

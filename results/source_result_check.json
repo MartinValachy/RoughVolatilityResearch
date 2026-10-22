@@ -1,0 +1,33 @@
+{
+  "status": "passed_checks",
+  "source_run_id": "source_replication_analysis_20261022T014736Z",
+  "scalar_checks": 900,
+  "planted_altered_incidence_detected": true,
+  "arithmetic": "csv/math/statistics independent of pandas/NumPy/analysis EWMA and slope",
+  "legacy_one_minute_5pp_episodes": [
+    {
+      "start_origin": "2014-01-23",
+      "end_origin": "2014-03-31",
+      "sessions": 47
+    }
+  ],
+  "post_result_discovery_sensitivity": {
+    "60": {
+      "origins_above_5pp_discovery_effect_standardized": 46,
+      "mean_absolute_weight_difference_discovery_effect_standardized": 0.024953261621919447,
+      "H_legacy_discovery_endpoints_omitted": 0.13526263469930755,
+      "H_modern_discovery_endpoints_omitted": 0.1563529953941046
+    },
+    "300": {
+      "origins_above_5pp_discovery_effect_standardized": 0,
+      "mean_absolute_weight_difference_discovery_effect_standardized": 0.0003218586625549513,
+      "H_legacy_discovery_endpoints_omitted": 0.14418782771772803,
+      "H_modern_discovery_endpoints_omitted": 0.1439844589265021
+    }
+  },
+  "sensitivity_classification": "exploratory after full result; no compressed dates; standardize only two discovery-day variance effects, not a cleaning rule",
+  "code_sha256": "cc104a0db3dfa6e98ba9e21f51936b4a3a544ca2735cf47dbfc94dfed71e20da",
+  "published_online": false,
+  "sealed_observations_opened": false,
+  "run_id": "source_result_check_20261022T015029Z"
+}

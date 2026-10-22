@@ -1,0 +1,152 @@
+\section{Derivations and interpretation}\label{app:identities}
+This appendix supplies the mathematical bridge from a sampled price to a reported decision input. The arguments below are conditional calculations under stated assumptions, not fitted models of the historical sample. They explain what the diagnostics can reveal and why the empirical comparisons do not identify latent market volatility.
+
+\subsection{From price increments to realized variance and quarticity}\label{app:moments}
+Use a trading-session clock $u\in[0,1]$, with the actual session rescaled to unit length. In an ideal continuous-price model,
+\begin{equation}
+ dp_u=b_u\,du+\sigma_u\,dW_u,\qquad
+ IV=\int_0^1\sigma_u^2\,du,\qquad IQ=\int_0^1\sigma_u^4\,du.
+\end{equation}
+Here $p$ is log price, $IV$ is integrated variance and $IQ$ is integrated quarticity. Quadratic-variation theory motivates sums of squared returns; the continuous stochastic-volatility setting supplies additional distributional results. Barndorff-Nielsen and Shephard~\cite{bns} distinguish this consistency statement from assumptions needed to quantify precision (their Sections 1 and 3). The following finite-grid calculation makes the moment normalizations explicit.
+
+For this calculation, ignore drift and suppose the variance path is deterministic, or independent of the Brownian price shocks. On a grid of $M$ intervals, write
+\begin{equation}
+ r_i=\sqrt{a_i}Z_i,\quad a_i=\int_{(i-1)/M}^{i/M}\sigma_u^2\,du,
+ \quad Z_i\mathrel{\overset{\mathrm{iid}}\sim}N(0,1).
+\end{equation}
+The assumptions imply independent conditional increments. They are stronger than a general model with leverage; conditional Gaussianity is not asserted for arbitrary stochastic volatility. Since $\mathbb E Z_i^2=1$ and $\mathbb E Z_i^4=3$,
+\begin{align}
+ \mathbb E[\RV\mid a]&=\sum_i a_i=IV,\label{eq:rvmean}\\
+ \operatorname{Var}(\RV\mid a)&=2\sum_i a_i^2,\label{eq:rvvar}\\
+ \mathbb E[\RQ\mid a]&=M\sum_i a_i^2,
+ \qquad \RQ=\frac M3\sum_i r_i^4.\label{eq:rqmean}
+\end{align}
+The variance uses $\operatorname{Var}(Z_i^2)=3-1=2$ and vanishing cross covariances. For a sufficiently regular variance path, the last expectation is a Riemann approximation to $IQ$. With constant variance $a_i=IV/M$, it is exactly $IV^2$. This derives the factor $M/3$ rather than treating it as a vendor convention. Under the stated finite-grid model, $2\RQ/M$ is an unbiased estimator of the conditional variance in Equation~\eqref{eq:rvvar}.
+
+Quarticity responds particularly strongly to isolated increments: multiplying one return by $k$ multiplies its RV contribution by $k^2$ and its RQ contribution by $k^4$. That does not mean that a larger source RQ discrepancy always occurs: retained trades, signs, neighboring returns and grid endpoints all matter. The complete incidence table is therefore necessary.
+
+The session clock also explains why $M$ must follow the actual session. If a complete shortened session has $m$ returns but its quarticity is incorrectly multiplied by a full-session count $M$, the computed RQ is $M/m$ times the intended session-normalized RQ, even when the prices and returns are identical. Missing intervals cannot be repaired by substituting the observed count into the formula: the resulting returns may cover an irregular or truncated interval. This is why incomplete grids are withheld rather than silently renormalized.
+
+For decimal log returns, RV has squared-return units and RQ has fourth-power units. Converting all returns to percentage units multiplies RV by $100^2$ and RQ by $100^4$; changing the currency denomination of every price leaves log returns unchanged. Multiplying a daily RV by an annualization factor $A$ is another explicit transformation. A daily RQ can be multiplied by $A^2$ to express the corresponding fourth-power scale; it does not then become an estimate of the integral of quarticity over an observed year. Units and observation windows must both agree before reconciliation.
+
+\subsection{What a relative measurement diagnostic does and does not estimate}\label{app:qhat}
+The preceding conditional-variance identity motivates the dimensionless diagnostic
+\begin{equation}
+ \widehat q=\frac{2\RQ}{M\RV^2}
+ =\frac{2}{3}\frac{\sum_i r_i^4}{(\sum_i r_i^2)^2}.
+\end{equation}
+A first-order delta approximation, $\log(\RV)-\log(IV)\simeq(\RV-IV)/IV$, connects a relative variance to log measurement error when that error is small. It does not establish iid additive errors across days, eliminate leverage, handle market microstructure noise or certify that $\widehat q$ itself is an unbiased log-error variance.
+
+Even the constant-variance Gaussian case illustrates the distinction between a ratio of expectations and an expectation of a ratio. Let $P_i=Z_i^2/\sum_j Z_j^2$. Spherical symmetry, or the Dirichlet law with all parameters $1/2$, gives
+\begin{equation}
+ \mathbb E[P_i^2]=\frac{(1/2)(3/2)}{(M/2)(M/2+1)}
+ =\frac{3}{M(M+2)},\qquad
+ \mathbb E[\widehat q]=\frac{2}{M+2}.
+\end{equation}
+In contrast, $\operatorname{Var}(\RV\mid IV)/IV^2=2/M$. The finite-sample discrepancy is a consequence of the random denominator. This diagnostic is supporting methodology, not an extra empirical endpoint of A10/A11. In particular, no empirical variogram is ``corrected'' by subtracting it.
+
+\subsection{Two different places where observation noise enters}\label{app:noise}
+First consider price-level noise on a fixed grid: $y_i=p_i+\eta_i$, where independent centered errors have variance $\omega^2$ and are independent of the efficient price. Observed returns are $\widetilde r_i=r_i+\eta_i-\eta_{i-1}$. Expansion gives
+\begin{equation}
+ \mathbb E[\widetilde\RV\mid a]=IV+2M\omega^2.\label{eq:pricenoise}
+\end{equation}
+The cross term has zero expectation and each differenced error has variance $2\omega^2$. Adjacent error differences are negatively correlated; independence across observed returns is unnecessary for this expectation. If the level noise is also Gaussian, each marginal observed return is Gaussian with variance $a_i+2\omega^2$, hence
+\begin{equation}
+ \mathbb E[\widetilde\RQ\mid a]
+ =M\sum_i(a_i+2\omega^2)^2
+ =M\sum_i a_i^2+4M\omega^2IV+4M^2\omega^4.\label{eq:rqnoise}
+\end{equation}
+Higher sampling frequency can therefore increase contamination even while it improves the ideal noise-free discretization. This illustrative model is implemented in the supporting simulation; it is not a claim that the historical source discrepancy consists of independent Gaussian quote errors. In particular, source-specific condition information is structured, not an iid perturbation.
+
+The second model concerns a daily log-variance proxy: $Y_t=X_t+e_t$. If $e_t$ is centered, iid, independent of $X$, and has variance $q$, distinct endpoints give
+\begin{equation}
+ V_Y(k):=\mathbb E[(Y_{t+k}-Y_t)^2]=V_X(k)+2q.\label{eq:noisevariogram}
+\end{equation}
+To derive this, expand the square, drop the cross term by independence, and use $\operatorname{Var}(e_{t+k}-e_t)=2q$. For stationary but correlated independent measurement error, the addition instead equals $2[\gamma_e(0)-\gamma_e(k)]$. If the error is related to $X$, an additional cross term remains. Price-level noise and daily log-proxy noise therefore cannot be identified with each other merely because both can flatten a plot.
+
+\subsection{Why the finite-band statistic is not latent roughness}\label{app:slope}
+For a positive population variogram, define a local scale diagnostic
+\begin{equation}
+ H_{\mathrm{eff}}(\tau)=\frac12\frac{d\log V(\tau)}{d\log\tau}
+ =\frac{\tau V'(\tau)}{2V(\tau)}.
+\end{equation}
+If $V(\tau)=C\tau^{2H}$ exactly, this equals $H$ at every scale. Adding the iid daily log-noise floor produces
+\begin{equation}
+ H_{\mathrm{eff},Y}(\tau)
+ =H\frac{C\tau^{2H}}{C\tau^{2H}+2q}.
+\end{equation}
+For positive $q$, the factor lies between zero and one. This is a precise attenuation mechanism under this model, not a proof that every empirical low slope is noise.
+
+For a stationary OU log-variance process with covariance $v\exp(-\kappa|\tau|)$, stationarity gives $V_X(\tau)=2v[1-\exp(-\kappa\tau)]$. Differentiating yields
+\begin{equation}
+ H_{\mathrm{eff},X}(\tau)=\frac{\kappa\tau}{2(\exp(\kappa\tau)-1)},\qquad
+ H_{\mathrm{eff},Y}(\tau)=
+ \frac{\tau v\kappa\exp(-\kappa\tau)}{2v[1-\exp(-\kappa\tau)]+2q}.
+\end{equation}
+Since $\exp(z)-1\sim z$ near zero, the noise-free local limit is $1/2$. It falls at longer scales because OU increments approach their stationary variance. An OU process is locally diffusive, not differentiable. ``Nonrough'' here distinguishes it from a volatility model with a smaller local exponent; it does not mean a smooth deterministic path. A finite nonzero noise floor further changes the small-scale behavior.
+
+The reported estimator uses finitely many calendar lags, not a derivative at zero. With $x_k=\log k$, $z_k=\log\widehat V(k)$, its explicit formula is
+\begin{equation}
+ \widetilde H_K=\frac12
+ \frac{\sum_{k=1}^{K}(x_k-\bar x)(z_k-\bar z)}{\sum_{k=1}^{K}(x_k-\bar x)^2}.
+\end{equation}
+It recovers $H$ for an exact power law on that band, but otherwise summarizes the curvature and errors at the selected lags. Lagged increments overlap, their estimates are dependent, and different lags can have different valid endpoint counts. Ordinary regression standard errors would not automatically be valid. Missing calendar dates are not compressed, because doing so changes the meaning of $k$. The known-truth experiment isolates this distinction without fitting a market model.
+
+Multiplying every daily RV by the same positive constant adds a constant to every log RV and leaves all increments and $\widetilde H_K$ unchanged. A source discrepancy that changes the slope must therefore have more structure than a constant variance-unit multiplier. This invariance does not identify which source is economically preferable.
+
+\subsection{Controlled source contrasts and interactions}\label{app:cross}
+Let $F(T,C)$ be any positive daily measurement produced by the entire fixed pipeline from time representation $T$ and condition representation $C$. The crossed construction changes inputs to this function while retaining the observed price/size/venue sequence. On log scale, define
+\begin{align}
+ D_T&=\log F(L,M)-\log F(M,M),\\
+ D_C&=\log F(M,L)-\log F(M,M),\\
+ I&=\log F(L,L)-\log F(L,M)-\log F(M,L)+\log F(M,M).
+\end{align}
+Then the legacy/reference log difference equals $D_T+D_C+I$ by algebra. An additive representation would set $I=0$, but the pipeline provides no reason to assume this. Changing conditions can change retained-venue counts, the selected venue, same-time medians and previous-tick endpoints. Moreover, the materiality indicator thresholds an absolute difference, so incidence counts cannot be added as if they were signed effects. The paper reports the complete crossed constructions rather than claiming an additive causal decomposition. B restoration is a further controlled diagnostic within this function, not a universally justified trade deletion.
+
+\subsection{State propagation, initialization and persistence}\label{app:state}
+Starting from $s_0=\RV_0$, repeated substitution into Equation~\eqref{eq:weight} gives
+\begin{equation}
+ s_t=\lambda^t\RV_0+(1-\lambda)\sum_{i=1}^t\lambda^{t-i}\RV_i.\label{eq:convolution}
+\end{equation}
+The coefficients sum to one. The initial coefficient is $\lambda^t$, not $(1-\lambda)\lambda^t$; treating initialization like a later shock would lose mass. This direct convolution is the independent check on the recursive implementation.
+
+For source differences $\delta_i=\RV_i^L-\RV_i^M$, subtraction gives exactly the same linear filter of $\delta_i$. If only a later observation $j>0$ differs, its effect at $t\geq j$ is $(1-\lambda)\lambda^{t-j}\delta_j$. Its half-life, in sessions, is $\log(1/2)/\log\lambda$. One discrepant input can therefore create many successive differing states; counting affected origins does not count independent source shocks. The paper labels weights by their information origin: $s_t$ only supplies the session-$t+1$ input, avoiding use of the same day's complete RV before it exists.
+
+For evaluated origins $\mathcal T$, put $a_{t,0}=\lambda^t$ and $a_{t,i}=(1-\lambda)\lambda^{t-i}$ for $1\leq i\leq t$. The triangle inequality yields
+\begin{equation}
+ \sum_{t\in\mathcal T}|s_t^L-s_t^M|
+ \leq\sum_i |\delta_i|\sum_{\substack{t\in\mathcal T\\t\geq i}}a_{t,i}.\label{eq:potential}
+\end{equation}
+The right-hand summands define the absolute propagation-potential shares. They omit signed cancellation and precede the nonlinear state-to-weight transformation. Their concentration is informative about sensitivity, but is not an allocation of actual portfolio losses.
+
+\subsection{From variance states to weights and cap masking}\label{app:weights}
+Let $s_t>0$ be a daily variance state, $A$ a common annualization factor, $v_*>0$ an annual volatility target and $c>0$ a cap. Equating an unconstrained position's estimated annual volatility to its target gives
+\begin{equation}
+ u_t\sqrt{A s_t}=v_*,\qquad
+ u_t=\frac{v_*}{\sqrt{A s_t}},\qquad
+ \frac{\partial\log u_t}{\partial\log s_t}=-\frac12.
+\end{equation}
+The sensitivity follows by differentiating $\log u_t=\log v_*-(\log A+\log s_t)/2$. A small relative variance change therefore produces approximately half as large an oppositely signed relative unconstrained weight change. The exact ratio is
+\begin{equation}
+ \frac{u_t^L}{u_t^M}=\sqrt{\frac{s_t^M}{s_t^L}},\qquad
+ \left|\log\frac{u_t^L}{u_t^M}\right|
+ =\frac12\left|\log\frac{s_t^L}{s_t^M}\right|.\label{eq:stateratio}
+\end{equation}
+Common targets and annualization cancel. If an entire source RV path is multiplied by $a>0$, consistent initialization makes its state exactly $a$ times as large and its unconstrained weight $a^{-1/2}$ times as large. Thus a constant unit error leaves the roughness slope unchanged while changing the risk input, illustrating why both audits are needed.
+
+Now set $w_t=\min(c,u_t)$. The states at which a weight saturates satisfy
+\begin{equation}
+ s_t\leq\frac{v_*^2}{A c^2}.
+\end{equation}
+Within this region the constrained weight is locally insensitive to the state. If both sources are there, their weights agree exactly regardless of their state ratio. If neither is there, capping changes neither weight. If just one is there, the cap reduces the gap. These three exhaustive cases prove
+\begin{equation}
+ |\min(c,a)-\min(c,b)|\leq |a-b|\qquad(a,b>0).
+\end{equation}
+The aggregate attenuation is defined as one minus the mean capped absolute gap divided by the mean uncapped absolute gap, when the latter is positive. Its value depends on the chosen target and cap. This makes the uncapped state-ratio diagnostic necessary for interpreting apparent decision agreement. It does not turn either estimated state into true risk or establish an optimal portfolio policy.
+
+\subsection{What the block intervals quantify}\label{app:resampling}
+For a source pair and grid, let $J_t$ indicate a valid comparison and $I_t$ indicate both validity and a discrepancy above the fixed threshold. The empirical incidence is $\widehat p=\sum_t I_t/\sum_t J_t$, with the two discovery dates ineligible for both sums. Resampling the numerator and denominator on the same calendar indices preserves this definition; resampling only discrepancies or compressing to valid dates changes the experiment.
+
+The stationary bootstrap~\cite{politis} starts at a uniformly drawn calendar index. Each subsequent index restarts uniformly with probability $1/L$, or continues to the next circular calendar index otherwise. Thus $\Pr(B=b)=(1-1/L)^{b-1}/L$ for block length $B$, with mean $L$. Using identical indices across paired objects retains their contemporaneous dependence. Recomputing the incidence on each resample yields the displayed percentile intervals; block-length sensitivities assess one aspect of dependence handling.
+
+These intervals rely on a useful stationary, weak-dependence approximation and the representativeness of the available window. They do not supply new independent episodes, remove a source-regime change, establish source equivalence or account for every exploratory choice. The slope panels are descriptive and are not assigned these incidence intervals. The policy matrix is a systematic post-result sensitivity, not a family of successful independent hypothesis tests.

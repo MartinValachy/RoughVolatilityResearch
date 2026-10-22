@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this reproducible side project, cite the repository version and its source literature."
+title: "Rough or Just Noisy? Volatility roughness and source compatibility diagnostics"
+type: software
+authors:
+  - family-names: Valachy
+    given-names: Martin
+version: 0.3.0
+abstract: "AI-assisted volatility measurement sensitivity and source compatibility diagnostics with synthetic reproducible demonstrations. No novel estimator or empirical forecast-superiority claim."

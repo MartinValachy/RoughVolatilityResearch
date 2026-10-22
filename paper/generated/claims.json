@@ -1,0 +1,4778 @@
+[
+  {
+    "key": "sessions",
+    "source": "results/source_policy_robustness.json",
+    "kind": "json",
+    "field": "source_sessions",
+    "operation": "value",
+    "scale": 1,
+    "digits": 0,
+    "value": 398.0,
+    "display": "398"
+  },
+  {
+    "key": "origins",
+    "source": "results/source_policy_robustness.json",
+    "kind": "json",
+    "field": "evaluated_origins",
+    "operation": "value",
+    "scale": 1,
+    "digits": 0,
+    "value": 272.0,
+    "display": "272"
+  },
+  {
+    "key": "symbolDays",
+    "source": "results/source_replication_analysis.json",
+    "kind": "json",
+    "field": "input_symbol_days",
+    "operation": "value",
+    "scale": 1,
+    "digits": 0,
+    "value": 482.0,
+    "display": "482"
+  },
+  {
+    "key": "records",
+    "source": "results/source_replication_analysis.json",
+    "kind": "json",
+    "field": "matched_input_records",
+    "operation": "value",
+    "scale": 1,
+    "digits": 0,
+    "value": 121467460.0,
+    "display": "121,467,460"
+  },
+  {
+    "key": "checksA10",
+    "source": "results/source_result_check.json",
+    "kind": "json",
+    "field": "scalar_checks",
+    "operation": "value",
+    "scale": 1,
+    "digits": 0,
+    "value": 900.0,
+    "display": "900"
+  },
+  {
+    "key": "checksA11",
+    "source": "results/source_policy_check.json",
+    "kind": "json",
+    "field": "scalar_checks",
+    "operation": "value",
+    "scale": 1,
+    "digits": 0,
+    "value": 10584.0,
+    "display": "10,584"
+  },
+  {
+    "key": "overlaps",
+    "source": "results/source_policy_check.json",
+    "kind": "json",
+    "field": "original_A10_overlap_scalars",
+    "operation": "value",
+    "scale": 1,
+    "digits": 0,
+    "value": 96.0,
+    "display": "96"
+  },
+  {
+    "key": "rvN15",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 15,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 137.0,
+    "display": "137"
+  },
+  {
+    "key": "rqN15",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 15,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 127.0,
+    "display": "127"
+  },
+  {
+    "key": "den15",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 15,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 396.0,
+    "display": "396"
+  },
+  {
+    "key": "hM15",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "case": "millisecond_time__millisecond_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1703424367202792,
+    "display": "0.1703"
+  },
+  {
+    "key": "hL15",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "case": "legacy_time__legacy_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.082757464502487,
+    "display": "0.0828"
+  },
+  {
+    "key": "hB15",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "case": "legacy_restore_modern_category_B",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1644401229893234,
+    "display": "0.1644"
+  },
+  {
+    "key": "gap15",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "mean_absolute_weight_difference",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 9.22545843443823,
+    "display": "9.225"
+  },
+  {
+    "key": "large15",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 130.0,
+    "display": "130"
+  },
+  {
+    "key": "rvN30",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 30,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 75.0,
+    "display": "75"
+  },
+  {
+    "key": "rqN30",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 30,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 73.0,
+    "display": "73"
+  },
+  {
+    "key": "den30",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 30,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 396.0,
+    "display": "396"
+  },
+  {
+    "key": "hM30",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "case": "millisecond_time__millisecond_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1629233795749424,
+    "display": "0.1629"
+  },
+  {
+    "key": "hL30",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "case": "legacy_time__legacy_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1227666464492489,
+    "display": "0.1228"
+  },
+  {
+    "key": "hB30",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "case": "legacy_restore_modern_category_B",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1624193309153773,
+    "display": "0.1624"
+  },
+  {
+    "key": "gap30",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "mean_absolute_weight_difference",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 3.2614520885345404,
+    "display": "3.261"
+  },
+  {
+    "key": "large30",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 49.0,
+    "display": "49"
+  },
+  {
+    "key": "rvN60",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 41.0,
+    "display": "41"
+  },
+  {
+    "key": "rqN60",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 37.0,
+    "display": "37"
+  },
+  {
+    "key": "den60",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 396.0,
+    "display": "396"
+  },
+  {
+    "key": "hM60",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "millisecond_time__millisecond_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1541890726133898,
+    "display": "0.1542"
+  },
+  {
+    "key": "hL60",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1239103297439266,
+    "display": "0.1239"
+  },
+  {
+    "key": "hB60",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_restore_modern_category_B",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1515998675173636,
+    "display": "0.1516"
+  },
+  {
+    "key": "gap60",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "mean_absolute_weight_difference",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 2.63196830885941,
+    "display": "2.632"
+  },
+  {
+    "key": "large60",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 47.0,
+    "display": "47"
+  },
+  {
+    "key": "rvN300",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 19.0,
+    "display": "19"
+  },
+  {
+    "key": "rqN300",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 5.0,
+    "display": "5"
+  },
+  {
+    "key": "den300",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 396.0,
+    "display": "396"
+  },
+  {
+    "key": "hM300",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "case": "millisecond_time__millisecond_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.14091682062457,
+    "display": "0.1409"
+  },
+  {
+    "key": "hL300",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1408721480419705,
+    "display": "0.1409"
+  },
+  {
+    "key": "hB300",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "case": "legacy_restore_modern_category_B",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1391374347489917,
+    "display": "0.1391"
+  },
+  {
+    "key": "gap300",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "mean_absolute_weight_difference",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.03219580578608,
+    "display": "0.032"
+  },
+  {
+    "key": "large300",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "rvN900",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 900,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 29.0,
+    "display": "29"
+  },
+  {
+    "key": "rqN900",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 900,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 4.0,
+    "display": "4"
+  },
+  {
+    "key": "den900",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 900,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 396.0,
+    "display": "396"
+  },
+  {
+    "key": "hM900",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "case": "millisecond_time__millisecond_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1045943079607502,
+    "display": "0.1046"
+  },
+  {
+    "key": "hL900",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "case": "legacy_time__legacy_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1013586116536098,
+    "display": "0.1014"
+  },
+  {
+    "key": "hB900",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "case": "legacy_restore_modern_category_B",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1018929739616445,
+    "display": "0.1019"
+  },
+  {
+    "key": "gap900",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "mean_absolute_weight_difference",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.00994643066010612,
+    "display": "0.010"
+  },
+  {
+    "key": "large900",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "rvN1800",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 1800,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 51.0,
+    "display": "51"
+  },
+  {
+    "key": "rqN1800",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 1800,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 5.0,
+    "display": "5"
+  },
+  {
+    "key": "den1800",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 1800,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 396.0,
+    "display": "396"
+  },
+  {
+    "key": "hM1800",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "case": "millisecond_time__millisecond_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0935967578913743,
+    "display": "0.0936"
+  },
+  {
+    "key": "hL1800",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "case": "legacy_time__legacy_flags",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0912013543833066,
+    "display": "0.0912"
+  },
+  {
+    "key": "hB1800",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "case": "legacy_restore_modern_category_B",
+      "lag_max": 10
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0916258958120247,
+    "display": "0.0916"
+  },
+  {
+    "key": "gap1800",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "mean_absolute_weight_difference",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.014425576256109999,
+    "display": "0.014"
+  },
+  {
+    "key": "large1800",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "RVlower",
+    "source": "results/source_replication_intervals.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "measure": "RV",
+      "mean_block": 22
+    },
+    "field": "lower_95_percentile",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 7.84810126582278,
+    "display": "7.85"
+  },
+  {
+    "key": "RVupper",
+    "source": "results/source_replication_intervals.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "measure": "RV",
+      "mean_block": 22
+    },
+    "field": "upper_95_percentile",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 12.87878787878787,
+    "display": "12.88"
+  },
+  {
+    "key": "RQlower",
+    "source": "results/source_replication_intervals.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "measure": "RQ",
+      "mean_block": 22
+    },
+    "field": "lower_95_percentile",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 7.035175879396981,
+    "display": "7.04"
+  },
+  {
+    "key": "RQupper",
+    "source": "results/source_replication_intervals.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "measure": "RQ",
+      "mean_block": 22
+    },
+    "field": "upper_95_percentile",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 11.64556962025316,
+    "display": "11.65"
+  },
+  {
+    "key": "maxGap",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "max_absolute_weight_difference",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 4,
+    "value": 23.91364635691042,
+    "display": "23.9136"
+  },
+  {
+    "key": "restoreGap",
+    "source": "results/source_replication_risk.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "mean_absolute_weight_difference",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 4,
+    "value": 0.012399733302599998,
+    "display": "0.0124"
+  },
+  {
+    "key": "uncapped60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "uncapped_mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 4,
+    "value": 8.88517755188605,
+    "display": "8.8852"
+  },
+  {
+    "key": "attenuation60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "cap_attenuation",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 70.37798858278606,
+    "display": "70.38"
+  },
+  {
+    "key": "bothCap60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "both_saturated_fraction",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 70.95588235294117,
+    "display": "70.96"
+  },
+  {
+    "key": "policyLarge60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_above_5pp",
+    "operation": "count_ge",
+    "threshold": 10,
+    "scale": 1,
+    "digits": 0,
+    "value": 18.0,
+    "display": "18"
+  },
+  {
+    "key": "relativemin60",
+    "source": "results/source_policy_states.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_relative_difference_above_factor",
+    "operation": "min",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 64.0,
+    "display": "64"
+  },
+  {
+    "key": "relativemax60",
+    "source": "results/source_policy_states.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_relative_difference_above_factor",
+    "operation": "max",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 77.0,
+    "display": "77"
+  },
+  {
+    "key": "uncapped300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "uncapped_mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 4,
+    "value": 1.0554854262127,
+    "display": "1.0555"
+  },
+  {
+    "key": "attenuation300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "cap_attenuation",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 96.94966837186884,
+    "display": "96.95"
+  },
+  {
+    "key": "bothCap300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "both_saturated_fraction",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 95.58823529411764,
+    "display": "95.59"
+  },
+  {
+    "key": "policyLarge300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_above_5pp",
+    "operation": "count_ge",
+    "threshold": 10,
+    "scale": 1,
+    "digits": 0,
+    "value": 2.0,
+    "display": "2"
+  },
+  {
+    "key": "relativemin300",
+    "source": "results/source_policy_states.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_relative_difference_above_factor",
+    "operation": "min",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "relativemax300",
+    "source": "results/source_policy_states.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "origins_relative_difference_above_factor",
+    "operation": "max",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "crossRV0",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 41.0,
+    "display": "41"
+  },
+  {
+    "key": "crossRQ0",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 37.0,
+    "display": "37"
+  },
+  {
+    "key": "crossLog0",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "mean_absolute_log_RV_ratio",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 5,
+    "value": 0.0852440437023751,
+    "display": "0.08524"
+  },
+  {
+    "key": "crossRV1",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "millisecond_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 42.0,
+    "display": "42"
+  },
+  {
+    "key": "crossRQ1",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "millisecond_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 35.0,
+    "display": "35"
+  },
+  {
+    "key": "crossLog1",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "millisecond_time__legacy_flags"
+    },
+    "field": "mean_absolute_log_RV_ratio",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 5,
+    "value": 0.0849950316197763,
+    "display": "0.08500"
+  },
+  {
+    "key": "crossRV2",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__millisecond_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 5.0,
+    "display": "5"
+  },
+  {
+    "key": "crossRQ2",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__millisecond_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 4.0,
+    "display": "4"
+  },
+  {
+    "key": "crossLog2",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_time__millisecond_flags"
+    },
+    "field": "mean_absolute_log_RV_ratio",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 5,
+    "value": 0.0256171117726697,
+    "display": "0.02562"
+  },
+  {
+    "key": "crossRV3",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 9.0,
+    "display": "9"
+  },
+  {
+    "key": "crossRQ3",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 5.0,
+    "display": "5"
+  },
+  {
+    "key": "crossLog3",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "SPY",
+      "frequency_seconds": 60,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "mean_absolute_log_RV_ratio",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 5,
+    "value": 0.0274395474701711,
+    "display": "0.02744"
+  },
+  {
+    "key": "policyGap000f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 1.2467964253994501,
+    "display": "1.247"
+  },
+  {
+    "key": "policyN000f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 26.0,
+    "display": "26"
+  },
+  {
+    "key": "policyGap000f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.02115911376919,
+    "display": "0.021"
+  },
+  {
+    "key": "policyN000f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap001f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 4.29576228320819,
+    "display": "4.296"
+  },
+  {
+    "key": "policyN001f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 92.0,
+    "display": "92"
+  },
+  {
+    "key": "policyGap001f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.57839850010962,
+    "display": "0.578"
+  },
+  {
+    "key": "policyN001f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 1.0,
+    "display": "1"
+  },
+  {
+    "key": "policyGap002f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 4.29576228320819,
+    "display": "4.296"
+  },
+  {
+    "key": "policyN002f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 92.0,
+    "display": "92"
+  },
+  {
+    "key": "policyGap002f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.57839850010962,
+    "display": "0.578"
+  },
+  {
+    "key": "policyN002f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 1.0,
+    "display": "1"
+  },
+  {
+    "key": "policyGap010f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN010f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap010f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN010f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap011f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 2.4935928507989003,
+    "display": "2.494"
+  },
+  {
+    "key": "policyN011f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 37.0,
+    "display": "37"
+  },
+  {
+    "key": "policyGap011f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.04231822753839,
+    "display": "0.042"
+  },
+  {
+    "key": "policyN011f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap012f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 8.59152456641638,
+    "display": "8.592"
+  },
+  {
+    "key": "policyN012f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 130.0,
+    "display": "130"
+  },
+  {
+    "key": "policyGap012f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 1.15679700021924,
+    "display": "1.157"
+  },
+  {
+    "key": "policyN012f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 9.0,
+    "display": "9"
+  },
+  {
+    "key": "policyGap020f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN020f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap020f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN020f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap021f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.009833246081303927,
+    "display": "0.010"
+  },
+  {
+    "key": "policyN021f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap021f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN021f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap022f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 10.16179245241803,
+    "display": "10.162"
+  },
+  {
+    "key": "policyN022f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 116.0,
+    "display": "116"
+  },
+  {
+    "key": "policyGap022f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.95362610474224,
+    "display": "0.954"
+  },
+  {
+    "key": "policyN022f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.9,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 11.0,
+    "display": "11"
+  },
+  {
+    "key": "policyGap100f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 1.3159841544297,
+    "display": "1.316"
+  },
+  {
+    "key": "policyN100f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 29.0,
+    "display": "29"
+  },
+  {
+    "key": "policyGap100f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.01609790289304,
+    "display": "0.016"
+  },
+  {
+    "key": "policyN100f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap101f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 4.442588775943021,
+    "display": "4.443"
+  },
+  {
+    "key": "policyN101f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 86.0,
+    "display": "86"
+  },
+  {
+    "key": "policyGap101f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.52774271310635,
+    "display": "0.528"
+  },
+  {
+    "key": "policyN101f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap102f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 4.442588775943021,
+    "display": "4.443"
+  },
+  {
+    "key": "policyN102f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 86.0,
+    "display": "86"
+  },
+  {
+    "key": "policyGap102f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.52774271310635,
+    "display": "0.528"
+  },
+  {
+    "key": "policyN102f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap110f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN110f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap110f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN110f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap111f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 2.63196830885941,
+    "display": "2.632"
+  },
+  {
+    "key": "policyN111f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 47.0,
+    "display": "47"
+  },
+  {
+    "key": "policyGap111f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.03219580578608,
+    "display": "0.032"
+  },
+  {
+    "key": "policyN111f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap112f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 8.88517755188605,
+    "display": "8.885"
+  },
+  {
+    "key": "policyN112f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 147.0,
+    "display": "147"
+  },
+  {
+    "key": "policyGap112f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 1.0554854262127,
+    "display": "1.055"
+  },
+  {
+    "key": "policyN112f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 7.0,
+    "display": "7"
+  },
+  {
+    "key": "policyGap120f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN120f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap120f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN120f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap121f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN121f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap121f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN121f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap122f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 11.42183246265969,
+    "display": "11.422"
+  },
+  {
+    "key": "policyN122f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 142.0,
+    "display": "142"
+  },
+  {
+    "key": "policyGap122f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.9494774102775,
+    "display": "0.949"
+  },
+  {
+    "key": "policyN122f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 13.0,
+    "display": "13"
+  },
+  {
+    "key": "policyGap200f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 1.0438792578254201,
+    "display": "1.044"
+  },
+  {
+    "key": "policyN200f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 19.0,
+    "display": "19"
+  },
+  {
+    "key": "policyGap200f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.01143332529257,
+    "display": "0.011"
+  },
+  {
+    "key": "policyN200f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap201f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 4.54349342424484,
+    "display": "4.543"
+  },
+  {
+    "key": "policyN201f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 77.0,
+    "display": "77"
+  },
+  {
+    "key": "policyGap201f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.40918016269543,
+    "display": "0.409"
+  },
+  {
+    "key": "policyN201f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap202f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 4.54349342424484,
+    "display": "4.543"
+  },
+  {
+    "key": "policyN202f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 77.0,
+    "display": "77"
+  },
+  {
+    "key": "policyGap202f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.40918016269543,
+    "display": "0.409"
+  },
+  {
+    "key": "policyN202f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.05,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap210f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN210f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap210f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN210f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap211f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 2.08775851565085,
+    "display": "2.088"
+  },
+  {
+    "key": "policyN211f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 55.0,
+    "display": "55"
+  },
+  {
+    "key": "policyGap211f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.02286665058514,
+    "display": "0.023"
+  },
+  {
+    "key": "policyN211f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap212f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 9.08698684848969,
+    "display": "9.087"
+  },
+  {
+    "key": "policyN212f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 183.0,
+    "display": "183"
+  },
+  {
+    "key": "policyGap212f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.8183603253908701,
+    "display": "0.818"
+  },
+  {
+    "key": "policyN212f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.1,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap220f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN220f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap220f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN220f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 0.5
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap221f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN221f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap221f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.0,
+    "display": "0.000"
+  },
+  {
+    "key": "policyN221f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 1.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "policyGap222f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 12.82633072289275,
+    "display": "12.826"
+  },
+  {
+    "key": "policyN222f60",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 173.0,
+    "display": "173"
+  },
+  {
+    "key": "policyGap222f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "mean_absolute_gap",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 3,
+    "value": 0.93124703309551,
+    "display": "0.931"
+  },
+  {
+    "key": "policyN222f300",
+    "source": "results/source_policy_policies.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "decay": 0.97,
+      "case": "legacy_time__legacy_flags",
+      "annual_target": 0.15,
+      "weight_cap": 2.0
+    },
+    "field": "origins_above_5pp",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 1.0,
+    "display": "1"
+  },
+  {
+    "key": "hBand5f15c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 5,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1921303250898744,
+    "display": "0.1921"
+  },
+  {
+    "key": "hBand5f15c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 5,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0913307914821649,
+    "display": "0.0913"
+  },
+  {
+    "key": "hBand5f15c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 5,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1800246207319052,
+    "display": "0.1800"
+  },
+  {
+    "key": "hBand5f30c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 5,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1865854000159523,
+    "display": "0.1866"
+  },
+  {
+    "key": "hBand5f30c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 5,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1532320048661635,
+    "display": "0.1532"
+  },
+  {
+    "key": "hBand5f30c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 5,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1838506372275396,
+    "display": "0.1839"
+  },
+  {
+    "key": "hBand5f60c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 5,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1772879128972055,
+    "display": "0.1773"
+  },
+  {
+    "key": "hBand5f60c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 5,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1546296818364775,
+    "display": "0.1546"
+  },
+  {
+    "key": "hBand5f60c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 5,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1762854357623348,
+    "display": "0.1763"
+  },
+  {
+    "key": "hBand5f300c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 5,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1742280375062673,
+    "display": "0.1742"
+  },
+  {
+    "key": "hBand5f300c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 5,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1707629735692627,
+    "display": "0.1708"
+  },
+  {
+    "key": "hBand5f300c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 5,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1709373591463037,
+    "display": "0.1709"
+  },
+  {
+    "key": "hBand5f900c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 5,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1537689717988229,
+    "display": "0.1538"
+  },
+  {
+    "key": "hBand5f900c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 5,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1492258103947352,
+    "display": "0.1492"
+  },
+  {
+    "key": "hBand5f900c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 5,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1517680330899537,
+    "display": "0.1518"
+  },
+  {
+    "key": "hBand5f1800c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 5,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1389320453812159,
+    "display": "0.1389"
+  },
+  {
+    "key": "hBand5f1800c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 5,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1369578126516922,
+    "display": "0.1370"
+  },
+  {
+    "key": "hBand5f1800c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 5,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1385918392363641,
+    "display": "0.1386"
+  },
+  {
+    "key": "hBand10f15c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 10,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1703424367202792,
+    "display": "0.1703"
+  },
+  {
+    "key": "hBand10f15c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 10,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.082757464502487,
+    "display": "0.0828"
+  },
+  {
+    "key": "hBand10f15c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 10,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1644401229893234,
+    "display": "0.1644"
+  },
+  {
+    "key": "hBand10f30c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 10,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1629233795749424,
+    "display": "0.1629"
+  },
+  {
+    "key": "hBand10f30c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 10,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1227666464492489,
+    "display": "0.1228"
+  },
+  {
+    "key": "hBand10f30c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 10,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1624193309153773,
+    "display": "0.1624"
+  },
+  {
+    "key": "hBand10f60c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 10,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1541890726133898,
+    "display": "0.1542"
+  },
+  {
+    "key": "hBand10f60c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 10,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1239103297439266,
+    "display": "0.1239"
+  },
+  {
+    "key": "hBand10f60c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 10,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1515998675173636,
+    "display": "0.1516"
+  },
+  {
+    "key": "hBand10f300c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 10,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.14091682062457,
+    "display": "0.1409"
+  },
+  {
+    "key": "hBand10f300c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 10,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1408721480419705,
+    "display": "0.1409"
+  },
+  {
+    "key": "hBand10f300c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 10,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1391374347489917,
+    "display": "0.1391"
+  },
+  {
+    "key": "hBand10f900c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 10,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1045943079607502,
+    "display": "0.1046"
+  },
+  {
+    "key": "hBand10f900c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 10,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1013586116536098,
+    "display": "0.1014"
+  },
+  {
+    "key": "hBand10f900c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 10,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1018929739616445,
+    "display": "0.1019"
+  },
+  {
+    "key": "hBand10f1800c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 10,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0935967578913743,
+    "display": "0.0936"
+  },
+  {
+    "key": "hBand10f1800c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 10,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0912013543833066,
+    "display": "0.0912"
+  },
+  {
+    "key": "hBand10f1800c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 10,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0916258958120247,
+    "display": "0.0916"
+  },
+  {
+    "key": "hBand22f15c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 22,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1437601350357986,
+    "display": "0.1438"
+  },
+  {
+    "key": "hBand22f15c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 22,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0765918412571741,
+    "display": "0.0766"
+  },
+  {
+    "key": "hBand22f15c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 15,
+      "lag_max": 22,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1396502058032433,
+    "display": "0.1397"
+  },
+  {
+    "key": "hBand22f30c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 22,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1341865411840568,
+    "display": "0.1342"
+  },
+  {
+    "key": "hBand22f30c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 22,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.102691069207084,
+    "display": "0.1027"
+  },
+  {
+    "key": "hBand22f30c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 30,
+      "lag_max": 22,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1330511451290806,
+    "display": "0.1331"
+  },
+  {
+    "key": "hBand22f60c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 22,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1252829134613465,
+    "display": "0.1253"
+  },
+  {
+    "key": "hBand22f60c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 22,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1045571875453868,
+    "display": "0.1046"
+  },
+  {
+    "key": "hBand22f60c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "lag_max": 22,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1228131874061338,
+    "display": "0.1228"
+  },
+  {
+    "key": "hBand22f300c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 22,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1020662548790763,
+    "display": "0.1021"
+  },
+  {
+    "key": "hBand22f300c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 22,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1039412870266192,
+    "display": "0.1039"
+  },
+  {
+    "key": "hBand22f300c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 300,
+      "lag_max": 22,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1013854436636406,
+    "display": "0.1014"
+  },
+  {
+    "key": "hBand22f900c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 22,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0801853345922273,
+    "display": "0.0802"
+  },
+  {
+    "key": "hBand22f900c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 22,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0772125136465342,
+    "display": "0.0772"
+  },
+  {
+    "key": "hBand22f900c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 900,
+      "lag_max": 22,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.078309419968615,
+    "display": "0.0783"
+  },
+  {
+    "key": "hBand22f1800c0",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 22,
+      "case": "millisecond_time__millisecond_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0642584836884352,
+    "display": "0.0643"
+  },
+  {
+    "key": "hBand22f1800c1",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 22,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0617876070979566,
+    "display": "0.0618"
+  },
+  {
+    "key": "hBand22f1800c2",
+    "source": "results/source_replication_H.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 1800,
+      "lag_max": 22,
+      "case": "legacy_restore_modern_category_B"
+    },
+    "field": "H_tilde",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 4,
+    "value": 0.0626904471234428,
+    "display": "0.0627"
+  },
+  {
+    "key": "ouSpot",
+    "source": "results/side_project/summary.csv",
+    "kind": "csv",
+    "selector": {
+      "model": "OU",
+      "noise_sd": 0.0,
+      "sampling_minutes": 5,
+      "lag_max": 10
+    },
+    "field": "H_spot_mean",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 6,
+    "value": 0.4670259627254471,
+    "display": "0.467026"
+  },
+  {
+    "key": "ouIV",
+    "source": "results/side_project/summary.csv",
+    "kind": "csv",
+    "selector": {
+      "model": "OU",
+      "noise_sd": 0.0,
+      "sampling_minutes": 5,
+      "lag_max": 10
+    },
+    "field": "H_IV_mean",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 6,
+    "value": 0.5392103259330481,
+    "display": "0.539210"
+  },
+  {
+    "key": "ouRV",
+    "source": "results/side_project/summary.csv",
+    "kind": "csv",
+    "selector": {
+      "model": "OU",
+      "noise_sd": 0.0,
+      "sampling_minutes": 5,
+      "lag_max": 10
+    },
+    "field": "H_RV_mean",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 6,
+    "value": 0.2379060981285755,
+    "display": "0.237906"
+  },
+  {
+    "key": "ouSE",
+    "source": "results/side_project/summary.csv",
+    "kind": "csv",
+    "selector": {
+      "model": "OU",
+      "noise_sd": 0.0,
+      "sampling_minutes": 5,
+      "lag_max": 10
+    },
+    "field": "H_RV_mcse",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 6,
+    "value": 0.002571946023956,
+    "display": "0.002572"
+  },
+  {
+    "key": "top_one_potential_share",
+    "source": "results/source_policy_states.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "top_one_potential_share",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 19.40601268500223,
+    "display": "19.41"
+  },
+  {
+    "key": "top_five_potential_share",
+    "source": "results/source_policy_states.csv",
+    "kind": "csv",
+    "selector": {
+      "frequency_seconds": 60,
+      "decay": 0.94,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "top_five_potential_share",
+    "operation": "value",
+    "threshold": null,
+    "scale": 100,
+    "digits": 2,
+    "value": 66.10908237581864,
+    "display": "66.11"
+  },
+  {
+    "key": "panelEFArv",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "EFA",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 4.0,
+    "display": "4"
+  },
+  {
+    "key": "panelEFArq",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "EFA",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 3.0,
+    "display": "3"
+  },
+  {
+    "key": "panelEFArvden",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "EFA",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 20.0,
+    "display": "20"
+  },
+  {
+    "key": "panelEFArqden",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "EFA",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 20.0,
+    "display": "20"
+  },
+  {
+    "key": "panelIWMrv",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "IWM",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 1.0,
+    "display": "1"
+  },
+  {
+    "key": "panelIWMrq",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "IWM",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 1.0,
+    "display": "1"
+  },
+  {
+    "key": "panelIWMrvden",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "IWM",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 20.0,
+    "display": "20"
+  },
+  {
+    "key": "panelIWMrqden",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "IWM",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 20.0,
+    "display": "20"
+  },
+  {
+    "key": "panelQQQrv",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "QQQ",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 2.0,
+    "display": "2"
+  },
+  {
+    "key": "panelQQQrq",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "QQQ",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 2.0,
+    "display": "2"
+  },
+  {
+    "key": "panelQQQrvden",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "QQQ",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 20.0,
+    "display": "20"
+  },
+  {
+    "key": "panelQQQrqden",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "QQQ",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 20.0,
+    "display": "20"
+  },
+  {
+    "key": "panelTLTrv",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "TLT",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 0.0,
+    "display": "0"
+  },
+  {
+    "key": "panelTLTrq",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "TLT",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_material_days",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 1.0,
+    "display": "1"
+  },
+  {
+    "key": "panelTLTrvden",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "TLT",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RV_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 20.0,
+    "display": "20"
+  },
+  {
+    "key": "panelTLTrqden",
+    "source": "results/source_replication_incidence.csv",
+    "kind": "csv",
+    "selector": {
+      "symbol": "TLT",
+      "frequency_seconds": 60,
+      "case": "legacy_time__legacy_flags"
+    },
+    "field": "RQ_valid_pairs",
+    "operation": "value",
+    "threshold": null,
+    "scale": 1,
+    "digits": 0,
+    "value": 20.0,
+    "display": "20"
+  },
+  {
+    "key": "discoveryStandardized",
+    "source": "results/source_result_check.json",
+    "kind": "json",
+    "field": "post_result_discovery_sensitivity.60.origins_above_5pp_discovery_effect_standardized",
+    "operation": "value",
+    "scale": 1,
+    "digits": 0,
+    "value": 46.0,
+    "display": "46"
+  },
+  {
+    "key": "discoveryHmodern",
+    "source": "results/source_result_check.json",
+    "kind": "json",
+    "field": "post_result_discovery_sensitivity.60.H_modern_discovery_endpoints_omitted",
+    "operation": "value",
+    "scale": 1,
+    "digits": 4,
+    "value": 0.1563529953941046,
+    "display": "0.1564"
+  },
+  {
+    "key": "discoveryHlegacy",
+    "source": "results/source_result_check.json",
+    "kind": "json",
+    "field": "post_result_discovery_sensitivity.60.H_legacy_discovery_endpoints_omitted",
+    "operation": "value",
+    "scale": 1,
+    "digits": 4,
+    "value": 0.13526263469930755,
+    "display": "0.1353"
+  }
+]

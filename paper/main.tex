@@ -1,0 +1,269 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,pdftitle={Rough or Just Noisy? Source Information, Realized Volatility and Exposure Caps},pdfauthor={Martin Valachy}}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.13}
+\newcommand{\RV}{\operatorname{RV}}
+\newcommand{\RQ}{\operatorname{RQ}}
+\newcommand{\RunID}[1]{\nolinkurl{#1}}
+\input{generated/facts.tex}
+\title{\textbf{Rough or Just Noisy?}\\[6pt]\large Source Information, Realized Volatility\\and Exposure Caps}
+\author{Martin Valachy\\\small Undergraduate research working paper}
+\date{22 October 2026\quad |\quad Version 1.1}
+\begin{document}
+\maketitle
+\begin{abstract}
+This paper studies how historical trade-source information propagates into realized-volatility diagnostics and a constrained portfolio input. A controlled comparison uses \Fact{records} matched ordered price/size/venue records across \Fact{symbolDays} paired symbol-days, including \Fact{sessions} SPY sessions. With the same strict literal trade-condition filter, legacy and millisecond source constructions produce materially different one-minute realized variance on \Fact{rvN60} of \Fact{den60} non-discovery dates. The corresponding finite-band log-variance slopes are \Fact{hL60} and \Fact{hM60}; these statistics do not identify latent market roughness. Under a fixed EWMA rule, next-session weight inputs differ by at least five percentage points on \Fact{large60} of \Fact{origins} evaluated origins, forming one persistent episode. A post-result policy sensitivity reveals an important qualification: at five minutes, the common exposure cap suppresses \Fact{attenuation300}\% of the uncapped mean weight discrepancy. Uncapped relative source differences nevertheless remain smaller than at one minute across the fixed decay settings. The contribution is a reproducible historical measurement and decision-input case study, with independent numerical checks and explicit limitations, rather than a new volatility estimator or a trading-performance claim.
+\end{abstract}
+\vspace{4pt}
+\textbf{Keywords:} realized variance; measurement error; rough volatility; trade conditions; source compatibility; volatility targeting.\\
+\textbf{Status:} complete computational working-paper draft for review; AI assistance and data availability are disclosed in Section~\ref{sec:reproduction}. Repository distribution excludes licensed observations.
+
+\section{Introduction}
+Realized variance is often treated as an input to subsequent statistical and financial analysis. Before it becomes such an input, however, it is constructed from a sequence of choices: the source representation, the retained trades, the trading session, the treatment of simultaneous observations and the sampling grid. Applying the same code to two sources does not necessarily preserve the same information. A further complication arises when the resulting estimates enter a constrained decision rule. Different estimates can produce nearly identical portfolio weights if both weights reach the same cap.
+
+This paper asks a deliberately narrow question: \emph{how do differences in source time and condition information change measured volatility, a finite-band roughness diagnostic and a fixed risk input, when the rest of the construction is held constant?} The question is investigated using two historical WRDS TAQ representations and controlled combinations of their fields. A small known-truth simulation provides context for interpreting the roughness diagnostic; it is not presented as a new discovery.
+
+Rough-volatility research motivates the distinction between a latent process and its observed proxy. Gatheral, Jaisson and Rosenbaum~\cite{gjr} provided influential evidence and modeling arguments for rough volatility. Cont and Das~\cite{contdas} demonstrate how realized-volatility roughness can arise under nonrough latent dynamics. Fukasawa, Takabatake and Westphal~\cite{ftw} show that observation error can create misleading scaling while developing a different, observation-aware inference procedure whose empirical conclusions still support roughness. These results do not license a conclusion that every low empirical slope is an artifact. They motivate checking what the statistic measures.
+
+Source sensitivity is also established prior art. Holden and Jacobsen~\cite{holden} document substantial liquidity-measure differences between Monthly and Daily TAQ. VOLARE~\cite{volare} discusses source-format, timestamp and odd-lot differences in realized-measure construction. The present paper therefore does not claim to discover that timestamps, filtering or measurement error matter. Its narrower contribution is to document a controlled source-information mechanism for realized variance and quarticity, then trace that mechanism through a simple state estimate and an exposure constraint.
+
+The main empirical finding is that the frozen strict filter selects different information across the source formats. At one minute, changing flags while retaining precise time preserves much of the observed discrepancy, whereas using modern flags with legacy time produces much smaller incidence. Restoring modern category-B information largely removes the one-minute downstream weight gap under this particular pipeline. This is a conditional mechanism diagnostic, not a recommendation to remove every B-coded trade.
+
+The practical finding is equally important: small constrained weight gaps need not imply similar risk estimates. The original five-minute mean weight gap is only \Fact{gap300} percentage points (pp), but becomes \Fact{uncapped300}pp before the cap. A systematic post-result sensitivity reports every fixed policy setting and separates absolute decision gaps from scale-free state comparisons. This makes the study a useful undergraduate case study in reproducible empirical finance, while keeping the economic claims modest.
+
+\section{Data and controlled design}\label{sec:data}
+\subsection{Sample, provenance and discovery}
+The main sample contains every fixed XNYS session from 2 January 2013 through 31 July 2014 for SPY: \Fact{sessions} sessions. The fixed January 2014 panel additionally contains QQQ, IWM, EFA and TLT. Together, the source-paired export has \Fact{symbolDays} symbol-days and \Fact{records} matched ordered input records before cleaning. These are correspondences of observed rows, not a verified count of unique exchange executions; repeated identical records can be indistinguishable.
+
+The mounted historical sources are a legacy seconds representation and a millisecond representation. Their common available overlap determines this case-study window. The source extraction is performed on WRDS; raw ticks are not downloaded. Source subsets are checked for matching ordered price, size and venue observations before comparison, with no invented joins used to force alignment. Local exports contain daily measures, diagnostics and provenance. Matching observed records conditions the comparison on a shared observable input sequence; it does not prove that either source is a complete or error-free record of economic trades.
+
+The mechanism was first investigated on two dates, 2 January 2014 and 3 July 2014. The expanded crossed-source design was fixed before its full run, after that discovery and earlier training exploration. Primary incidence excludes these two explicit discovery dates, leaving \Fact{den60} SPY pairs at one minute. This exclusion is not advertised as an untouched chronological holdout. Full-window slope and EWMA-path calculations retain both dates. The later policy-grid exercise is explicitly post-result sensitivity. Validation observations from 2017--2019 and the final period from 2020 onward remain closed.
+
+\subsection{Five source constructions}
+The reference construction, denoted $M$, uses modern time and modern flags. Four alternatives are considered: legacy time and legacy flags ($L$); modern time and legacy flags; legacy time and modern flags; and legacy time/flags with modern category-B information restored ($B$). All retain the same remaining measurement pipeline. The restoration changes which information is available to the frozen literal filter; it is not adopted as a production cleaning rule.
+
+The NYSE specification distinguishes condition meanings by tape: category B is average-price for CTA issues but bunched for UTP issues~\cite{nyse}. A single economic interpretation should therefore not be applied to all ETFs. Moreover, a source specification describes intended fields, not a proof of how a particular mounted derivative was generated. Direct floor-time and correction comparisons were additionally made on the two discovery dates; that specific stronger check is not silently generalized to every expanded-sample day.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{figures/workflow.pdf}
+\caption{The observation-to-decision chain. Controlled source fields can alter measurements even when ordered observed price/size/venue records match. A common decision constraint can then conceal differences in the state estimates. The diagram describes an audit chain, not an economic causal model.}\label{fig:workflow}
+\end{figure}
+
+\subsection{Analytical questions and study logic}
+The study follows a chain of three questions. Does source representation change a measurement when the recorded price/size/venue sequence and remaining code are held fixed? Does that change alter a descriptive scaling statistic or a causal risk state? Does apparent agreement between capped inputs persist when the cap is removed? The controlled constructions address the first question; the fixed-band statistic and fixed EWMA address the second; the complete A11 matrix addresses the third. The design avoids choosing a forecasting model or policy because it happens to favor one source.
+
+The prior expectation is a mechanism, not a desired sign: selecting different observations or changing their ordering within a grid can alter squared and fourth-power increments. Neither source must be universally larger, and smaller constrained gaps need not imply more accurate risk. Materiality thresholds define a transparent diagnostic of disagreement rather than a test of economic optimality. A10's engineering relevance criterion was fixed before its expanded analysis; the later A11 exercise explains a qualification discovered after the original results. These roles are kept distinct throughout.
+
+\section{Measurement and evaluation methods}\label{sec:methods}
+\subsection{Trading-session construction and daily moments}
+The fixed pipeline retains in-session positive finite price and size observations, applies its uncorrected-trade rule, and keeps only whitespace-normalized blank or @ condition strings. It selects the dominant retained venue by trade count, breaking ties by venue identifier, then takes the median price at simultaneous timestamps. Previous-tick prices are sampled on six nested grids: 15, 30, 60, 300, 900 and 1,800 seconds. The exchange calendar supplies the session length, including early closes.
+
+There is one explicit opening convention: if no retained observation occurs exactly at the open, the opening anchor uses the first eligible trade and the approximation is flagged. Subsequent unpopulated grid points are not filled backwards from that observation. An incomplete grid retains its expected/observed counts and missing moments rather than being treated as a shorter complete session. Thus a complete recorded grid does not imply a perfectly observed economic opening price. This convention is a limitation shared across the controlled constructions.
+
+The strict blank-or-@ rule is an intentional literal-filter diagnostic. It is narrower than the inspected \texttt{highfrequency} cleaner's condition defaults and differs in venue-selection order~\cite{highfrequency}. It is not a full replication of a general BNHLS trade-cleaning pipeline, and the results should not be interpreted as an out-of-box package comparison.
+
+For a complete grid with $M_t$ within-session log returns $r_{t,i}$, define
+\begin{equation}
+ \RV_t=\sum_{i=1}^{M_t}r_{t,i}^2,\qquad
+ \RQ_t=\frac{M_t}{3}\sum_{i=1}^{M_t}r_{t,i}^4.\label{eq:moments}
+\end{equation}
+Appendix~\ref{app:moments} derives both normalizations from Gaussian increment moments and explains the role of actual session counts. Appendix~\ref{app:noise} distinguishes price noise from daily log-proxy noise. These models give interpretive benchmarks, not assumed descriptions of the source discrepancy.
+
+Returns are in decimal units and the moments are unannualized. The session excludes a separately constructed overnight return. A common change to percent returns multiplies RV by $100^2$ and RQ by $100^4$; guessed rescaling cannot resolve incompatible definitions. Numerical tolerances for independent implementation checks are separate from the materiality thresholds below.
+
+\subsection{Source discrepancy and finite-band roughness}
+For positive valid source pairs and a moment $Q\in\{\RV,\RQ\}$, the discrepancy is $d_{t,Q}=\log(Q_t^{\mathrm{candidate}}/Q_t^M)$. RV is material when $|d_{t,\RV}|>\log(1.1)$; RQ is material when $|d_{t,\RQ}|>\log 2$. These are engineering thresholds, not significance tests or equivalence margins. Missing/invalid pairs do not count as agreement, and valid denominators are measure- and grid-specific.
+
+For $x_t=\log\RV_t$, define the lag-$k$ empirical increment moment and finite-band statistic
+\begin{equation}
+ \widehat V(k)=\frac{1}{|\mathcal I_k|}\sum_{t\in\mathcal I_k}(x_t-x_{t-k})^2,
+ \qquad \widetilde H_K=\tfrac12\operatorname{slope}_{k=1,\ldots,K}
+       \{\log k,\log\widehat V(k)\}.\label{eq:H}
+\end{equation}
+Here $\mathcal I_k$ retains valid endpoints on the original calendar. Missing dates never compress the lag. The primary band is $K=10$, with $K=5,22$ as fixed sensitivities; paired slope differences use common endpoint support. Equation~\eqref{eq:H} is descriptive. It is not Cont and Das's normalized variation estimator or Fukasawa et al.'s quasi-likelihood estimator, and no theorem for either is transferred to it.
+
+\subsection{A fixed next-session risk input}
+To study propagation without selecting a forecasting model, use the initialized EWMA state and constrained weight
+\begin{equation}
+ s_0=\RV_0,\qquad s_t=\lambda s_{t-1}+(1-\lambda)\RV_t,
+ \qquad u_t=\frac{v_*}{\sqrt{252s_t}},\qquad w_{t+1|t}=\min(c,u_t).\label{eq:weight}
+\end{equation}
+End-of-session $t$ data can supply an input for $t+1$; future returns are not used. The original settings are $\lambda=0.94$, $v_*=0.10$ and $c=1$. Excluding the first 126 observations leaves \Fact{origins} evaluated origins. State paths require complete positive history; a gap is not imputed or removed to make the recursion run. The annualization is a scenario convention for this session-based input, not a claim to model full overnight-inclusive portfolio risk.
+
+Appendices~\ref{app:state}--\ref{app:weights} derive the initialized convolution, persistence of a source discrepancy, inverse-square-root sensitivity, cap threshold and scale-free source ratio. These derivations explain why one episode can affect many successive origins and why a common cap can conceal different states.
+
+The analysis compares weight gaps, durations and input turnover. It does not evaluate returns, transaction costs, realized risk, forecast superiority or profit. A predefined practical warning criterion is met if at least 2\% of valid non-discovery days are material at a grid, or at least ten post-warmup origins have an absolute weight gap of at least 5pp. The criterion classifies engineering relevance and is not a novelty test.
+
+\subsection{Uncertainty and post-result sensitivity}
+The incidence intervals use paired-date stationary resampling~\cite{politis} with 3,999 draws. Mean block length 22 is primary; 11 and 44 are fixed sensitivities. The same resampled dates carry the numerator and valid-denominator indicators, with discovery dates ineligible for primary incidence. ETFs are not pooled as independent observations. The displayed percentile intervals describe resampling uncertainty under the specified dependence assumptions. They do not supply a uniform coverage guarantee under source-regime change, which is a material limitation of this historical window.
+
+After seeing the original results, the A11 exercise fixes all 27 combinations of $\lambda\in\{.90,.94,.97\}$, $v_*\in\{.05,.10,.15\}$ and $c\in\{.5,1,2\}$. All settings and constructions are reported; no favorable policy is selected. Before capping,
+\begin{equation}
+ \frac{u_t^{L}}{u_t^{M}}=\sqrt{\frac{s_t^{M}}{s_t^{L}}},\qquad
+ |\min(c,a)-\min(c,b)|\leq |a-b|.\label{eq:cap}
+\end{equation}
+The uncapped ratio removes the target and common annualization convention. The second relation shows mechanically why a common cap can suppress disagreement. This sensitivity is useful but is not a new confirmatory sample or independent replication.
+
+\section{Known-truth context: a measurement diagnostic}\label{sec:simulation}
+The supporting simulation separates model regularity from the observed statistic. A stationary Gaussian log-variance process $X$ is transformed to positive variance as $v_t=10^{-4}\exp(X_t-0.25/2)$. The OU case has covariance $0.25\exp(-\kappa|h|)$, with $\kappa=\log(2)/22$. Two generalized Cauchy covariance settings, following the covariance family discussed by Bennedsen, Lunde and Pakkanen~\cite{blp}, have local $H=.1,.3$ and the same 22-day half-correlation scale. They are stationary Gaussian Cauchy-covariance processes, not asserted to be fractional OU processes.
+
+For each model, 128 independent paths have 504 sessions and 780 fine steps per session. Left-point variance values generate conditionally Gaussian log-price increments $\sqrt{v_j/780}\,Z_j$. Independent log-price noise of standard deviation 0, 1 or 3 basis points is added at fine-grid price endpoints; nested coarse returns sum the resulting increments. Daily grid-integrated variance is the mean of the fine variance values. Sampling intervals are 1, 5, 15 and 30 minutes, with the same fixed lag bands used for interpretation. The simulator is deliberately controlled and not calibrated to a full market microstructure process.
+
+In the no-added-noise OU setting, local $H=.5$, while mean finite-band slopes from daily spot samples, grid-integrated variance and five-minute RV are respectively \Fact{ouSpot}, \Fact{ouIV} and \Fact{ouRV}. The Monte Carlo SE of the last statistic is \Fact{ouSE}. Figure~\ref{fig:synthetic} shows the observation-stage and grid dependence. This is an implementation-backed explanatory example, consistent with established concerns about proxy roughness~\cite{contdas,ftw}; it does not establish the latent process behind SPY or refute rough-volatility models.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{figures/synthetic.pdf}
+\caption{Known-truth simulation, no added log-price noise and calendar lags 1--10. Panel (a) compares three observation stages at the five-minute grid. Panel (b) varies the sampled-price grid; bars are $\pm1.96$ Monte Carlo SE across independent paths, not empirical-market confidence intervals. Full noise/lag sensitivities remain in the supporting tables. Source: A08.}\label{fig:synthetic}
+\end{figure}
+
+\section{Historical source-comparison results}\label{sec:results}
+\subsection{Material discrepancies and descriptive slopes}
+Table~\ref{tab:grid} reports every fixed grid. At one minute, legacy versus modern RV is material on \Fact{rvN60}/\Fact{den60} non-discovery dates and RQ on \Fact{rqN60}/\Fact{den60}. The primary block-resampling intervals for their incidence are \Fact{RVlower}--\Fact{RVupper}\% and \Fact{RQlower}--\Fact{RQupper}\%, respectively. Materiality is not monotone in grid width: coarser sampling does not eliminate every daily discrepancy. The five-minute comparison has \Fact{rvN300} material RV dates but substantially fewer RQ discrepancies.
+
+\begin{table}[tbp]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{Full SPY grid comparison: legacy versus modern. Incidence excludes the two discovery dates. H-tilde uses full-window calendar lags 1--10. The mean weight gap and large-gap origins use the original fixed policy and \Fact{origins} evaluated origins.}
+\label{tab:grid}\input{generated/grid_table.tex}
+\end{table}
+
+The one-minute finite-band slopes are \Fact{hM60} for modern information and \Fact{hL60} for legacy information; B restoration gives \Fact{hB60}. These are different descriptive statistics on the same underlying observed-row sequence, not estimates with reported latent-$H$ confidence intervals. Figure~\ref{fig:measurement} puts the source incidence and slope effects together. Appendix~\ref{app:bands} retains the other lag bands so the interpretation does not rely on a selected slope.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{figures/measurement.pdf}
+\caption{Source information and measured volatility. Panel (a) shows material RV/RQ incidence over valid non-discovery dates, with primary mean-block-22 percentile intervals. Panel (b) shows descriptive full-window H-tilde, including discovery dates. Different denominators/interpretations are intentional and must not be conflated. Source: A10.}\label{fig:measurement}
+\end{figure}
+
+\subsection{What the crossed constructions identify}
+The crossed cases in Table~\ref{tab:cross} support a limited information-mechanism interpretation. At one minute, retaining legacy flags while restoring precise time still produces \Fact{crossRV1} material RV dates. Using modern flags with legacy time reduces the count to \Fact{crossRV2}; B restoration under legacy time/other flags gives \Fact{crossRV3}. The comparison isolates which input information drives discrepancies under the frozen pipeline. It does not prove that flags alone have an additive causal contribution: conditioning changes can change the dominant venue and timestamp medians too.
+
+\begin{table}[tbp]
+\centering\small\setlength{\tabcolsep}{5pt}
+\caption{One-minute controlled constructions versus the modern reference. All incidence denominators are \Fact{den60}; discovery dates are excluded. The modern reference compared with itself has zero discrepancy by construction.}\label{tab:cross}
+\input{generated/crossed_table.tex}
+\end{table}
+
+The short fixed ETF panel provides a limited check of breadth. Excluding the January discovery date, material one-minute RV counts are \Fact{panelEFArv}/\Fact{panelEFArvden} for EFA, \Fact{panelIWMrv}/\Fact{panelIWMrvden} for IWM, \Fact{panelQQQrv}/\Fact{panelQQQrvden} for QQQ and \Fact{panelTLTrv}/\Fact{panelTLTrvden} for TLT; corresponding RQ counts are \Fact{panelEFArq}/\Fact{panelEFArqden}, \Fact{panelIWMrq}/\Fact{panelIWMrqden}, \Fact{panelQQQrq}/\Fact{panelQQQrqden} and \Fact{panelTLTrq}/\Fact{panelTLTrqden}. These correlated single-month outcomes are not pooled as independent market-wide replications. They are reported to prevent the principal SPY result from being mistaken for a universal statement.
+
+\subsection{Propagation into a risk input}
+Under the original policy, the one-minute legacy/reference mean absolute weight gap is \Fact{gap60}pp and the maximum is \Fact{maxGap}pp. At least a 5pp difference occurs on \Fact{large60} of \Fact{origins} origins. Those origins form a \emph{single consecutive episode}, from 23 January through 31 March 2014; they are not \Fact{large60} independent new shocks. Figure~\ref{fig:paths} shows the path comparison. B restoration reduces the mean one-minute gap to \Fact{restoreGap}pp under this policy.
+
+An existing post-result diagnostic standardizes only the two discovery-day legacy RV effects to the modern values, without deleting dates or compressing the calendar. It still leaves \Fact{discoveryStandardized} origins with at least a 5pp gap. Omitting those dates' increment endpoints gives one-minute slopes of approximately \Fact{discoveryHmodern} modern and \Fact{discoveryHlegacy} legacy. The full-window result is therefore not solely the two explicit discovery observations, but this sensitivity is not an untouched confirmation or an adopted outlier-cleaning rule.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=.96\linewidth]{figures/weight_paths.pdf}
+\caption{Fixed policy weight inputs, labeled by the end-of-session origin date that supplies information for the next session. Settings are $\lambda=.94$, target 10\%, cap 100\% and warmup 126 observations. The source-dependent one-minute episode is persistent. Five-minute constrained paths appear closer; Figure~\ref{fig:cap} explains why that cannot alone certify similar states. No portfolio returns are evaluated. Source: A10; displayed paths are checked against its summaries.}\label{fig:paths}
+\end{figure}
+
+\section{Why exposure agreement can be misleading}\label{sec:cap}
+The original five-minute constrained mean gap is \Fact{gap300}pp. Before capping, it is \Fact{uncapped300}pp at the same target. Both sources are capped on \Fact{bothCap300}\% of evaluated origins, and the cap reduces the mean absolute discrepancy by \Fact{attenuation300}\%. Even at one minute the cap attenuates the mean gap by \Fact{attenuation60}\%. Equation~\eqref{eq:cap} makes this result mechanically understandable: both inputs can be mapped to the same constrained weight despite different states.
+
+This qualification does not erase the observed grid difference. Across the three fixed decays, one-minute uncapped weight ratios exceed a 1.1 factor on \Fact{relativemin60}--\Fact{relativemax60} of \Fact{origins} origins. Five-minute counts are zero. The transformed p95 comparisons in Figure~\ref{fig:cap} use uncapped ratios, independent of the target, and remain smaller at five minutes. These are relative comparisons of two estimated states, not measurements of true risk or future discrepancy probabilities.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{figures/cap_masking.pdf}
+\caption{Cap masking and uncapped source differences. Panel (a) uses the original policy and a logarithmic vertical scale for mean absolute weight gaps. Panel (b) reports $100[\exp\{q_{.95}(|\log(u^L/u^M)|)\}-1]$ at each decay. The sample percentile is descriptive, not an inferential interval. The target and annualization cancel in the uncapped ratio. Source: A11, explicitly post-result.}\label{fig:cap}
+\end{figure}
+
+Across all 27 fixed target/cap/decay settings, at least ten origins exceed a 5pp absolute gap in \Fact{policyLarge60} one-minute policies and \Fact{policyLarge300} five-minute policies. Some policies produce no constrained gap because both inputs saturate. Figure~\ref{fig:policies} and Appendix~\ref{app:policies} report the entire specified grid, including such zeros; no policy is selected as optimal. The 27 policies share data and formulas and are not independent replications.
+
+For additional context, the linear EWMA shock diagnostic attributes \Fact{top_one_potential_share}\% of one-minute absolute propagation potential to the largest single date and \Fact{top_five_potential_share}\% to the five largest dates at decay .94. These are concentration shares of an absolute triangle-bound measure. They are not shares of nonlinear capped weight losses, independent shocks or causal economic damage. The source-state difference itself allows signed cancellation.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{figures/policies.pdf}
+\caption{Every fixed policy setting at one and five minutes. Cells show mean absolute source weight gaps in pp. Both panels share a color scale. Targets/caps are scenario parameters; filled cells do not represent selected strategies. The specified post-result exercise changes no source filtering or observations. Source: A11.}\label{fig:policies}
+\end{figure}
+
+\clearpage
+\section{Discussion and limitations}\label{sec:limits}
+The results distinguish three questions that can otherwise be conflated. First, do sources preserve the same information under a reused literal filter? Second, do the resulting measurement/state estimates agree? Third, do constrained decisions agree? Matching the last object cannot certify the first two. The combination of crossed source constructions and an explicit exposure-cap diagnostic is a practical audit workflow for empirical finance.
+
+The study meets its predefined engineering relevance criterion, but that is a modest conclusion. It does not establish academic priority, a new estimator or a production-optimal cleaning rule. Existing work already establishes measurement-induced apparent roughness and historical TAQ compatibility problems. The value here is the dataset-specific controlled evidence, transparent source pipeline and independently checked propagation into a decision input.
+
+Several limitations constrain generalization. The sample is historical and determined by the mounted common source overlap. Source regimes, timestamp precision, condition coverage and market structure may change. The short ETF cross-section cannot resolve these concerns. Stationary date-block intervals should therefore be read cautiously rather than as unconditional guarantees. The source reference is not verified integrated variance, and observed-row correspondence is weaker than unique execution identity.
+
+The strict filter and opening convention are also consequential. The filter excludes conditions retained by broader cleaning defaults, while the dominant-venue and simultaneous-price choices interact with the source representation. The B-restoration exercise identifies a narrow mechanism only within this design. No silent deletion, threshold adjustment or guessed quarticity rescaling is used to create agreement. A future cleaning-rule comparison would be a separately specified study, not an interpretation retrofitted to this one.
+
+Finally, the risk comparison is intentionally not an economic backtest. It uses fixed states and scenario weights, no fitted model-selection contest, and no returns, costs, cash, overnight or execution accounting. Five-minute state comparisons being smaller here does not establish the best sampling interval. The original registered 1,250-day forecast comparison remains deferred for source/history feasibility reasons and is not presented as completed by this case study. An option implied-volatility surface is not required to answer the paper's realized-measurement question.
+
+\section{Verification, reproducibility and disclosure}\label{sec:reproduction}
+Verification is layered rather than asserted universally. The source export checks file identity, fixed sample coverage and per-construction measurement-check records. The moment pipeline compares SQL aggregation with an independent NumPy construction, including expected/observed grid counts. An independent calendar check can reject a shared early-close error that source agreement alone would miss. Matching ordered records is checked separately from numerical RV/RQ agreement.
+
+At the result level, independent standard-library arithmetic recomputes \Fact{checksA10} A10 scalars. The A11 check uses original paired inputs, direct EWMA convolution and explicit shock propagation rather than the analysis recurrence and closed-form influence masses. It checks \Fact{checksA11} scalars and \Fact{overlaps} overlapping original-A10 values, and rejects a planted altered policy output. Synthetic tests cover selected covariance, scaling, missingness, initialization, causality and boundary cases. Appendix~\ref{app:audit} maps the checks to components and their limits. These checks support the recorded calculations; they do not establish economic truth, undocumented vendor semantics or the absence of every bug.
+
+The supporting derivations have separate checks using exact Gaussian polynomial quadrature, Gamma-function moments, numerical differentiation of log variograms, initialized convolution and cap boundary cases. These verify selected identities under their stated assumptions; they do not verify that the assumptions hold for the empirical data.
+
+The paper's numerical macros and tables are generated from recorded outputs and have a separate machine-readable claim map. A paper-specific independent checker verifies their source selectors, transformations and printed values. The source code, input/output hashes and run IDs support a concrete restart path. A separate synthetic-only demo/candidate runs without WRDS access or vendor records. Restricted daily data and this private empirical working history are not automatically public-release material.
+
+\textbf{Data availability.} The empirical inputs are licensed historical WRDS source data. Raw ticks and vendor observations are not redistributed. The accompanying repository supplies processing source, synthetic examples and the manuscript. Reproducing the empirical findings requires separately licensed inputs, which the repository does not distribute. The repository omits private research history and source observations. Closed validation/final observations have not been used.
+
+\textbf{AI and authorship disclosure.} Martin Valachy set the research direction, scope and project goals. Codex implemented the computational pipeline, automated independent numerical checks, figures and this draft. Agreement between separately implemented checks is computational verification, not independent human peer review. Martin's comprehension/code review is not asserted complete. The working-paper form is intended to support that review and an honest undergraduate portfolio, not to imply journal acceptance or work performed without AI assistance.
+
+\section{Conclusion}
+A source-compatible pipeline must preserve information, not merely reuse the same literal filter. In this fixed historical comparison, time/condition representations materially change realized measures and descriptive roughness statistics, and those differences propagate into a persistent one-minute risk-input episode. A common exposure cap can then hide disagreement between the underlying state estimates. The uncapped check qualifies, rather than overturns, the smaller five-minute effects in this sample.
+
+For applied work, the defensible lesson is to audit source fields, session counts, measurement statistics, uncapped states and constrained inputs as separate objects. The evidence supports that practical workflow. It does not select a universally best estimator, identify latent market roughness or demonstrate a profitable strategy.
+
+\clearpage
+\input{references.tex}
+
+\clearpage\appendix
+\section{Component verification and run map}\label{app:audit}
+\begin{table}[htbp]\centering\small
+\caption{What was checked, and what remains outside that check.}
+\begin{tabular}{p{.19\linewidth}p{.43\linewidth}p{.29\linewidth}}
+\toprule Component & Evidence & Limit\\\midrule
+Source/sample & Fixed calendar/panel, exported member hashes, per-file source alignment flags & Identity is observable-row correspondence, not unique execution identity\\
+RV/RQ construction & SQL versus NumPy; exact grid counts; missingness; synthetic unit/early-close errors & Does not certify a universally best trade filter or true integrated variance\\
+Finite-band slopes & Independent log-variogram/OLS arithmetic; scale invariance; calendar holes & No local market-H identification or empirical H coverage claim\\
+EWMA and weights & Recurrence versus direct convolution; causality, initialization and fixed-policy overlaps & No return, cash, overnight, cost or execution evaluation\\
+Policy/influence & Every fixed setting; explicit shock sums; altered summary rejected & Post-result; no policy-selection or nonlinear causal-loss attribution\\
+Synthetic baseline & Known covariance/measurement checks; independent table arithmetic; coupled refinement & Conditional simulator evidence, not empirical model validation\\
+Paper/presentation & Source-linked numeric facts, compilation, references and visual inspection & Cannot substitute for human comprehension and research review\\
+\bottomrule\end{tabular}
+\end{table}
+
+The primary provenance anchors are:
+\begin{description}
+\item[A08 simulation] \RunID{side_project_study_20261021T214152Z}.
+\item[A08 independent tables] \RunID{side_project_table_check_20261021T215134Z}.
+\item[A08 refinement] \RunID{side_project_refinement_20261021T214206Z}.
+\item[A10 full analysis] \RunID{source_replication_analysis_20261022T014736Z}.
+\item[A10 independent results] \RunID{source_result_check_20261022T015029Z}.
+\item[A10 export provenance] \RunID{source_export_verified_20261022T014656Z}.
+\item[A11 sensitivity] \RunID{source_policy_robustness_20261022T032458Z}.
+\item[A11 independent results] \RunID{source_policy_check_20261022T032503Z}.
+\item[Derivation checks] \RunID{paper_derivation_check_20261022T121236Z}.
+\end{description}
+The source configurations and methods are recorded in \texttt{configs/side\_project.json}, \texttt{configs/source\_replication.json}, \texttt{configs/source\_policy\_robustness.json} and the associated A08/A10/A11 protocol files. A11 was frozen locally before computing its sensitivities, after the original A10 outcome was known. The exploratory chronology is retained rather than relabeled as a confirmatory design.
+
+\clearpage
+\section{All fixed one- and five-minute policies}\label{app:policies}
+\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{7pt}
+\caption{Complete A11 policy matrix. Targets/caps are percentages; gaps are mean absolute weight differences in pp; ``large'' counts origins with an absolute gap of at least 5pp. All rows use the same \Fact{origins} dependent origins.}\input{generated/policy_table.tex}
+\end{table}
+
+\clearpage
+\section{All fixed slope bands}\label{app:bands}
+\begin{table}[htbp]\centering\small\setlength{\tabcolsep}{10pt}
+\caption{Full-window finite-band H-tilde at every grid and fixed band. Both explicit discovery dates remain included. These values are descriptive and do not carry latent-H confidence intervals.}\input{generated/H_table.tex}
+\end{table}
+
+\input{theory.tex}
+
+\section{Reproduction and boundaries}
+The private original A10 export is kept outside the repository. From the authorized research workspace, the empirical pipeline is checked using \nolinkurl{verify_source_export.py}, \nolinkurl{analyze_source_replication.py}, \nolinkurl{check_source_results.py}, \nolinkurl{analyze_policy_robustness.py} and \nolinkurl{check_policy_robustness.py}. Each receives the private-folder argument. The paper preparation script reads these checked outputs, writes named facts/tables and verifies the displayed weight paths against the original summary. A separate checker reads the source records using standard-library arithmetic and compares the generated fact macros.
+
+The PDF is compiled from editable \LaTeX{} sources. The delivery includes a claim map, bibliography and verification summary; the wider local atlas is supplementary and not a substitute for the paper's argument. The portable synthetic demo has its own isolated installation procedure. Reproduction generates new run IDs and timing metadata; scientific tolerances, not byte equality across numerical platforms, determine arithmetic agreement. No older mixed-period audit script is part of these instructions.
+
+The original broader forecast contest and unresolved source-reconciliation gates are preserved as deferred historical plans. No shortened-window forecast winner is reported. The option-surface extension was parked after clarification of the paper's scope, and no option observations were acquired. No final-period, publication, spending or contact action is required by this reproduction path.
+\end{document}

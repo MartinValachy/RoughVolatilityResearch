@@ -1,0 +1,22 @@
+{
+  "version": "A10-source-semantics-1",
+  "start": "2013-01-02",
+  "end": "2014-07-31",
+  "main_symbol": "SPY",
+  "panel": ["SPY", "QQQ", "IWM", "EFA", "TLT"],
+  "panel_month": "2014-01",
+  "discovery_dates": ["2014-01-02", "2014-07-03"],
+  "RV_material_log_ratio": 0.09531017980432493,
+  "RQ_material_log_ratio": 0.6931471805599453,
+  "EWMA_lambda": 0.94,
+  "EWMA_warmup": 126,
+  "target_annual_volatility": 0.1,
+  "weight_cap": 1.0,
+  "annual_sessions": 252,
+  "primary_lag_max": 10,
+  "bootstrap_seed": 20261023,
+  "bootstrap_draws": 3999,
+  "date_blocks": [22, 11, 44],
+  "production_allowed": false,
+  "classification": "Exploratory practical source-compatibility replication; no latent-H, profit or novelty claim"
+}

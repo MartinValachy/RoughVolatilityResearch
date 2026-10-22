@@ -1,0 +1,23 @@
+{
+  "status": "computed_pending_independent_check",
+  "source_run_id": "source_replication_analysis_20261022T014736Z",
+  "source_input_sha256": "1d45ddd0e9ba33b6c139c80583d5c88f8669c123a86cf3409501a0c7192083cb",
+  "code_sha256": "118a0e0493086d80b8c18a961a9f7ebaeef1986e7aa42e88c522d13d3e300195",
+  "config_sha256": "0eda8c4a0beb6cd458f9ef3d7b5c0097c9444b88a7a87020c354f5e7f5a0f16f",
+  "protocol_sha256": "9ee70a29606cd4d3fce981bc7c6b808e2ef532c2946dce5da000de440e7775b0",
+  "source_sessions": 398,
+  "evaluated_origins": 272,
+  "policies_per_construction_grid": 27,
+  "policy_rows": 648,
+  "state_rows": 72,
+  "period_rows": 288,
+  "outputs_sha256": {
+    "results/source_policy_policies.csv": "46ee6071e4b89a41d1f09d69d9ab256453cd517ebe8cd82cef457aad80d369e5",
+    "results/source_policy_states.csv": "3c77a8d514ae68e0c92a4d635250c775053915b46c4c9447f2fec388673b59ec",
+    "results/source_policy_periods.csv": "9dfc73550c47dc0480549de143c5549f27d133de9326cb9ee64878cbc96199b6"
+  },
+  "classification": "Post-result descriptive sensitivity; all policies reported, no model selection or new validation",
+  "sealed_observations_opened": false,
+  "published_online": false,
+  "run_id": "source_policy_robustness_20261022T032458Z"
+}

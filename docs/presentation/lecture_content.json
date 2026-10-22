@@ -1,0 +1,949 @@
+{
+  "title": "Rough or Just Noisy? - university lecture",
+  "slides": [
+    {
+      "title": "Rough or Just Noisy?",
+      "body": "A lecture on measuring financial volatility\nand checking how measurements affect an investment rule",
+      "section": "",
+      "table": null,
+      "chart": null,
+      "caption": "Martin Valachy\nThe current working-paper study, explained step by step",
+      "notes": "This lecture explains the paper without assuming finance or university mathematics. It presents the current A08/A10/A11 case study. A separately planned A13 breadth extension has no results yet. Martin set the project direction. Codex implemented the pipeline and draft; independent human review remains open.",
+      "sourceKeys": [],
+      "kind": "cover",
+      "slide": 1
+    },
+    {
+      "title": "The question and the route through the lecture",
+      "body": "Question: can different recordings of the same trades change a risk estimate and the amount a rule proposes investing?\n\nFirst we define the measurements. Then we explain the controlled comparison. Finally we interpret the findings and the checks.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": null,
+      "caption": "",
+      "notes": "The paper studies a measurement and decision-input chain. It does not evaluate trading returns. The lecture separates the known simulation example from the historical source comparison. Source: working paper by Martin Valachy, Sections 2–8 and Appendix D. ",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 2
+    },
+    {
+      "title": "Price changes, returns and percentages",
+      "body": "A return expresses a price change relative to its starting price.\n\nA price rising from 100 to 101 gives a simple return of 1%, which is 0.01 in decimal form. A fall gives a negative return.\n\nThe paper uses log returns, a closely related transformation for relative price changes. The optional appendix gives its formula. We keep percentage and decimal units explicit.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": null,
+      "caption": "A return describes a price change. It does not yet measure volatility.",
+      "notes": "Simple return is (new price / old price) minus one. Log return is ln(new price / old price). For a rise from 100 to 101 the log return is approximately .995%, not exactly 1%. The toy RV example on the next slide assumes its three returns directly, rather than deriving them from those two prices. Source: paper Section 3.1 and Appendix D.1.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 3
+    },
+    {
+      "title": "Realized variance: a worked example",
+      "body": "Realized variance (RV) adds squared returns during a session. Squaring makes both upward and downward moves contribute positively.\n\nFor this invented day, RV = 0.0001 + 0.0001 + 0.0004 = 0.0006.",
+      "section": "1. Concepts and worked examples",
+      "table": [
+        [
+          "Assumed log return",
+          "Decimal return",
+          "Squared contribution"
+        ],
+        [
+          "+1%",
+          "0.01",
+          "0.0001"
+        ],
+        [
+          "−1%",
+          "−0.01",
+          "0.0001"
+        ],
+        [
+          "+2%",
+          "0.02",
+          "0.0004"
+        ]
+      ],
+      "chart": null,
+      "caption": "A session is the exchange’s open-to-close period. This invented day has three intervals and contains no market observations.",
+      "notes": "Every input is a hypothetical log return. RV is a variance measure and therefore has squared-return units. The squared return for +2% is four times the squared return for +1%. Real sessions have many more intervals. The paper derives the moment normalization under a stated ideal model. Source: Section 3.1 and Appendix D.1.",
+      "sourceKeys": [],
+      "kind": "table",
+      "slide": 4
+    },
+    {
+      "title": "Variance and volatility use different scales",
+      "body": "Variance uses squared-return units. Volatility uses the original return scale.\n\nTaking the square root converts the example’s variance into volatility:\n√0.0006 ≈ 0.0245 = 2.45%.\n\nThis describes movement during the invented session. It is not the session’s return or a prediction of profit.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": null,
+      "caption": "The paper usually reports RV itself, so its numerical values are variances.",
+      "notes": "The square root is the positive number whose square gives the variance. The example is a mathematical illustration. A daily session measure differs from a full overnight-inclusive investment risk measure. The study uses a fixed annualization convention only for the later risk rule. Source: paper Section 3.1 and Appendix D.1.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 5
+    },
+    {
+      "title": "Quarticity gives extra weight to large moves",
+      "body": "Realized quarticity (RQ) uses fourth powers of returns. It is a second diagnostic, especially sensitive to large increments.\n\nRQ equals the sum of fourth-power returns multiplied by M/3. M is the actual number of sampled return intervals in that session.",
+      "section": "1. Concepts and worked examples",
+      "table": [
+        [
+          "Relative move size",
+          "Squared contribution",
+          "Fourth-power contribution"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "2",
+          "4",
+          "16"
+        ],
+        [
+          "4",
+          "16",
+          "256"
+        ]
+      ],
+      "chart": null,
+      "caption": "Invented unitless comparison. RQ is not a return or an investment gain.",
+      "notes": "The Gaussian fourth moment is three times the square of the variance. That identity explains the factor one third. Multiplying by M makes the expectation approximate integrated quarticity on a unit-length session clock. The actual early-close count matters. A missing interval cannot be made complete simply by changing M. Source: Appendix D.1.",
+      "sourceKeys": [],
+      "kind": "table",
+      "slide": 6
+    },
+    {
+      "title": "Sampling interval: when we record the price",
+      "body": "A sampling interval is the time gap between prices used in the calculation.\n\nA 1-minute grid uses 09:30, 09:31, 09:32 and so on. A 5-minute grid uses 09:30, 09:35, 09:40 and so on.\n\nThe study compares six fixed intervals, from 15 seconds to 30 minutes.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": null,
+      "caption": "“Grid” means this schedule of observation times.",
+      "notes": "The intervals are 15,30,60,300,900,1800 seconds. The pipeline uses the last eligible price at each grid point. An independent exchange calendar supplies session endpoints and early closes. Source: paper Section 3.1.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 7
+    },
+    {
+      "title": "A coarser grid can miss a movement",
+      "body": "This invented price rises and returns to 100 within five minutes.\n\nA 1-minute calculation sees the movement. A 5-minute calculation using only the first and last points sees no change in this example.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": {
+        "type": "line",
+        "categories": [
+          "09:30",
+          "09:31",
+          "09:32",
+          "09:33",
+          "09:34",
+          "09:35"
+        ],
+        "series": [
+          {
+            "name": "Invented price",
+            "values": [
+              100.0,
+              103.0,
+              100.0,
+              100.0,
+              100.0,
+              100.0
+            ]
+          }
+        ],
+        "yTitle": "Invented price",
+        "min": 99,
+        "max": 104,
+        "majorUnit": 1
+      },
+      "caption": "The horizontal axis is clock time. The vertical axis is the invented price.",
+      "notes": "This is an illustration of sampling, not evidence that five minutes is generally worse. More frequent sampling can also admit more observation noise. The study reports every fixed grid rather than selecting the most attractive result. The chart contains no proprietary observations. Source: paper Section 3.1; mathematical context in Appendix D.3. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [],
+      "kind": "chart",
+      "slide": 8
+    },
+    {
+      "title": "Hidden volatility and an observed estimate",
+      "body": "True volatility is not directly recorded in the trade file. The paper calls this hidden quantity latent volatility.\n\nRV is an estimate constructed from recorded prices.\n\nA change in the estimate may reflect a change in hidden volatility, a change in observation quality, or both.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": null,
+      "caption": "A reference data source is a comparison point, not certified truth.",
+      "notes": "This distinction motivates the known-truth simulation and the controlled source experiment. In a simulation we specify the generating process. In the market comparison neither source is verified integrated variance. Source: Introduction, Section 4 and Discussion.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 9
+    },
+    {
+      "title": "Roughness concerns changes in volatility itself",
+      "body": "There are two levels: prices move, and the volatility of those movements can also change.\n\nRoughness describes how irregularly volatility itself changes across short time scales.\n\nA visually jagged price chart does not identify mathematical roughness. The paper compares relative changes in daily RV by applying a logarithm, written log RV.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": null,
+      "caption": "The next slide explains what that statistic compares.",
+      "notes": "Rough-volatility research concerns local regularity, while the present estimator uses a fixed finite band of daily lags. The paper does not identify the latent market exponent H. References include Gatheral et al., Cont and Das, and Fukasawa et al. Source: Sections 1 and 3.2, Appendix D.4.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 10
+    },
+    {
+      "title": "H-tilde summarizes change across day gaps",
+      "body": "A lag is a gap between sessions: lag 1 compares neighboring sessions; lag 2 separates them by two.\n\nH-tilde summarizes how average squared changes in log RV grow with that gap, using lags 1–10 here. It is unitless: 0.15 does not mean 15% volatility.",
+      "section": "1. Concepts and worked examples",
+      "table": [
+        [
+          "Mean squared change (invented)",
+          "Example A",
+          "Example B"
+        ],
+        [
+          "At a 1-session gap",
+          "10",
+          "10"
+        ],
+        [
+          "At a 2-session gap",
+          "20",
+          "12.3"
+        ],
+        [
+          "Two-lag H-tilde",
+          "0.50",
+          "About 0.15"
+        ]
+      ],
+      "chart": null,
+      "caption": "Toy values in arbitrary units. The paper uses ten lags, not just these two.",
+      "notes": "For these two-lag examples, H-tilde is half the log of the ratio V(2)/V(1), divided by log2. The values are .5 and approximately .1493. Under an exact power-law model this matches the exponent. Noise, finite scales and different observation objects can change it. The empirical statistic remains descriptive. Source: Section 3.2 and Appendix D.4.",
+      "sourceKeys": [],
+      "kind": "table",
+      "slide": 11
+    },
+    {
+      "title": "Simulation gives a known starting point",
+      "body": "The study creates artificial volatility and prices using specified mathematical models.\n\nWe know the hidden process because we generated it. We then apply the same RV and H-tilde calculations.\n\nThis tests the interpretation of the statistic before we discuss real data.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": null,
+      "caption": "A simulation is a controlled artificial example, not an additional market sample.",
+      "notes": "A08 uses128 paths per model,504 days,780 fine steps per session and fixed measurement grids. Models include OU and two generalized Cauchy covariance cases. OU fluctuates continuously around its long-run mean and is locally diffusive. Independent price and noise streams are specified. Source: Section 4 and A08 run side_project_study_20261021T214152Z; table check side_project_table_check_20261021T215134Z.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 12
+    },
+    {
+      "title": "The same model gives different measured slopes",
+      "body": "The same artificial model generates every bar.\n\nHidden risk sample: risk sampled at one daily instant.\nRisk over the day: hidden variance added over the whole session.\nPrice estimate: RV from five-minute prices.\n\nThe bars average the resulting H-tilde values across simulated paths.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "Hidden risk\nsample",
+          "Risk over\nthe day",
+          "Price\nestimate"
+        ],
+        "series": [
+          {
+            "name": "Mean H-tilde",
+            "keys": [
+              "ouSpot",
+              "ouIV",
+              "ouRV"
+            ],
+            "values": [
+              0.46702596272545,
+              0.53921032593305,
+              0.23790609812858
+            ]
+          }
+        ],
+        "yTitle": "Average H-tilde, unitless",
+        "min": 0,
+        "max": 0.65,
+        "format": "0.00"
+      },
+      "caption": "The OU model fluctuates around a long-run average. These are simulated finite-lag summaries, not market H.",
+      "notes": "The means are .467026,.539210,.237906. The local OU exponent is one half. A finite-band statistic on a daily sample or proxy need not equal that limit. The simulation establishes an interpretive counterexample and supports no claim that the market follows OU. Source: Section 4, Figure2, Appendix D.4. Independent table and refinement checks are mapped in Appendix A. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [
+        "ouSpot",
+        "ouIV",
+        "ouRV"
+      ],
+      "kind": "chart",
+      "slide": 13
+    },
+    {
+      "title": "Measurement noise can flatten the comparison",
+      "body": "Suppose each daily volatility estimate contains an independent measurement error.\n\nComparing two days then includes error from both endpoints. That extra variation can be important even when the days are close together.\n\nThis can lower H-tilde under the paper’s illustrative assumptions. Real source differences may have a more structured cause.",
+      "section": "1. Concepts and worked examples",
+      "table": null,
+      "chart": null,
+      "caption": "The paper states the independence assumptions and derives the added error term.",
+      "notes": "For Y=X+e with independent iid centered error variance q, the expected squared increment is V_X(k)+2q. Correlation or endogeneity changes the identity. Price-level noise is a different model: differencing noisy prices adds a term to RV that grows with the number of intervals. The study does not automatically subtract a q-hat diagnostic from empirical variograms. Source: Appendix D.2–D.4.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 14
+    },
+    {
+      "title": "The historical sample",
+      "body": "SPY is an exchange-traded fund: a fund bought and sold like a share. It follows a broad US stock-market index.\n\nThe main comparison covers 398 SPY sessions from January 2013 through July 2014. A short January 2014 panel adds four other funds.\n\nThe sources contain 121,467,460 matched recorded rows before cleaning.",
+      "section": "2. The controlled study",
+      "table": null,
+      "chart": null,
+      "caption": "Matched rows share ordered price, size and trading venue. They need not be unique executions.",
+      "notes": "The additional funds are QQQ,IWM,EFA,TLT. The total is482 paired symbol-days. The common mounted source overlap determines the sample window. The new A13 extension will separately investigate broader ETF coverage and has no result yet. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z.",
+      "sourceKeys": [
+        "sessions",
+        "records"
+      ],
+      "kind": "text",
+      "slide": 15
+    },
+    {
+      "title": "Two recordings of trade information",
+      "body": "A timestamp tells us when a recorded trade occurred. A condition field describes a classification attached to that trade.\n\nThe study compares a legacy seconds representation with a millisecond representation. A millisecond is one thousandth of a second.",
+      "section": "2. The controlled study",
+      "table": [
+        [
+          "Field",
+          "Legacy source",
+          "Modern source"
+        ],
+        [
+          "Time",
+          "Second-level representation",
+          "Millisecond representation"
+        ],
+        [
+          "Condition",
+          "Legacy labels",
+          "Modern labels"
+        ],
+        [
+          "Shared recorded inputs",
+          "Ordered price, size and venue",
+          "Ordered price, size and venue"
+        ]
+      ],
+      "chart": null,
+      "caption": "Modern is the reference in this study. The word does not certify economic truth.",
+      "notes": "The actual mounted derivatives may differ from their official specifications. Stronger floor-time and correction checks cover the two discovery dates only. CategoryB means different things on CTA and UTP tapes. The study avoids assigning it one universal economic meaning. Sources: Sections2.1–2.2, NYSE2014 specification, A09/A10 check records.",
+      "sourceKeys": [],
+      "kind": "table",
+      "slide": 16
+    },
+    {
+      "title": "The fixed preparation pipeline",
+      "body": "1. Keep in-session positive prices and sizes, with the stated correction rule.\n2. Keep records only when the condition field is blank or contains the @ symbol, under this strict rule.\n3. Choose the venue with the most retained trades. A venue is a trading location.\n4. Combine simultaneous prices using their median, the middle value.\n5. Use the last eligible price at each grid point.\n6. Calculate RV and RQ with the actual session count.",
+      "section": "2. The controlled study",
+      "table": null,
+      "chart": null,
+      "caption": "The rule is deliberately narrow. The study does not claim a universally best trade filter.",
+      "notes": "An opening approximation uses the first eligible trade if none occurs exactly at the open and flags the case. Later missing grid points are not backward filled. Incomplete moments are withheld with counts retained. The strict filter differs from broader highfrequency defaults and venue-selection order. These limitations are part of the interpretation. Source: Section3.1 and AppendixD.1/D.5.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 17
+    },
+    {
+      "title": "Crossed cases separate time from conditions",
+      "body": "The same preparation code receives five combinations of source information. This helps identify which information matters within this pipeline.",
+      "section": "2. The controlled study",
+      "table": [
+        [
+          "Construction",
+          "Time information",
+          "Condition information"
+        ],
+        [
+          "Modern reference",
+          "Modern",
+          "Modern"
+        ],
+        [
+          "Legacy",
+          "Legacy",
+          "Legacy"
+        ],
+        [
+          "Modern time only",
+          "Modern",
+          "Legacy"
+        ],
+        [
+          "Modern conditions only",
+          "Legacy",
+          "Modern"
+        ],
+        [
+          "B-information diagnostic",
+          "Legacy",
+          "Legacy + modern B"
+        ]
+      ],
+      "chart": null,
+      "caption": "B is a condition category with feed-specific meanings. Restoring it tests information. Changing conditions can also change the selected venue and price medians.",
+      "notes": "B restoration changes information available to the filter; it is not an adopted production deletion rule. The entire function of the pipeline matters. The paper derives a crossed log-contrast identity with an interaction term rather than assuming additive causal attribution. Source: Sections2.2,5.2 and AppendixD.5. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z.",
+      "sourceKeys": [],
+      "kind": "table",
+      "slide": 18
+    },
+    {
+      "title": "What counts as a material discrepancy?",
+      "body": "For RV, the fixed threshold asks whether the larger source value exceeds 1.1 times the smaller value. For RQ, the factor is 2.\n\n“Material” names this prespecified diagnostic threshold. It does not automatically mean a statistically significant or profitable effect.",
+      "section": "2. The controlled study",
+      "table": [
+        [
+          "Invented RV values",
+          "Larger / smaller",
+          "Above the 1.1 threshold?"
+        ],
+        [
+          "100 and 105",
+          "1.05",
+          "No"
+        ],
+        [
+          "100 and 111",
+          "1.11",
+          "Yes"
+        ]
+      ],
+      "chart": null,
+      "caption": "The paper applies thresholds to positive valid pairs. Invalid comparisons stay explicit.",
+      "notes": "The code uses absolute log ratios >log1.1 and >log2. The strict greater-than boundary matters. Negative differences are not clipped and mismatches are not tuned away. The source values in this toy table are unitless illustrations. Source: Section3.2 and configs/source_replication.json.",
+      "sourceKeys": [],
+      "kind": "table",
+      "slide": 19
+    },
+    {
+      "title": "Discovery and later checks have different roles",
+      "body": "The mechanism was first explored on two dates. The main discrepancy counts exclude those dates.\n\nFull-window slopes and the risk-state paths retain them. The paper also reports a sensitivity that changes only their source effects.\n\nThe later policy exercise follows the original results. Closed validation and final periods remain unused.",
+      "section": "2. The controlled study",
+      "table": null,
+      "chart": null,
+      "caption": "The study is an exploratory case study, not an untouched forecasting test.",
+      "notes": "Discovery dates are2014-01-02/2014-07-03. Incidence excludes them; H/EWMA include them. The post-result standardization retains46 large-gap origins without removing dates or compressing time. Validation2017-2019 and final2020+ are closed. The original1,250-day forecast contest remains deferred. Source: Sections2.1,5.3,7.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 20
+    },
+    {
+      "title": "The complete SPY discrepancy counts",
+      "body": "Each cell counts eligible dates when legacy and modern measurements differ beyond the fixed threshold. All six intervals appear, including smaller effects.",
+      "section": "3. Results and their interpretation",
+      "table": [
+        [
+          "Sampling interval",
+          "RV: dates above threshold",
+          "RQ: dates above threshold"
+        ],
+        [
+          "15 seconds",
+          "137 / 396",
+          "127 / 396"
+        ],
+        [
+          "30 seconds",
+          "75 / 396",
+          "73 / 396"
+        ],
+        [
+          "1 minute",
+          "41 / 396",
+          "37 / 396"
+        ],
+        [
+          "5 minutes",
+          "19 / 396",
+          "5 / 396"
+        ],
+        [
+          "15 minutes",
+          "29 / 396",
+          "4 / 396"
+        ],
+        [
+          "30 minutes",
+          "51 / 396",
+          "5 / 396"
+        ]
+      ],
+      "chart": null,
+      "caption": "396 eligible SPY dates after excluding two discovery dates. Sources agree on recorded inputs.",
+      "notes": "RV/RQ denominators are verified equal for these rows. The complete paper also reports date-block intervals. Incidence is not necessarily monotone across grids because endpoints and large increments change. No source is certified true integrated variance. Source: Table1 and source_replication_incidence.csv. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z.",
+      "sourceKeys": [
+        "rvN15",
+        "rqN15",
+        "den15",
+        "rvN30",
+        "rqN30",
+        "den30",
+        "rvN60",
+        "rqN60",
+        "den60",
+        "rvN300",
+        "rqN300",
+        "den300",
+        "rvN900",
+        "rqN900",
+        "den900",
+        "rvN1800",
+        "rqN1800",
+        "den1800"
+      ],
+      "kind": "table",
+      "slide": 21
+    },
+    {
+      "title": "At one minute, conditions explain much of the gap",
+      "body": "The chart counts dates with a material RV discrepancy.\n\nModern time alone leaves 42 dates. Modern condition information reduces the count to 5.\n\nThis is evidence about this fixed pipeline, including its interactions.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "Legacy",
+          "Modern time\nonly",
+          "Modern\nconditions\nonly",
+          "B information\nrestored"
+        ],
+        "series": [
+          {
+            "name": "Material RV dates",
+            "keys": [
+              "rvN60",
+              "crossRV1",
+              "crossRV2",
+              "crossRV3"
+            ],
+            "values": [
+              41.0,
+              42.0,
+              5.0,
+              9.0
+            ]
+          }
+        ],
+        "yTitle": "Dates above threshold",
+        "min": 0,
+        "max": 50
+      },
+      "caption": "Every bar has the same 396-date denominator. B restoration is a diagnostic, not a universal rule.",
+      "notes": "The four counts are41,42,5,9. Holding code fixed does not make component effects additive. Labels affect retained observations, venue choice and timestamp medians. The paper does not recommend discarding all category-B trades. Source: Table2 and Section5.2. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [
+        "rvN60",
+        "crossRV1",
+        "crossRV2",
+        "crossRV3"
+      ],
+      "kind": "chart",
+      "slide": 22
+    },
+    {
+      "title": "The source changes the roughness summary too",
+      "body": "These bars show H-tilde for log RV over lags 1–10. Lower values describe relatively more short-lag variation within this calculation.\n\nThey compare measurement constructions on the same recorded trade sequence. They do not reveal the market’s hidden H.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "Modern",
+          "Legacy",
+          "B information\nrestored"
+        ],
+        "series": [
+          {
+            "name": "H-tilde",
+            "keys": [
+              "hM60",
+              "hL60",
+              "hB60"
+            ],
+            "values": [
+              0.15418907261339,
+              0.12391032974393,
+              0.15159986751736
+            ]
+          }
+        ],
+        "yTitle": "H-tilde, unitless",
+        "min": 0,
+        "max": 0.2,
+        "format": "0.000"
+      },
+      "caption": "Full-window descriptive statistics, including discovery dates. 0.15 is not 15% risk.",
+      "notes": "Values .15418907,.12391033,.15159987. A constant RV unit multiplier adds a constant to logRV and cannot change these increments or slopes. The paper retains lag bands1–5/1–10/1–22 and reports no latent-H interval. Source: Sections3.2,5.1, AppendixC/D.4. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [
+        "hM60",
+        "hL60",
+        "hB60"
+      ],
+      "kind": "chart",
+      "slide": 23
+    },
+    {
+      "title": "EWMA: a risk estimate with memory",
+      "body": "EWMA means exponentially weighted moving average. It combines an older estimate with the latest measured variance.\n\nThe original rule uses 94% of the previous estimate and 6% of today’s RV. The result becomes the variance input for the next session.\n\nThe paper calls this weighted variance estimate a state. The initial state equals the first RV. The paper excludes 126 warmup observations from evaluation.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": null,
+      "caption": "An origin date is the completed session supplying information for the next session.",
+      "notes": "The state is s_t=.94s_(t-1)+.06RV_t. It is a causal input, rather than a fitted forecast contest. Consistent initialization matters for the direct-convolution check. Source: Section3.3, AppendixD.6. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 24
+    },
+    {
+      "title": "A worked EWMA update",
+      "body": "Suppose the old variance estimate is 10 and today’s measured variance is 20. The units here are invented variance units.\n\nThe new estimate is 9.4 + 1.2 = 10.6. It moves toward today’s value while retaining memory.",
+      "section": "3. Results and their interpretation",
+      "table": [
+        [
+          "Input",
+          "Weight",
+          "Weighted contribution"
+        ],
+        [
+          "Previous estimate: 10",
+          "94%",
+          "9.4"
+        ],
+        [
+          "Today’s RV: 20",
+          "6%",
+          "1.2"
+        ],
+        [
+          "New estimate",
+          "",
+          "10.6"
+        ]
+      ],
+      "chart": null,
+      "caption": "This is an arithmetic example, not a market observation or a volatility percentage.",
+      "notes": "The weights sum to one. This arithmetic concerns variance, not standard deviation. The original state initialization coefficient differs from later shock coefficients. The paper derives the exact expansion and checks it against a separate direct computation. Source: AppendixD.6.",
+      "sourceKeys": [],
+      "kind": "table",
+      "slide": 25
+    },
+    {
+      "title": "One input difference can affect many later days",
+      "body": "A later discrepancy enters the update once and then gradually fades.\n\nThe chart shows the remaining influence relative to its size at arrival. Its horizontal axis has equal 10-session steps.\n\nRepeated affected dates therefore need not be independent new events.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": {
+        "type": "line",
+        "categories": [
+          "Arrival",
+          "10 later",
+          "20 later",
+          "30 later",
+          "40 later"
+        ],
+        "series": [
+          {
+            "name": "Relative remaining influence",
+            "values": [
+              1.0,
+              0.5386151140949,
+              0.29010624113146,
+              0.15625560616666,
+              0.084161631143426
+            ]
+          }
+        ],
+        "yTitle": "Influence relative to arrival",
+        "min": 0,
+        "max": 1,
+        "format": "0.0"
+      },
+      "caption": "Invented single-discrepancy example under the fixed 94% memory rule.",
+      "notes": "For a later observation j, the state contribution at t>=j is(1-lambda)lambda^(t-j)delta_j. Normalizing at arrival removes(1-lambda)delta_j. Initialization uses lambda^t instead. The upper-bound influence shares in A11 are not nonlinear loss attributions. Source: AppendixD.6. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [],
+      "kind": "chart",
+      "slide": 26
+    },
+    {
+      "title": "The proposed investment amount",
+      "body": "The rule divides its annual volatility target by its estimated annual volatility. “Position” means the amount invested as a percentage of available capital.\n\nA target of 10% and an estimated volatility of 20% gives 10/20 = 0.5, or a 50% position.\n\nA gap from 100% to 95% is 5 percentage points, not a 5% investment return.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": null,
+      "caption": "The study compares proposed next-session inputs. It does not calculate strategy profits.",
+      "notes": "The variance state is annualized with252 and square-rooted. Uncapped position u=target/sqrt(252s). Actual portfolio risk could include overnight,cash,costs and execution. Those are outside the experiment. Source: Section3.3 and AppendixD.7.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 27
+    },
+    {
+      "title": "The one-minute difference reaches the risk rule",
+      "body": "After warmup, the comparison has 272 evaluation origins. On 47 of them, the proposed positions differ by at least 5 percentage points.\n\nThose dates form one consecutive episode, from 23 January through 31 March 2014.\n\nThe average absolute position gap is 2.632 percentage points under the original fixed policy.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": null,
+      "caption": "An affected origin is not automatically a separate shock or an actual investment loss.",
+      "notes": "The maximum gap is23.913646pp. B-restored mean gap is.01239973pp. Post-result discovery-date standardization retains46 large-gap origins. These sensitivities do not become untouched validation. Source: Section5.3 and Figure4. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z.",
+      "sourceKeys": [
+        "origins",
+        "large60",
+        "gap60"
+      ],
+      "kind": "text",
+      "slide": 28
+    },
+    {
+      "title": "A cap is an upper limit on the position",
+      "body": "Consider this invented example: two risk estimates propose positions of 120% and 150%.\n\nA common 100% cap reduces both to 100%. The final amounts agree although the estimates behind them differ.\n\n“Before cap” means the formula’s proposal. It is not a recommendation to borrow.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "Source A",
+          "Source B"
+        ],
+        "series": [
+          {
+            "name": "Before cap",
+            "values": [
+              120.0,
+              150.0
+            ]
+          },
+          {
+            "name": "After 100% cap",
+            "values": [
+              100.0,
+              100.0
+            ]
+          }
+        ],
+        "yTitle": "Position, % of capital",
+        "min": 0,
+        "max": 175
+      },
+      "caption": "Invented amounts. The same upper limit cannot enlarge a position gap.",
+      "notes": "The cap map min(c,u) is nonexpansive. If both inputs exceed c, the capped gap is exactly zero. If one exceeds c, the gap shrinks; if neither does, the gap is unchanged. The state saturation threshold is derived in AppendixD.7. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [],
+      "kind": "chart",
+      "slide": 29
+    },
+    {
+      "title": "The five-minute comparison shows cap masking",
+      "body": "The bars show the mean absolute difference between two proposed positions. Both use the original target and memory rule.\n\nCapping reduces that mean difference by 96.95% relative to its uncapped value. This can conceal disagreement in the underlying variance states.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "Before cap",
+          "After cap"
+        ],
+        "series": [
+          {
+            "name": "Mean absolute position gap",
+            "keys": [
+              "uncapped300",
+              "gap300"
+            ],
+            "values": [
+              1.0554854262127,
+              0.03219580578608
+            ]
+          }
+        ],
+        "yTitle": "Gap, percentage points",
+        "min": 0,
+        "max": 1.2,
+        "format": "0.000"
+      },
+      "caption": "A percentage-point position gap is neither a return difference nor measured true risk.",
+      "notes": "Before1.055485426pp,after.032195806pp; both capped95.58823529% of origins. The percentage attenuation is one minus capped mean gap divided by uncapped mean gap. Source: Section6,Figure5. A11 analysis source_policy_robustness_20261022T032458Z; independent source_policy_check_20261022T032503Z. Post-result sensitivity. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [
+        "uncapped300",
+        "gap300",
+        "attenuation300"
+      ],
+      "kind": "chart",
+      "slide": 30
+    },
+    {
+      "title": "An uncapped ratio gives another comparison",
+      "body": "Divide one uncapped proposed position by the other. The common target and annualization factor cancel. The ratio therefore reflects a relative difference in estimated variance states.\n\nAcross three fixed memory settings, one-minute ratios differ by a factor above 1.1 on 64–77 of 272 origins. Five-minute counts are zero.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": null,
+      "caption": "Five-minute relative differences remain smaller here even after checking the cap.",
+      "notes": "The event uses ratio outside[1/1.1,1.1]. It is not simply an arithmetic10% difference in both directions. The exact identity is uL/uM=sqrt(sM/sL). Descriptive95th percentile transformed ratios are in the paper. These do not predict future discrepancy probabilities. Source: Section6,AppendixD.7. A11 analysis source_policy_robustness_20261022T032458Z; independent source_policy_check_20261022T032503Z. Post-result sensitivity.",
+      "sourceKeys": [
+        "relativemin60",
+        "relativemax60",
+        "origins"
+      ],
+      "kind": "text",
+      "slide": 31
+    },
+    {
+      "title": "The policy exercise reports all 27 combinations",
+      "body": "A policy here means a specified memory rate, volatility target and position cap. The exercise crosses three choices of each, giving 27 combinations.\n\nThe chart counts policies with at least ten origins showing a position gap of 5 percentage points. All policies, including zero gaps, remain in the paper.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "1-minute RV input",
+          "5-minute RV input"
+        ],
+        "series": [
+          {
+            "name": "Policies meeting this condition",
+            "keys": [
+              "policyLarge60",
+              "policyLarge300"
+            ],
+            "values": [
+              18.0,
+              2.0
+            ]
+          }
+        ],
+        "yTitle": "Number of policies, out of 27",
+        "min": 0,
+        "max": 27
+      },
+      "caption": "This sensitivity follows the original result. It does not select an optimal policy.",
+      "notes": "Settingslambda .90/.94/.97,target .05/.10/.15,cap .5/1/2. Counts18/27 and2/27. They share data/formulas and are not independent experiments. A11 was frozen before the sensitivity run, after A10 results were known. Source: Section6 and AppendixB. A11 analysis source_policy_robustness_20261022T032458Z; independent source_policy_check_20261022T032503Z. Post-result sensitivity. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [
+        "policyLarge60",
+        "policyLarge300"
+      ],
+      "kind": "chart",
+      "slide": 32
+    },
+    {
+      "title": "Uncertainty must respect related days",
+      "body": "Adjacent days can share market conditions and a persistent source effect. Treating every date as independent can overstate the amount of evidence.\n\nThe paper resamples blocks of dates, keeping each source pair together. It recalculates the discrepancy fraction for each resample.\n\nThese intervals assume that the overall behavior is reasonably stable and that dependence weakens over time in this historical window.",
+      "section": "4. Verification and conclusions",
+      "table": null,
+      "chart": null,
+      "caption": "A confidence interval cannot create new independent episodes or fix a source-regime change.",
+      "notes": "Stationary bootstrap: random starts and geometric block lengths,primarymean22,sensitivity11/44,3999draws. Numerator/denominator and eligible indicators use identical indices. The ETF panel is not pooled as independent observations. Slope panels have no latent-H intervals. Source: Section3.4 and AppendixD.8, Politis and Romano1994.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 33
+    },
+    {
+      "title": "Different checks address different mistakes",
+      "body": "Input checks compare recorded rows and file hashes. Calendar checks verify session lengths independently.\n\nA second implementation recalculates daily measurements. Separate code checks risk updates through a direct formula. Deliberately altered outputs must trigger failures.\n\nA further audit connects the paper’s printed numbers to their source outputs.",
+      "section": "4. Verification and conclusions",
+      "table": null,
+      "chart": null,
+      "caption": "These are computational checks. Independent human review remains a separate task.",
+      "notes": "A10independent900scalars,A11independent10584scalars/96overlaps,272generatedpaperfacts/263used,655selectedmathchecks. Numerical agreement does not certify truevariance,vendorsemantics,priority or everypossiblebug. Source: Section8,AppendixA,VERIFICATION.md. All67repositorytests passed before this lecture rewrite.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 34
+    },
+    {
+      "title": "The limits of the current evidence",
+      "body": "The source overlap is historical. Other funds currently contribute only one month each. The planned A13 extension will investigate broader coverage and has no result yet.\n\nThe filter is deliberately strict and the opening price sometimes uses a flagged approximation.\n\nOne persistent episode, dependent days and post-result policy sensitivity limit generalization. Neither source gives verified true volatility.",
+      "section": "4. Verification and conclusions",
+      "table": null,
+      "chart": null,
+      "caption": "The original longer forecast contest remains deferred. This paper completes a narrower case study.",
+      "notes": "No latent-H identification,universallybestgrid,profitability,newestimator oracademicpriorityclaim. The original1250dayforecastprotocol is not shortened. Validation/finalperiodsremainclosed. Source: Section7 and currentA13protocol.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 35
+    },
+    {
+      "title": "What this study contributes",
+      "body": "Earlier research already establishes measurement-induced apparent roughness and historical TAQ source differences.\n\nThis study documents a particular controlled source-information mechanism and follows it into a risk input. It then shows how a common cap can conceal state disagreement.\n\nIts contribution is a reproducible, qualified case study and a practical checking method.",
+      "section": "4. Verification and conclusions",
+      "table": null,
+      "chart": null,
+      "caption": "The paper distinguishes dataset-specific evidence from broader claims of originality.",
+      "notes": "Primary literature and source versions appear in the bibliography. Martin directed the research; Codex implemented and drafted it. Human comprehension/code review is not asserted complete. Source: Sections1,7–9 and AI disclosure.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 36
+    },
+    {
+      "title": "The conclusion",
+      "body": "An audit should check source information, the volatility measurement, the uncapped risk state and the capped investment input separately.\n\nAgreement at the final step can hide disagreement earlier.\n\nThe evidence supports this lesson in the studied historical sample. Broader replication is a further research step.",
+      "section": "4. Verification and conclusions",
+      "table": null,
+      "chart": null,
+      "caption": "The current paper is a complete computational draft for human review.",
+      "notes": "This is the central conclusion of the existing A08/A10/A11 paper. A13 is a separate fixed breadth extension and may strengthen,qualify or contradict it. No additional options surface is needed for this question. Source: Section9.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 37
+    },
+    {
+      "title": "A. Gaussian moments explain the RV/RQ formulas",
+      "body": "A log return is ln(new price / old price), where ln means the natural logarithm.\n\nAssume interval return rᵢ = √aᵢ Zᵢ, where aᵢ is its variance and Zᵢ has a standard normal distribution. In this illustrative model, increments are independent conditional on the variance path.\n\nE[Zᵢ²] = 1 and E[Zᵢ⁴] = 3 imply:\nE[RV] = Σaᵢ and E[RQ] = M Σaᵢ².\n\nThat explains the normalization RQ = (M/3)Σrᵢ⁴.",
+      "section": "Optional mathematical appendix",
+      "table": null,
+      "chart": null,
+      "caption": "E means expectation, Σ means sum, and M is the actual interval count.",
+      "notes": "The variance path must be deterministic or independent of price shocks for the finite-grid conditional Gaussian calculation given. This is stronger than general leverage models. The paper derives Var(RV|a)=2sum a_i² and the relative qhat diagnostic, whose constant-Gaussian expectation is2/(M+2), not2/M. Source: AppendixD.1–D.2, Barndorff-Nielsen and Shephard2002.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 38
+    },
+    {
+      "title": "B. A daily error floor changes a slope",
+      "body": "Write Yₜ = Xₜ + eₜ. X is hidden log variance, Y is its observed proxy and e is an independent measurement error with variance q.\n\nFor two distinct days, the expected squared change is:\nVᵧ(k) = Vₓ(k) + 2q.\n\nThe added term comes from error at both endpoints. It can make short-gap changes large relative to long-gap changes.",
+      "section": "Optional mathematical appendix",
+      "table": null,
+      "chart": null,
+      "caption": "The formula assumes iid centered errors independent of X. The paper also treats correlated errors.",
+      "notes": "V(k) denotes the expected squared increment across lagk. OUcovariancevexp(-kappa|tau|) gives V=2v(1-exp(-kappa tau)); the local half-log slope is kappa tau/[2(exp(kappa tau)-1)] and tends to one half near zero. Finite-bandOLS differs from a local derivative. Price-level noise has a different impact, E(noisyRV)=IV+2Momega². These are illustrative identities, not estimated market assumptions. Source: AppendixD.3–D.4.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 39
+    },
+    {
+      "title": "C. Why the cap can conceal a state difference",
+      "body": "Let s be estimated daily variance, A the annualization factor, v the volatility target and c the position cap.\n\nThe uncapped amount is u = v/√(As). The final amount is w = min(c,u), meaning the smaller of c and u.\n\nIf both proposals exceed c, both final amounts equal c even when their variance states differ.",
+      "section": "Optional mathematical appendix",
+      "table": null,
+      "chart": null,
+      "caption": "The ratio uᴸ/uᴹ = √(sᴹ/sᴸ) removes the common target and annualization factor.",
+      "notes": "The initializedEWMAexactconvolution,persistencehalf-life,trianglebound and capnonexpansion are derived stepbystep in AppendixD.6–D.7. The initialcoefficient differs fromlaterinnovations. Absoluteinfluencepotentialshares are not nonlinearportfoliolossattribution. No economicbacktest is implied.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 40
+    },
+    {
+      "title": "How to read the paper after this lecture",
+      "body": "Sections 1–2 explain the question and the data design. Section 3 defines the measurements and risk rule.\n\nSections 4–6 contain the simulation and historical findings. Sections 7–9 discuss limits, verification and the conclusion.\n\nAppendices A–C give checks and complete tables. Appendix D derives the mathematics. Appendix E explains reproduction.",
+      "section": "4. Verification and conclusions",
+      "table": null,
+      "chart": null,
+      "caption": "The repository supplies code and synthetic examples. Licensed observations remain excluded.",
+      "notes": "The paper source is paper/main.tex with theory.tex,references.tex,generatedtables/facts and vectorfigures. The lecture’s numerical charts use the checked claim map. Code execution without the licensed empirical observations can reproduce synthetic demonstrations, not the historical empirical findings. Human review remains open.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 41
+    },
+    {
+      "title": "Sources behind the study",
+      "body": "The paper cites rough-volatility research, measurement-error research and historical source comparisons.\n\nIts bibliography gives ten inspected primary references, exact versions and links. The slide notes identify the relevant paper sections and source runs.\n\nRepository: github.com/MartinValachy/RoughVolatilityResearch",
+      "section": "4. Verification and conclusions",
+      "table": null,
+      "chart": null,
+      "caption": "AI assistance and open human review are disclosed in the paper.",
+      "notes": "References: Gatheral/Jaisson/Rosenbaum;Cont/Das;Fukasawa/Takabatake/Westphal;Holden/Jacobsen;VOLARE authors;NYSE2014specification;highfrequencymaintainers;Politis/Romano;Bennedsen/Lunde/Pakkanen;Barndorff-Nielsen/Shephard. Exact bibliographicdetails are in paper/references.tex. The existing GitHubrepository is private; visibility is separate from scientificstatus.",
+      "sourceKeys": [],
+      "kind": "text",
+      "slide": 42
+    }
+  ]
+}

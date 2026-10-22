@@ -1,0 +1,111 @@
+{
+  "status": "passed_checks",
+  "config": {
+    "version": "A08-portfolio-v1",
+    "seed": 20261022,
+    "paths": 128,
+    "days": 504,
+    "fine_steps_per_day": 780,
+    "session_minutes": 390,
+    "models": [
+      "OU",
+      "Cauchy_H01",
+      "Cauchy_H03"
+    ],
+    "local_H": [
+      0.5,
+      0.1,
+      0.3
+    ],
+    "half_correlation_days": 22,
+    "cauchy_beta": 0.5,
+    "stationary_log_variance": 0.25,
+    "mean_daily_variance": 0.0001,
+    "sampling_minutes": [
+      1,
+      5,
+      15,
+      30
+    ],
+    "log_price_noise_sd": [
+      0.0,
+      0.0001,
+      0.0003
+    ],
+    "lag_bands": [
+      5,
+      10,
+      22
+    ],
+    "primary_lag_band": 10,
+    "production_allowed": false,
+    "classification": "Known-truth simulation sensitivity study; no latent empirical H inference"
+  },
+  "config_sha256": "1329c0d8fc5e4d00aa11006283fd79c9782a78e8ebf73ae05731fbb26481107d",
+  "code_sha256": "c31fb2454f61aa25e877340ab7c8acd4ce7e118586ce04bb230d962ed44e722d",
+  "runner_sha256": "5666060d101f6a5aeb039a9aa5c3c6f72ac5da5a15bef89d620532987d62e3f1",
+  "pilot": false,
+  "seconds": 88.06411059999982,
+  "covariance_checks": [
+    {
+      "model": "OU",
+      "status": "passed_checks",
+      "FFT_covariance_max_abs_error": 5.551115123125783e-17,
+      "dense_MC_max_error_over_variance": 0.003516320575878029,
+      "dense_paths": 12000,
+      "embedding": {
+        "m": 128,
+        "min_eigenvalue": 1.3036022039614181e-08,
+        "roundoff_tolerance": 3.1958672995429e-11
+      }
+    },
+    {
+      "model": "Cauchy_H01",
+      "status": "passed_checks",
+      "FFT_covariance_max_abs_error": 1.3877787807814457e-16,
+      "dense_MC_max_error_over_variance": 0.010472486155399419,
+      "dense_paths": 12000,
+      "embedding": {
+        "m": 128,
+        "min_eigenvalue": 0.02397671394809464,
+        "roundoff_tolerance": 2.6014990811796983e-11
+      }
+    },
+    {
+      "model": "Cauchy_H03",
+      "status": "passed_checks",
+      "FFT_covariance_max_abs_error": 1.1102230246251565e-16,
+      "dense_MC_max_error_over_variance": 0.007283920865173377,
+      "dense_paths": 12000,
+      "embedding": {
+        "m": 128,
+        "min_eigenvalue": 0.0005102281560898092,
+        "roundoff_tolerance": 3.126736436775666e-11
+      }
+    }
+  ],
+  "samplers": {
+    "OU": {
+      "sampler": "exact stationary OU recursion"
+    },
+    "Cauchy_H01": {
+      "m": 1048576,
+      "min_eigenvalue": 0.024048731484981545,
+      "roundoff_tolerance": 9.243530714089391e-08,
+      "sampler": "PSD circulant Gaussian embedding; no spectral truncation"
+    },
+    "Cauchy_H03": {
+      "m": 1048576,
+      "min_eigenvalue": 0.0005509977700057789,
+      "roundoff_tolerance": 5.797806027295205e-08,
+      "sampler": "PSD circulant Gaussian embedding; no spectral truncation"
+    }
+  },
+  "conditional_RV_expectation_max_error": 0.0019781347463863064,
+  "conditional_RV_expectation_tolerance": 0.025,
+  "path_rows": 13824,
+  "summary_rows": 108,
+  "empirical_data_read": false,
+  "qualification": "Trading-clock discretized Ito log-price experiment, fixed illustrative noise; finite-band H is descriptive, no latent-market inference.",
+  "run_id": "side_project_study_20261021T214152Z"
+}

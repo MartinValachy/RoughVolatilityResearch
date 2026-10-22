@@ -1,0 +1,20 @@
+{
+  "version": "A08-portfolio-v1",
+  "seed": 20261022,
+  "paths": 128,
+  "days": 504,
+  "fine_steps_per_day": 780,
+  "session_minutes": 390,
+  "models": ["OU", "Cauchy_H01", "Cauchy_H03"],
+  "local_H": [0.5, 0.1, 0.3],
+  "half_correlation_days": 22,
+  "cauchy_beta": 0.5,
+  "stationary_log_variance": 0.25,
+  "mean_daily_variance": 0.0001,
+  "sampling_minutes": [1, 5, 15, 30],
+  "log_price_noise_sd": [0.0, 0.0001, 0.0003],
+  "lag_bands": [5, 10, 22],
+  "primary_lag_band": 10,
+  "production_allowed": false,
+  "classification": "Known-truth simulation sensitivity study; no latent empirical H inference"
+}

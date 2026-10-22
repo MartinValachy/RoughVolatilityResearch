@@ -1,0 +1,47 @@
+{
+  "status": "passed_checks",
+  "input_symbol_days": 482,
+  "matched_input_records": 121467460,
+  "main_SPY_expected_days": 398,
+  "main_SPY_covered_days": 398,
+  "missing_main_dates": [],
+  "full_main_coverage": true,
+  "pilot": false,
+  "code_sha256": "89805a2348e51ababde929057592a42874a77ee61c87e8d304428abbf2484b0a",
+  "config_sha256": "c65dfb5435b2026b1e33d4fcdfd55fbbfac52b4366d119681dc7559cfd2af974",
+  "discovery_dates_excluded_from_primary_incidence": [
+    "2014-01-02",
+    "2014-07-03"
+  ],
+  "independent_source_measure_checks": "passed on WRDS before export; preserved in acquisition manifest",
+  "independent_outer_comparison_audit": {
+    "legacy_restore_modern_category_B": {
+      "no_material_difference": 2664,
+      "material_difference": 221,
+      "incomplete_grid": 7
+    },
+    "legacy_time__legacy_flags": {
+      "no_material_difference": 2398,
+      "material_difference": 487,
+      "incomplete_grid": 7
+    },
+    "legacy_time__millisecond_flags": {
+      "no_material_difference": 2762,
+      "material_difference": 123,
+      "incomplete_grid": 7
+    },
+    "millisecond_time__legacy_flags": {
+      "no_material_difference": 2474,
+      "material_difference": 411,
+      "incomplete_grid": 7
+    },
+    "millisecond_time__millisecond_flags": {
+      "no_material_difference": 2885,
+      "incomplete_grid": 7
+    }
+  },
+  "no_latent_H_or_profit_claim": true,
+  "published_online": false,
+  "sealed_observations_opened": false,
+  "run_id": "source_replication_analysis_20261022T014736Z"
+}

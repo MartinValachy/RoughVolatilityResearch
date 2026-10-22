@@ -1,1 +1,0 @@
-# COMPREHENSION_LOG.md

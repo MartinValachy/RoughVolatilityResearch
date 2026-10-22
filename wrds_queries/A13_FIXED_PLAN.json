@@ -1,0 +1,24 @@
+{
+  "calendar_sessions": 398,
+  "new_acquisition_dates": 377,
+  "panel_funds": 4,
+  "reused_January_pairs": 84,
+  "new_paired_symbol_days": 1508,
+  "total_paired_symbol_days": 1592,
+  "primary_eligible_dates_per_fund": 376,
+  "month_pilot_dates": 19,
+  "total_daily_case_grid_rows": 47760,
+  "code_sha256": "e4521a82ba0b03fceec99167999216a80c76146b871680010e4c4c30c02a1288",
+  "components": {
+    "original_engine_file_sha256": "1f0adbfdad39df7d53bc7f760bcf9b19eb55da9754e1c4730814ce62a522ad21",
+    "selected_measurement_definitions_sha256": "cccede362ea56341f294cc250e582cfa106e56d3dec8be099db02faffc492858",
+    "original_source_replication_file_sha256": "ec2666a2f43a745501a76849014c7b6a2b0b8ee8d5b645c6ab74763359e0c369",
+    "frozen_acquisition_class_sha256": "30888218f5d14dc298f697df2379fda553b2101d23a2dd2093e1961f58b02e0b",
+    "controller_sha256": "e0638f036611fc1bcf7cf971611cc14a968f84310805aee0e0662e6c5f1d7a59",
+    "protocol_file_sha256": "6496aa621ef01ce62a53ab0377406c8ff2f88f63c9747912247d18e330b974cf",
+    "config_file_sha256": "c46836e956ec8a6ec459812dd747b4ac9627000222b34fe209b3e8063625a402",
+    "config_canonical_sha256": "b3eb40015c40054e9f632ea977ff81df8bfa416a54d01854e4c1117a94dc98e6",
+    "calendar_canonical_sha256": "cdf3066d032552ece013a39b4155251462fdf02778911a75d2e07f1782438ffe"
+  },
+  "live_WRDS_execution_tested": false
+}

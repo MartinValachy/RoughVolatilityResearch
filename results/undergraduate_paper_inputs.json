@@ -1,0 +1,38 @@
+{
+  "run_id": "undergraduate_paper_inputs_20261022T120142Z",
+  "named_numerical_facts": 272,
+  "focused_figures": 6,
+  "source_inputs_sha256": {
+    "results/source_replication_incidence.csv": "e220853797e629cec5a7801ff3ed603bae49ba3998fbe662224d20b8812027de",
+    "results/source_replication_H.csv": "7e8172d85c025458ef9e7866d862a74813385106b8eaebcb4ef9dfab4113f432",
+    "results/source_replication_risk.csv": "b92139b67a8b2b8f4cd426c62653a693d35a5b661ad9a7b868e23939ec144237",
+    "results/source_replication_intervals.csv": "57f13dda57cc4ed46f8b86ead587adbd6cfc7869209a0021c4a25f6f6d7a663e",
+    "results/source_policy_policies.csv": "46ee6071e4b89a41d1f09d69d9ab256453cd517ebe8cd82cef457aad80d369e5",
+    "results/source_policy_states.csv": "3c77a8d514ae68e0c92a4d635250c775053915b46c4c9447f2fec388673b59ec",
+    "results/side_project/summary.csv": "414585d64e8af72f8a94d27ab0eed41e426f5bf54562126fbc5d526b9c1e2b87",
+    "results/source_policy_robustness.json": "7be2e4f6809f664ebf3fa77acd7a2b3674be7bf9701e4326e156c0abf37ade42",
+    "results/source_replication_analysis.json": "b4d859aa66ba2e775dd37ffac66a7acca13cbabc080f940970db1053bfb3ce85",
+    "results/source_result_check.json": "0a3bf8e3da620889a667924863d76c3d49a2b24b3cf1ce1c73e1425ee90adc8c",
+    "results/source_policy_check.json": "4de263c478932088c0675400c22e12406ea1eee514f3f5973d1d692ca9b6852e"
+  },
+  "generated_files_sha256": {
+    "generated/claims.json": "817db6b8b334ed2db5005b7b57f4ad09df6ec7e7fbf6da443459debd658bbdfc",
+    "generated/crossed_table.tex": "093591514304127f80c908a73c9aef1167f35de24be716e9328a5220aece56b8",
+    "generated/facts.tex": "bf9e16808a89907c8ac0f4e742b92a0dfde69513f6497b3f7e8906ec30694343",
+    "generated/grid_table.tex": "66f6940c65f0ce80ab47815e39f256792c26b4efa021055bbc252a354ec84ba2",
+    "generated/H_table.tex": "d6f9c840c3dc0a4b63789cc3f1e0d617cf01b50d979d8e0b2a45c36655ef7016",
+    "generated/policy_table.tex": "d6f120ae657730d51d3a108a1a6ce33dd3f70283b51a629651a3d8906d0eed3e",
+    "figures/cap_masking.pdf": "0efa435fd25b682e209c42d4b5290fc9aaa554940ecf1d7156923616e132a581",
+    "figures/cap_masking.png": "555847000137e54ed5784c0fee6ce6bbdf7de7bf9b76efaa7f70703f7132e839",
+    "figures/measurement.pdf": "6f65307cc5d6378ae983111bf8832005d19addd5f5ed59f7836d5ff75c6716b6",
+    "figures/measurement.png": "d1ce2772b00d4121e5d28183947c7ef88df909ab5dc0cb7fbde77cbf2ae2fbf5",
+    "figures/policies.pdf": "804284e08f42e36ba1b5534028167ba6f8467380d49678440754e54334a8b77b",
+    "figures/policies.png": "63a8b09f0af76879db70217d93486d1df247b64d69e6dfa88bb8aef287b3de7e",
+    "figures/synthetic.pdf": "e709f54fbd1cd384300485166e2aa12ed69e9aeba0128a63bb4a76869b2fba5e",
+    "figures/synthetic.png": "40a436ef947336012d56fd70cbe4993a9be838a81fc1db11330fdf2b0dccf94e",
+    "figures/weight_paths.pdf": "6c6a62a12322136afe09b9ac1479940b728421911fcd794fac9c177d83fca947",
+    "figures/weight_paths.png": "bec9ea2c9ea13a71ad9b0aeac3ac1c674ae718bb3c846343af662b3914d391fc",
+    "figures/workflow.pdf": "afe03feb270c1eaede04beefb19fc551e261b779b104b1458e95dcc48761d4ab",
+    "figures/workflow.png": "3cd699a5826582de0f38d9fc714951aefd53280894c1ed4d4fccc62b9098d14b"
+  }
+}

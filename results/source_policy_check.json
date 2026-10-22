@@ -1,0 +1,15 @@
+{
+  "status": "passed_checks",
+  "analysis_run_id": "source_policy_robustness_20261022T032458Z",
+  "scalar_checks": 10584,
+  "original_A10_overlap_scalars": 96,
+  "planted_policy_alteration_detected": true,
+  "arithmetic": "csv/math/statistics, original paired inputs, direct state convolution and shock sums; no analysis imports",
+  "code_sha256": "40cced70d2a85fc6d4bde984f6e93ee062c4a14bb78e4a724e3002362223d286",
+  "source_run_id": "source_replication_analysis_20261022T014736Z",
+  "analysis_code_sha256": "118a0e0493086d80b8c18a961a9f7ebaeef1986e7aa42e88c522d13d3e300195",
+  "classification": "Post-result descriptive sensitivity; all policies reported, no model selection or new validation",
+  "sealed_observations_opened": false,
+  "published_online": false,
+  "run_id": "source_policy_check_20261022T032503Z"
+}

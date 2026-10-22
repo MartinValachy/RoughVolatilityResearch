@@ -1,0 +1,17 @@
+{
+  "status": "passed_checks",
+  "synthetic_only": true,
+  "planted_findings_detected": 5,
+  "no_automatic_rescaling": true,
+  "source_equivalence_certified": false,
+  "counts": {
+    "no_material_difference": 75,
+    "material_difference": 2,
+    "session_count_disagreement": 1,
+    "missing_candidate": 1,
+    "incomplete_grid": 1
+  },
+  "code_sha256": "4f283ce5a32ceba8d80c6a10f486864a0c5f21d95364b30d3864766223ff226a",
+  "audit_module_sha256": "0145eba62609d990e45f2c55010cf4ddd7b6eb9eb733259c1dfd8b5d42f491bf",
+  "run_id": "source_audit_demo_20261022T141800Z"
+}
