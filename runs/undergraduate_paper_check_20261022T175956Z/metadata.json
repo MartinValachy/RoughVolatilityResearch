@@ -1,0 +1,20 @@
+{
+  "status": "passed_checks",
+  "paper_input_run_id": "undergraduate_paper_inputs_20261022T120142Z",
+  "named_facts_checked": 272,
+  "unique_facts_referenced": 263,
+  "all_printed_macros_match_sources": true,
+  "planted_altered_fact_rejected": true,
+  "bibliography_entries": 10,
+  "citations_resolve": true,
+  "tex_references_resolve": true,
+  "code_sha256": "5067b17f65959dfd3daefac9bb618cc1f966cbcf6a0f6bc4a5ad238ed0b1c906",
+  "paper_source_sha256": "4ab1957944879a0c703dcbddcc65ce61a49867866fbb147ef63f857ef3acbeca",
+  "theory_source_sha256": "8974adb5929da3bc28989205752c9d2e4fe0656883b8afd66b3bdc20bbb08759",
+  "source_check": "csv/json/math independent of pandas fact preparation",
+  "human_peer_review_completed": false,
+  "published_online": false,
+  "sealed_data_opened": false,
+  "run_id": "undergraduate_paper_check_20261022T175956Z",
+  "captured_utc": "2026-10-22T17:59:56.766823+00:00"
+}

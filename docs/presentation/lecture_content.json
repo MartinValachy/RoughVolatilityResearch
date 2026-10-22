@@ -8,7 +8,7 @@
       "table": null,
       "chart": null,
       "caption": "Martin Valachy\nThe current working-paper study, explained step by step",
-      "notes": "This lecture explains the paper without assuming finance or university mathematics. It presents the current A08/A10/A11 case study. A separately planned A13 breadth extension has no results yet. Martin set the project direction. Codex implemented the pipeline and draft; independent human review remains open.",
+      "notes": "This lecture explains the integrated A08/A10/A11/A13 historical case study without assuming finance or university mathematics. Martin directed the project; Codex implemented and drafted it. Independent human review remains open.",
       "sourceKeys": [],
       "kind": "cover",
       "slide": 1
@@ -826,6 +826,277 @@
       "slide": 32
     },
     {
+      "title": "The follow-up expands the same historical calendar",
+      "body": "Four additional funds now cover the same 398 trading sessions as SPY, from January 2013 through July 2014. Their trading symbols are QQQ, IWM, EFA and TLT.\n\nThe study contains 1,990 distinct fund-days. The extension adds 1,508 pairs and reuses 84 January pairs already examined.\n\nThe plan preceded the extra download, but followed the SPY finding. It provides broader asset coverage within the same historical period.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": null,
+      "caption": "One fund-day means one fund on one exchange session, compared across both sources.",
+      "notes": "A13 is a fixed exploratory follow-up, not a previously untouched time period. All four selected ETFs and all six grids are retained. January is excluded from primary incidence but retained in full-calendar slopes and EWMA histories. Source: Section6.1,AppendixF. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime.",
+      "sourceKeys": [
+        "B_sessions",
+        "B_unionPairs",
+        "B_newPairs",
+        "B_reusePairs"
+      ],
+      "kind": "text",
+      "slide": 33
+    },
+    {
+      "title": "Measurement discrepancies remain across funds",
+      "body": "Cells show dates exceeding the fixed difference threshold / dates with a valid source pair. RV uses a factor of 1.1; RQ uses a factor of 2. Both include reciprocal lower limits.",
+      "section": "3. Results and their interpretation",
+      "table": [
+        [
+          "Fund",
+          "1-min RV",
+          "1-min RQ",
+          "5-min RV",
+          "5-min RQ"
+        ],
+        [
+          "QQQ",
+          "46 / 376",
+          "34 / 376",
+          "22 / 376",
+          "13 / 376"
+        ],
+        [
+          "IWM",
+          "61 / 376",
+          "48 / 376",
+          "17 / 376",
+          "8 / 376"
+        ],
+        [
+          "EFA",
+          "59 / 376",
+          "19 / 376",
+          "35 / 376",
+          "2 / 376"
+        ],
+        [
+          "TLT",
+          "32 / 366",
+          "18 / 366",
+          "32 / 376",
+          "3 / 376"
+        ]
+      ],
+      "chart": null,
+      "caption": "January 2014 and discovery dates are excluded. TLT has ten missing one-minute pairs.",
+      "notes": "These are primary legacy/modern incidence counts. Eligible376perfund; TLT1mvalid366. Every fixed construction/grid is in AppendixF, including zeros. Missingness is not agreement. Original SPY incidence uses396dates, so primary denominators differ. Source: Section6.1 and AppendixF. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime.",
+      "sourceKeys": [
+        "B_QQQ60LRVN",
+        "B_QQQ60LRVD",
+        "B_QQQ60LRQN",
+        "B_QQQ60LRQD",
+        "B_QQQ300LRVN",
+        "B_QQQ300LRVD",
+        "B_QQQ300LRQN",
+        "B_QQQ300LRQD",
+        "B_IWM60LRVN",
+        "B_IWM60LRVD",
+        "B_IWM60LRQN",
+        "B_IWM60LRQD",
+        "B_IWM300LRVN",
+        "B_IWM300LRVD",
+        "B_IWM300LRQN",
+        "B_IWM300LRQD",
+        "B_EFA60LRVN",
+        "B_EFA60LRVD",
+        "B_EFA60LRQN",
+        "B_EFA60LRQD",
+        "B_EFA300LRVN",
+        "B_EFA300LRVD",
+        "B_EFA300LRQN",
+        "B_EFA300LRQD",
+        "B_TLT60LRVN",
+        "B_TLT60LRVD",
+        "B_TLT60LRQN",
+        "B_TLT60LRQD",
+        "B_TLT300LRVN",
+        "B_TLT300LRVD",
+        "B_TLT300LRQN",
+        "B_TLT300LRQD"
+      ],
+      "kind": "table",
+      "slide": 34
+    },
+    {
+      "title": "Five minutes does not remove the QQQ position gap",
+      "body": "The chart counts evaluation origins where source choice changes the capped position by at least 5 percentage points.\n\nEach fund has 272 origins after the same warmup. QQQ has 50; SPY has 0.\n\nAn origin is a date when the rule proposes the next position. Consecutive origins can reflect the same persistent difference.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "EFA",
+          "TLT"
+        ],
+        "series": [
+          {
+            "name": "Origins with gap ≥5pp",
+            "keys": [
+              "large300",
+              "B_QQQ300large",
+              "B_IWM300large",
+              "B_EFA300large",
+              "B_TLT300large"
+            ],
+            "values": [
+              0.0,
+              50.0,
+              9.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "yTitle": "Origins, out of 272",
+        "min": 0,
+        "max": 60,
+        "majorUnit": 10
+      },
+      "caption": "All five funds use five-minute RV and the original fixed risk rule. These are proposed positions.",
+      "notes": "Full398sessionhistory; lambda.94,target.10,cap1,annualization252,warmup126. QQQ50,IWM9,EFA0,TLT0,SPY0. Counts do not measure losses, independent shocks, or future probabilities. Source: Section6.1,Table3 and A10 original policy. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [
+        "origins",
+        "large300",
+        "B_QQQ300large",
+        "B_IWM300large",
+        "B_EFA300large",
+        "B_TLT300large"
+      ],
+      "kind": "chart",
+      "slide": 35
+    },
+    {
+      "title": "Average capped gaps differ across funds",
+      "body": "Mean absolute source difference in the proposed position, using the same fixed rule and full calendar. pp means percentage points.",
+      "section": "3. Results and their interpretation",
+      "table": [
+        [
+          "Fund",
+          "1-min mean gap, pp",
+          "5-min mean gap, pp"
+        ],
+        [
+          "SPY",
+          "2.632",
+          "0.032"
+        ],
+        [
+          "QQQ",
+          "5.8531",
+          "1.8268"
+        ],
+        [
+          "IWM",
+          "7.7539",
+          "1.2386"
+        ],
+        [
+          "EFA",
+          "0.0109",
+          "0.0101"
+        ],
+        [
+          "TLT",
+          "withheld",
+          "0.0157"
+        ]
+      ],
+      "chart": null,
+      "caption": "“Withheld” preserves an incomplete TLT history; it does not mean a zero difference.",
+      "notes": "All usable histories have272origins. Missing TLT1m values prevent the specified complete-calendar EWMA; do not compress time or fill missing observations. Fixed126sessionwarmup and initializedstate. These are daily policy inputs rather than returns. Source: Section6.1,Table3. A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime.",
+      "sourceKeys": [
+        "gap60",
+        "gap300",
+        "B_QQQ60capped",
+        "B_QQQ300capped",
+        "B_IWM60capped",
+        "B_IWM300capped",
+        "B_EFA60capped",
+        "B_EFA300capped",
+        "B_TLT60capped",
+        "B_TLT300capped"
+      ],
+      "kind": "table",
+      "slide": 36
+    },
+    {
+      "title": "EFA shows cap masking even at one minute",
+      "body": "EFA’s mean absolute position gap falls from 3.2885 percentage points before the cap to 0.0109 after it.\n\nThat is 99.67% attenuation.\n\nA small final gap can therefore coexist with a materially larger disagreement before the common limit.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": {
+        "type": "bar",
+        "categories": [
+          "Before cap",
+          "After cap"
+        ],
+        "series": [
+          {
+            "name": "Mean absolute position gap",
+            "keys": [
+              "B_EFA60uncapped",
+              "B_EFA60capped"
+            ],
+            "values": [
+              3.288490247839,
+              0.01085413751079
+            ]
+          }
+        ],
+        "yTitle": "Gap, percentage points",
+        "min": 0,
+        "max": 4,
+        "format": "0.000"
+      },
+      "caption": "Same one-minute inputs and rule; only the cap changes. The gap is not a return difference.",
+      "notes": "Attenuation is1 minus capped mean gap/uncapped mean gap, using unrounded values. This extends the original SPYfive-minute masking example to another fund/grid. Reference is not truevariance. Source: Section6.1 and Figure8. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime. Chart workbook values are rounded to 14 significant digits; the checked paper claim map retains the full source values.",
+      "sourceKeys": [
+        "B_EFA60uncapped",
+        "B_EFA60capped",
+        "B_EFA60attenuation"
+      ],
+      "kind": "chart",
+      "slide": 37
+    },
+    {
+      "title": "The SPY condition mechanism does not explain every fund",
+      "body": "Restoring modern category-B information removes much of SPY’s original one-minute discrepancy.\n\nFor QQQ, the same restoration leaves 46 material RV dates. Using all modern conditions with legacy time leaves 4.\n\nThis narrows the source-information explanation, while showing that a single category repair does not work uniformly.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": null,
+      "caption": "Category B has different documented meanings across reporting tapes. Restoration is a diagnostic.",
+      "notes": "QQQ1mlegacy46/376;Brestore46/376;modernconditionslegacytime4/376. No isolated economic cause or universal treatment of B-coded trades follows. All five crossed constructions are retained. Source: Section2.2 and6.1,AppendixF,NYSE2014condition specification. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime.",
+      "sourceKeys": [
+        "B_QQQ60BRVN",
+        "B_QQQ60CRVN"
+      ],
+      "kind": "text",
+      "slide": 38
+    },
+    {
+      "title": "The calendar stays fixed when observations are missing",
+      "body": "TLT has 10 missing one-minute source pairs. Dropping those days would make the next observed day look like the next trading day.\n\nThat would change the risk rule’s memory and the meaning of a lag. The study instead withholds the incomplete one-minute risk comparison.\n\nDescriptive slope calculations retain the calendar and report how many valid lag endpoints remain.",
+      "section": "3. Results and their interpretation",
+      "table": null,
+      "chart": null,
+      "caption": "An unavailable result carries information about the pipeline’s limits.",
+      "notes": "Incidence denominator366/376,fullhistoryincomplete. No interpolation, carry-forward of dailyRV or calendarcompression. Five-minuteTLThistoryiscomplete. Htablesincludeendpointcountsandcommonendpointcontrasts. Source: Section3.2,6.1,AppendixF. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime.",
+      "sourceKeys": [
+        "B_TLT60missing"
+      ],
+      "kind": "text",
+      "slide": 39
+    },
+    {
       "title": "Uncertainty must respect related days",
       "body": "Adjacent days can share market conditions and a persistent source effect. Treating every date as independent can overstate the amount of evidence.\n\nThe paper resamples blocks of dates, keeping each source pair together. It recalculates the discrepancy fraction for each resample.\n\nThese intervals assume that the overall behavior is reasonably stable and that dependence weakens over time in this historical window.",
       "section": "4. Verification and conclusions",
@@ -835,7 +1106,7 @@
       "notes": "Stationary bootstrap: random starts and geometric block lengths,primarymean22,sensitivity11/44,3999draws. Numerator/denominator and eligible indicators use identical indices. The ETF panel is not pooled as independent observations. Slope panels have no latent-H intervals. Source: Section3.4 and AppendixD.8, Politis and Romano1994.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 33
+      "slide": 40
     },
     {
       "title": "Different checks address different mistakes",
@@ -844,22 +1115,22 @@
       "table": null,
       "chart": null,
       "caption": "These are computational checks. Independent human review remains a separate task.",
-      "notes": "A10independent900scalars,A11independent10584scalars/96overlaps,272generatedpaperfacts/263used,655selectedmathchecks. Numerical agreement does not certify truevariance,vendorsemantics,priority or everypossiblebug. Source: Section8,AppendixA,VERIFICATION.md. All67repositorytests passed before this lecture rewrite.",
+      "notes": "A10independent900scalars;A11independent10584scalars/96overlaps;A13independent6445scalars. Paper maps272originaland642breadthfacts;655selectedmathchecks. Agreement does not certify truevariance,vendorsemantics,priority or everypossiblebug. Source: Section8,AppendixA,VERIFICATION.md. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 34
+      "slide": 41
     },
     {
       "title": "The limits of the current evidence",
-      "body": "The source overlap is historical. Other funds currently contribute only one month each. The planned A13 extension will investigate broader coverage and has no result yet.\n\nThe filter is deliberately strict and the opening price sometimes uses a flagged approximation.\n\nOne persistent episode, dependent days and post-result policy sensitivity limit generalization. Neither source gives verified true volatility.",
+      "body": "The expanded study covers five funds over one historical source-overlap period. More assets do not provide a new market regime.\n\nThe filter is deliberately strict and the opening price sometimes uses a flagged approximation. Neither source gives verified true volatility.\n\nRelated days and post-result follow-ups limit generalization. Validation from 2017–2019 and the final period from 2020 remain closed.",
       "section": "4. Verification and conclusions",
       "table": null,
       "chart": null,
       "caption": "The original longer forecast contest remains deferred. This paper completes a narrower case study.",
-      "notes": "No latent-H identification,universallybestgrid,profitability,newestimator oracademicpriorityclaim. The original1250dayforecastprotocol is not shortened. Validation/finalperiodsremainclosed. Source: Section7 and currentA13protocol.",
+      "notes": "No latent-H identification, universally best grid, trading profit, new estimator or academic priority claim. The original1250dayforecastcontest remains deferred. A13precededadditionalacquisitionbutfollowedSPYresults. Source: Section7. A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 35
+      "slide": 42
     },
     {
       "title": "What this study contributes",
@@ -871,19 +1142,19 @@
       "notes": "Primary literature and source versions appear in the bibliography. Martin directed the research; Codex implemented and drafted it. Human comprehension/code review is not asserted complete. Source: Sections1,7–9 and AI disclosure.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 36
+      "slide": 43
     },
     {
       "title": "The conclusion",
-      "body": "An audit should check source information, the volatility measurement, the uncapped risk state and the capped investment input separately.\n\nAgreement at the final step can hide disagreement earlier.\n\nThe evidence supports this lesson in the studied historical sample. Broader replication is a further research step.",
+      "body": "An audit should check source information, the volatility measurement, the uncapped risk state and the capped investment input separately.\n\nBroader asset coverage qualifies the SPY result: five-minute sampling leaves a substantial QQQ position discrepancy, while the cap conceals most of EFA’s one-minute gap.\n\nThe practical lesson is to check each step and retain the full comparison, including missing results.",
       "section": "4. Verification and conclusions",
       "table": null,
       "chart": null,
       "caption": "The current paper is a complete computational draft for human review.",
-      "notes": "This is the central conclusion of the existing A08/A10/A11 paper. A13 is a separate fixed breadth extension and may strengthen,qualify or contradict it. No additional options surface is needed for this question. Source: Section9.",
+      "notes": "Integrated A08/A10/A11/A13 conclusion. Useful historical case study, without a new-estimator, trading-performance or untouched-regime claim. No options surface is needed for this question. Source: Section9.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 37
+      "slide": 44
     },
     {
       "title": "A. Gaussian moments explain the RV/RQ formulas",
@@ -895,7 +1166,7 @@
       "notes": "The variance path must be deterministic or independent of price shocks for the finite-grid conditional Gaussian calculation given. This is stronger than general leverage models. The paper derives Var(RV|a)=2sum a_i² and the relative qhat diagnostic, whose constant-Gaussian expectation is2/(M+2), not2/M. Source: AppendixD.1–D.2, Barndorff-Nielsen and Shephard2002.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 38
+      "slide": 45
     },
     {
       "title": "B. A daily error floor changes a slope",
@@ -907,7 +1178,7 @@
       "notes": "V(k) denotes the expected squared increment across lagk. OUcovariancevexp(-kappa|tau|) gives V=2v(1-exp(-kappa tau)); the local half-log slope is kappa tau/[2(exp(kappa tau)-1)] and tends to one half near zero. Finite-bandOLS differs from a local derivative. Price-level noise has a different impact, E(noisyRV)=IV+2Momega². These are illustrative identities, not estimated market assumptions. Source: AppendixD.3–D.4.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 39
+      "slide": 46
     },
     {
       "title": "C. Why the cap can conceal a state difference",
@@ -919,11 +1190,11 @@
       "notes": "The initializedEWMAexactconvolution,persistencehalf-life,trianglebound and capnonexpansion are derived stepbystep in AppendixD.6–D.7. The initialcoefficient differs fromlaterinnovations. Absoluteinfluencepotentialshares are not nonlinearportfoliolossattribution. No economicbacktest is implied.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 40
+      "slide": 47
     },
     {
       "title": "How to read the paper after this lecture",
-      "body": "Sections 1–2 explain the question and the data design. Section 3 defines the measurements and risk rule.\n\nSections 4–6 contain the simulation and historical findings. Sections 7–9 discuss limits, verification and the conclusion.\n\nAppendices A–C give checks and complete tables. Appendix D derives the mathematics. Appendix E explains reproduction.",
+      "body": "Sections 1–2 explain the question and data design. Section 3 defines the measurements and risk rule.\n\nSections 4–6 contain simulation and historical findings, including the four-fund follow-up. Sections 7–9 give limits, verification and conclusions.\n\nAppendices A–C give checks and SPY tables. D derives the mathematics, E explains reproduction, and F gives the complete follow-up counts and slope context.",
       "section": "4. Verification and conclusions",
       "table": null,
       "chart": null,
@@ -931,7 +1202,7 @@
       "notes": "The paper source is paper/main.tex with theory.tex,references.tex,generatedtables/facts and vectorfigures. The lecture’s numerical charts use the checked claim map. Code execution without the licensed empirical observations can reproduce synthetic demonstrations, not the historical empirical findings. Human review remains open.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 41
+      "slide": 48
     },
     {
       "title": "Sources behind the study",
@@ -943,7 +1214,7 @@
       "notes": "References: Gatheral/Jaisson/Rosenbaum;Cont/Das;Fukasawa/Takabatake/Westphal;Holden/Jacobsen;VOLARE authors;NYSE2014specification;highfrequencymaintainers;Politis/Romano;Bennedsen/Lunde/Pakkanen;Barndorff-Nielsen/Shephard. Exact bibliographicdetails are in paper/references.tex. The existing GitHubrepository is private; visibility is separate from scientificstatus.",
       "sourceKeys": [],
       "kind": "text",
-      "slide": 42
+      "slide": 49
     }
   ]
 }

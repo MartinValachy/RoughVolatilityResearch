@@ -1,0 +1,16 @@
+{
+  "status": "passed_checks",
+  "named_facts_checked": 642,
+  "unique_facts_referenced": 635,
+  "planted_altered_fact_rejected": true,
+  "source_check": "csv/json/math independent of pandas preparation",
+  "code_sha256": "7cdfdcba345692a9f929bdb74b83fbca16956bb61c31f40dbd9c6caa24c5da2c",
+  "paper_source_sha256": {
+    "main.tex": "4ab1957944879a0c703dcbddcc65ce61a49867866fbb147ef63f857ef3acbeca",
+    "breadth.tex": "580ff9e657d10760cbc4a43543751f502b9654c78335e3d1d0bbbd3dc7f2a333",
+    "breadth_appendix.tex": "8acce2575587be3f73cf5512f72d2794f652b5b8982b062413fc96644885e9fd"
+  },
+  "input_run": "breadth_paper_inputs_20261022T180205Z",
+  "run_id": "breadth_paper_check_20261022T180206Z",
+  "captured_utc": "2026-10-22T18:02:06.404016+00:00"
+}

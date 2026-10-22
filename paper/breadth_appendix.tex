@@ -1,0 +1,27 @@
+\clearpage
+\section{Complete A13 primary counts and slope context}\label{app:breadth}
+This appendix retains every fund, grid and construction. ``Time only'' means modern time with legacy flags; ``Cond. only'' means legacy time with modern flags. B restoration is a diagnostic, not a production rule. Every incidence entry is material/valid eligible pairs. The primary eligible calendar has \BF{eligible} dates per fund; valid denominators can be smaller. January 2014 is previously observed and is excluded here, together with the fixed discovery dates. Missingness is not classified as agreement.
+
+The frozen design is \nolinkurl{protocol/A13_ETF_BREADTH.md}, with configuration \nolinkurl{configs/etf_breadth.json}. Its provenance anchors are:\\
+\textbf{Export check} \RunID{etf_breadth_export_verified_20261022T144522Z}.\\
+\textbf{Analysis} \RunID{etf_breadth_analysis_20261022T144854Z}.\\
+\textbf{Independent results} \RunID{etf_breadth_independent_check_20261022T145028Z}.
+
+\begin{table}[htbp]\centering\small
+\caption{Complete A13 RV primary incidence. Materiality is an absolute log ratio above $\log(1.1)$, equivalently a ratio outside $[1/1.1,1.1]$. Modern/reference comparisons have zero material dates but can have missing grids.}
+\input{generated/breadth_rv_table.tex}
+\end{table}
+
+\clearpage
+\begin{table}[htbp]\centering\small
+\caption{Complete A13 RQ primary incidence. Materiality is an absolute log ratio above $\log(2)$, with reciprocal lower boundary. The larger threshold and fourth-power units differ from RV; these counts do not estimate a latent-noise distribution.}
+\input{generated/breadth_rq_table.tex}
+\end{table}
+
+\clearpage
+\begin{table}[htbp]\centering\small
+\caption{A13 descriptive H-tilde over lags 1--10 for all fixed constructions/grids. Full \BF{sessions}-session calendar including previously seen January/discovery dates. Missing values retain calendar endpoints, so comparisons may have different endpoint support; the machine-readable H table also gives common-endpoint contrasts and all lag counts. No latent-H confidence interval is implied.}
+\input{generated/breadth_h_table.tex}
+\end{table}
+
+The complete supplementary tables are \nolinkurl{results/etf_breadth_incidence.csv}, \nolinkurl{results/etf_breadth_H.csv}, \nolinkurl{results/etf_breadth_risk.csv} and \nolinkurl{results/etf_breadth_intervals.csv}. They include bands 1--5 and 1--22, the original fixed risk rule for all constructions/grids, and all registered mean-block 22/11/44 intervals. These tables are aggregate research summaries; licensed daily observations are excluded. A13 follows the original result and is not untouched validation. The original A11 policy grid remains explicitly post-result sensitivity; no new preferred policy is selected from this extension.

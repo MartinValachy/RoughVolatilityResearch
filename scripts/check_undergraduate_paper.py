@@ -53,8 +53,9 @@ def check():
     else:raise AssertionError('Planted altered paper fact not rejected')
     macros=(paper/'generated/facts.tex').read_text(encoding='utf-8')
     for f in facts:assert '\\csname fact@'+f['key']+'\\endcsname{'+f['display']+'}' in macros
-    content='\n'.join((paper/name).read_text(encoding='utf-8') for name in ['main.tex','theory.tex'])
-    sources=[paper/'main.tex',paper/'theory.tex']+list((paper/'generated').glob('*_table.tex'))
+    narrative=['main.tex','theory.tex']+[name for name in ['breadth.tex','breadth_appendix.tex'] if (paper/name).exists()]
+    content='\n'.join((paper/name).read_text(encoding='utf-8') for name in narrative)
+    sources=[paper/name for name in narrative]+list((paper/'generated').glob('*_table.tex'))
     refs=set(re.findall(r'\\Fact\{([^}]+)\}','\n'.join(p.read_text(encoding='utf-8') for p in sources)))
     keys={f['key'] for f in facts}
     assert refs<=keys,refs-keys

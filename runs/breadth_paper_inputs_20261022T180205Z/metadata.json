@@ -1,0 +1,29 @@
+{
+  "status": "prepared",
+  "analysis_run": "etf_breadth_analysis_20261022T144854Z",
+  "independent_run": "etf_breadth_independent_check_20261022T145028Z",
+  "named_facts": 642,
+  "source_inputs_sha256": {
+    "results/etf_breadth_analysis.json": "f7bfc204791f63a908d2cd1b2cf269257274815a07576e9208ad4066de26a255",
+    "results/etf_breadth_independent_check.json": "b182adc0f9ba2b00b10028c370701370dc80729c2a312694976a635d5f91bc42",
+    "results/etf_breadth_export_verified.json": "3427981af7f119a4303360298ccfd12e2eb0d591a0e0fb6a818da5db9b162279",
+    "results/etf_breadth_incidence.csv": "0ff7d2c0125f905488fa28a31973a49dd764bfc1c7b97ad757d9962a27edc234",
+    "results/etf_breadth_H.csv": "c153d20a19efe7f7981ffa952c0806192b067249ea9a971c1cdcff7cfc139cf0",
+    "results/etf_breadth_risk.csv": "535e6cec76370625892df0c3eaf512a84866a2d7e645d56af623b7757f226a42"
+  },
+  "generated_files_sha256": {
+    "generated/breadth_claims.json": "9de9a6bfababb44547fc41688a2a3467e54a655679d979779613050c0e1713c7",
+    "generated/breadth_facts.tex": "7d0ba8da982d9ad449e01be997441e687d20172fc22e9380764324f50910299a",
+    "generated/breadth_h_table.tex": "63c74ec57a171ed0701102f49ea59af9394d3244a081125b8520d96e88d57f48",
+    "generated/breadth_risk_table.tex": "4aed9b78348e95b6ca85f32b9c167a2a40f26126e38e575c96a16b4fbe8444a7",
+    "generated/breadth_rq_table.tex": "06345e0598664ba941e248116786ce941e24c38603dd315db34927a57afe2a1e",
+    "generated/breadth_rv_table.tex": "33c3508f98487c052fb47c0ce690e512e965210aff5560be8dc60da9160a27a7",
+    "figures/breadth_cap_comparison.pdf": "c40d313bcfb907d0f479d12d4af704e5d2a0f75755fa6ca4c417cfaa3c6c1601",
+    "figures/breadth_cap_comparison.png": "66b62a6c5aee58eb6da7705a7e267e2f31df78fbca624690b015d62339a16b59",
+    "figures/breadth_incidence_rv.pdf": "81911771c9eb251574195acf139beec6bbc6cd0a4cd02730cb501336a6da1b36",
+    "figures/breadth_incidence_rv.png": "45cf62aa455a78412a07cb24e224820c7f0397b6d278873aeb18063b88491abb"
+  },
+  "code_sha256": "904b7cf3629eb191a9b55a39c72cb399f8860b01e118921f0395855190e651c3",
+  "run_id": "breadth_paper_inputs_20261022T180205Z",
+  "captured_utc": "2026-10-22T18:02:05.915095+00:00"
+}

@@ -8,12 +8,12 @@
   "bibliography_entries": 10,
   "citations_resolve": true,
   "tex_references_resolve": true,
-  "code_sha256": "98f207045f7335e474fc3b626bae2be32137f2942d2b43eb174a54bb7aeeefc5",
-  "paper_source_sha256": "60838f917cee4abbbc802bf127f9927665d0f632e31bf31530216a55102e206b",
+  "code_sha256": "5067b17f65959dfd3daefac9bb618cc1f966cbcf6a0f6bc4a5ad238ed0b1c906",
+  "paper_source_sha256": "4ab1957944879a0c703dcbddcc65ce61a49867866fbb147ef63f857ef3acbeca",
   "theory_source_sha256": "8974adb5929da3bc28989205752c9d2e4fe0656883b8afd66b3bdc20bbb08759",
   "source_check": "csv/json/math independent of pandas fact preparation",
   "human_peer_review_completed": false,
   "published_online": false,
   "sealed_data_opened": false,
-  "run_id": "undergraduate_paper_check_20261022T141720Z"
+  "run_id": "undergraduate_paper_check_20261022T175956Z"
 }

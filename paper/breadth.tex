@@ -1,0 +1,27 @@
+\subsection{Broader asset coverage qualifies the SPY result}\label{sec:breadth}
+The fixed A13 follow-up extends QQQ, IWM, EFA and TLT to the same \BF{sessions}-session calendar. It adds \BF{newPairs} source-paired fund-days and verifies/reuses the \BF{reusePairs} January observations already seen in A10, yielding \BF{pairs} ETF pairs. Together with SPY, the study now contains \BF{unionPairs} distinct fund-days; the reused January panel is counted once. This design was frozen before the additional acquisition, after the SPY result was known. It is a follow-up exploratory breadth study, not untouched chronological validation.
+
+Primary ETF incidence excludes the already observed January 2014 panel and both fixed discovery dates. This leaves \BF{eligible} eligible sessions per fund before grid incompleteness. Full-calendar slopes and initialized EWMA histories retain January and the discovery dates to preserve spacing and state history. The same paired resampled date indices are shared across all funds, constructions and grids; assets are not treated as independent experiments. Appendix~\ref{app:breadth} reports every primary construction/grid count and its valid denominator. All three slope bands, all fixed-risk summaries and all block-length intervals are supplied as machine-readable supplements.
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{figures/breadth_incidence_rv.pdf}
+\caption{A13 legacy/modern RV incidence across every fixed fund and grid. Cells show material dates over valid eligible pairs; color is their fraction on a common zero-to-one scale. The threshold is the same factor 1.1 and its reciprocal. January 2014 and the explicit discovery dates are excluded. Missing pairs never become agreement; the reference is not verified true variance.}\label{fig:breadth-incidence}
+\end{figure}
+
+Table~\ref{tab:breadth-risk} changes the practical interpretation. At five minutes, QQQ has \BF{QQQ300large} of \BF{QQQ300origins} dependent origins above the fixed 5pp gap threshold, whereas the original SPY policy has \Fact{large300}. The QQQ mean capped gap is \BF{QQQ300capped}pp, against \BF{QQQ300uncapped}pp before the cap. Both funds use the same calendar, initialization, warmup and policy. The SPY finding therefore cannot support a general claim that five-minute sampling makes this source issue negligible. These comparisons concern proposed risk inputs, not realized returns or a superior trading strategy.
+
+The opposite diagnostic problem appears in EFA. Its one-minute mean uncapped gap is \BF{EFA60uncapped}pp, but the capped gap is only \BF{EFA60capped}pp: \BF{EFA60attenuation}\% attenuation. A near-zero constrained gap can coexist with a nonzero underlying proposal gap. IWM shows a larger one-minute capped discrepancy and much less cap attenuation, while TLT's one-minute full-history risk calculation is withheld: \BF{TLT60missing} eligible legacy/reference pairs have incomplete grids. This is a data-quality limitation, not a zero policy effect. No missing dates are filled or removed to construct a complete EWMA history.
+
+\begin{table}[tbp]\centering\small
+\caption{Every A13 fund at one and five minutes under the original fixed policy. RV/RQ entries are material/valid primary pairs. Weight gaps are mean absolute percentage-point differences; ``large'' counts dependent origins with gap at least 5pp. Nonmissing histories have \Fact{origins} origins. The incomplete TLT one-minute history is withheld.}\label{tab:breadth-risk}
+\input{generated/breadth_risk_table.tex}
+\end{table}
+
+\begin{figure}[tbp]
+\centering\includegraphics[width=\linewidth]{figures/breadth_cap_comparison.pdf}
+\caption{A13 fixed-policy gaps before and after the common cap, with shared vertical scale. Mean absolute gaps are in percentage points, not returns. Asset-specific variance levels affect how often the cap binds. A large attenuation percentage must be read together with its absolute uncapped gap. No policy is selected as optimal.}\label{fig:breadth-cap}
+\end{figure}
+
+The crossed constructions also qualify a universal category-B explanation. For QQQ at one minute, B restoration retains \BF{QQQ60BRVN} material RV dates, whereas modern condition information with legacy time leaves \BF{QQQ60CRVN}. The SPY restoration result thus does not identify a single category-level mechanism for every fund. The broader evidence favors auditing complete source information and its interactions, rather than applying an asset-independent repair inferred from SPY. Exact economic meanings of every mounted field remain a separate documentation question.
+
+The extension passed \BF{members} exported-member hash checks, independent calendar/coverage checks and daily correspondence/measurement checks. A separate result implementation recalculated \BF{checks} scalars, using explicit EWMA convolution and an independently constructed restart-segment sampler, and rejected a planted altered incidence. This verifies the reported calculations within the frozen design; it does not make the historical window a new regime or certify either source as economic truth.

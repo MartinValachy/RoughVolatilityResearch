@@ -15,6 +15,7 @@ def normalize(s):return re.sub(r'\s+',' ',str(s)).strip()
 def check(path):
     content=json.loads((ROOT/'docs/presentation/lecture_content.json').read_text(encoding='utf8'))
     facts={r['key']:r for r in json.loads((ROOT/'paper/generated/claims.json').read_text())}
+    facts.update({'B_'+r['key']:r for r in json.loads((ROOT/'paper/generated/breadth_claims.json').read_text())})
     count=0;chart_count=0;table_count=0
     with zipfile.ZipFile(path) as z:
         if z.testzip() is not None:raise AssertionError('PPTX CRC failed')
@@ -60,7 +61,9 @@ def check(path):
         editable_tables=table_count,text_note_table_chart_checks=count,presentation_sha256=sha(path),
         content_sha256=sha(ROOT/'docs/presentation/lecture_content.json'),
         source_claim_map_sha256=sha(ROOT/'paper/generated/claims.json'),
-        source_check='undergraduate_paper_check_20261022T123135Z',
+        breadth_claim_map_sha256=sha(ROOT/'paper/generated/breadth_claims.json'),
+        source_checks=[json.loads((ROOT/'results'/name).read_text())['run_id'] for name in
+                       ['undergraduate_paper_check.json','breadth_paper_check.json']],
         invented_examples_checked=True,chart_rounding_significant_digits=14,
         native_PowerPoint_execution_verified=False,
         boundary='Content/source binding and selected arithmetic; human comprehension and application rendering remain separate',

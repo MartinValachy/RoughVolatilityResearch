@@ -1,0 +1,22 @@
+{
+  "status": "passed_checks",
+  "slides": 49,
+  "editable_charts": 10,
+  "editable_tables": 10,
+  "text_note_table_chart_checks": 404,
+  "presentation_sha256": "79b8e61e38c2fdbb4f1ed751ac792da11c9be02126fbfa041a45bb306b3de11f",
+  "content_sha256": "493a666dca7bddd1929b11a3727cc559067de0d13bf59ca99d02c9da0d25c669",
+  "source_claim_map_sha256": "817db6b8b334ed2db5005b7b57f4ad09df6ec7e7fbf6da443459debd658bbdfc",
+  "breadth_claim_map_sha256": "9de9a6bfababb44547fc41688a2a3467e54a655679d979779613050c0e1713c7",
+  "source_checks": [
+    "undergraduate_paper_check_20261022T175956Z",
+    "breadth_paper_check_20261022T180206Z"
+  ],
+  "invented_examples_checked": true,
+  "chart_rounding_significant_digits": 14,
+  "native_PowerPoint_execution_verified": false,
+  "boundary": "Content/source binding and selected arithmetic; human comprehension and application rendering remain separate",
+  "code_sha256": "b0e6dbab305d50b3de405f6c3386093d60551aa5b8a19af09888c91663a0198f",
+  "run_id": "university_lecture_check_20261022T180206Z",
+  "captured_utc": "2026-10-22T18:02:06.807294+00:00"
+}

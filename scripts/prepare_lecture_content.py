@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     facts = {x['key']: x for x in json.loads((ROOT/'paper/generated/claims.json').read_text())}
+    facts.update({'B_'+x['key']:x for x in json.loads((ROOT/'paper/generated/breadth_claims.json').read_text())})
     d = lambda key: facts[key]['display']
     slides = []
     def add(title, body='', *, section='', table=None, chart=None, caption='', notes='', keys=(), kind=None):
@@ -20,6 +21,7 @@ def main():
     source='Source: working paper by Martin Valachy, Sections 2–8 and Appendix D. '
     a10='A10 analysis source_replication_analysis_20261022T014736Z; independent source_result_check_20261022T015029Z.'
     a11='A11 analysis source_policy_robustness_20261022T032458Z; independent source_policy_check_20261022T032503Z. Post-result sensitivity.'
+    a13='A13 analysis etf_breadth_analysis_20261022T144854Z; independent etf_breadth_independent_check_20261022T145028Z. Fixed exploratory follow-up; same historical source regime.'
     add('Rough or Just Noisy?', 'A lecture on measuring financial volatility\nand checking how measurements affect an investment rule',kind='cover',caption='Martin Valachy\nThe current working-paper study, explained step by step',notes='This lecture explains the paper without assuming finance or university mathematics. It presents the current A08/A10/A11 case study. A separately planned A13 breadth extension has no results yet. Martin set the project direction. Codex implemented the pipeline and draft; independent human review remains open.')
     add('The question and the route through the lecture', 'Question: can different recordings of the same trades change a risk estimate and the amount a rule proposes investing?\n\nFirst we define the measurements. Then we explain the controlled comparison. Finally we interpret the findings and the checks.',section=basics,notes='The paper studies a measurement and decision-input chain. It does not evaluate trading returns. The lecture separates the known simulation example from the historical source comparison. '+source)
     add('Price changes, returns and percentages', 'A return expresses a price change relative to its starting price.\n\nA price rising from 100 to 101 gives a simple return of 1%, which is 0.01 in decimal form. A fall gives a negative return.\n\nThe paper uses log returns, a closely related transformation for relative price changes. The optional appendix gives its formula. We keep percentage and decimal units explicit.',section=basics,caption='A return describes a price change. It does not yet measure volatility.',notes='Simple return is (new price / old price) minus one. Log return is ln(new price / old price). For a rise from 100 to 101 the log return is approximately .995%, not exactly 1%. The toy RV example on the next slide assumes its three returns directly, rather than deriving them from those two prices. Source: paper Section 3.1 and Appendix D.1.')
@@ -67,6 +69,74 @@ def main():
     add('C. Why the cap can conceal a state difference', 'Let s be estimated daily variance, A the annualization factor, v the volatility target and c the position cap.\n\nThe uncapped amount is u = v/√(As). The final amount is w = min(c,u), meaning the smaller of c and u.\n\nIf both proposals exceed c, both final amounts equal c even when their variance states differ.',section=appendix,caption='The ratio uᴸ/uᴹ = √(sᴹ/sᴸ) removes the common target and annualization factor.',notes='The initializedEWMAexactconvolution,persistencehalf-life,trianglebound and capnonexpansion are derived stepbystep in AppendixD.6–D.7. The initialcoefficient differs fromlaterinnovations. Absoluteinfluencepotentialshares are not nonlinearportfoliolossattribution. No economicbacktest is implied.')
     add('How to read the paper after this lecture', 'Sections 1–2 explain the question and the data design. Section 3 defines the measurements and risk rule.\n\nSections 4–6 contain the simulation and historical findings. Sections 7–9 discuss limits, verification and the conclusion.\n\nAppendices A–C give checks and complete tables. Appendix D derives the mathematics. Appendix E explains reproduction.',section=review,caption='The repository supplies code and synthetic examples. Licensed observations remain excluded.',notes='The paper source is paper/main.tex with theory.tex,references.tex,generatedtables/facts and vectorfigures. The lecture’s numerical charts use the checked claim map. Code execution without the licensed empirical observations can reproduce synthetic demonstrations, not the historical empirical findings. Human review remains open.')
     add('Sources behind the study', 'The paper cites rough-volatility research, measurement-error research and historical source comparisons.\n\nIts bibliography gives ten inspected primary references, exact versions and links. The slide notes identify the relevant paper sections and source runs.\n\nRepository: github.com/MartinValachy/RoughVolatilityResearch',section=review,caption='AI assistance and open human review are disclosed in the paper.',notes='References: Gatheral/Jaisson/Rosenbaum;Cont/Das;Fukasawa/Takabatake/Westphal;Holden/Jacobsen;VOLARE authors;NYSE2014specification;highfrequencymaintainers;Politis/Romano;Bennedsen/Lunde/Pakkanen;Barndorff-Nielsen/Shephard. Exact bibliographicdetails are in paper/references.tex. The existing GitHubrepository is private; visibility is separate from scientificstatus.')
+    # Extend the established lecture after the original SPY results, before review.
+    original = slides[:]
+    slides = []
+    add('The follow-up expands the same historical calendar',
+        f'Four additional funds now cover the same {d("B_sessions")} trading sessions as SPY, from January 2013 through July 2014. Their trading symbols are QQQ, IWM, EFA and TLT.\n\nThe study contains {d("B_unionPairs")} distinct fund-days. The extension adds {d("B_newPairs")} pairs and reuses {d("B_reusePairs")} January pairs already examined.\n\nThe plan preceded the extra download, but followed the SPY finding. It provides broader asset coverage within the same historical period.',
+        section=results,keys=['B_sessions','B_unionPairs','B_newPairs','B_reusePairs'],
+        caption='One fund-day means one fund on one exchange session, compared across both sources.',
+        notes='A13 is a fixed exploratory follow-up, not a previously untouched time period. All four selected ETFs and all six grids are retained. January is excluded from primary incidence but retained in full-calendar slopes and EWMA histories. Source: Section6.1,AppendixF. '+a13)
+    incidence_keys=[]
+    incidence_table=[['Fund','1-min RV','1-min RQ','5-min RV','5-min RQ']]
+    for symbol in ['QQQ','IWM','EFA','TLT']:
+        row=[symbol]
+        for grid,measure in [(60,'RV'),(60,'RQ'),(300,'RV'),(300,'RQ')]:
+            numerator=f'B_{symbol}{grid}L{measure}N';denominator=f'B_{symbol}{grid}L{measure}D'
+            incidence_keys.extend([numerator,denominator]);row.append(d(numerator)+' / '+d(denominator))
+        incidence_table.append(row)
+    add('Measurement discrepancies remain across funds',
+        'Cells show dates exceeding the fixed difference threshold / dates with a valid source pair. RV uses a factor of 1.1; RQ uses a factor of 2. Both include reciprocal lower limits.',
+        section=results,table=incidence_table,keys=incidence_keys,
+        caption='January 2014 and discovery dates are excluded. TLT has ten missing one-minute pairs.',
+        notes='These are primary legacy/modern incidence counts. Eligible376perfund; TLT1mvalid366. Every fixed construction/grid is in AppendixF, including zeros. Missingness is not agreement. Original SPY incidence uses396dates, so primary denominators differ. Source: Section6.1 and AppendixF. '+a13)
+    add('Five minutes does not remove the QQQ position gap',
+        f'The chart counts evaluation origins where source choice changes the capped position by at least 5 percentage points.\n\nEach fund has {d("origins")} origins after the same warmup. QQQ has {d("B_QQQ300large")}; SPY has {d("large300")}.\n\nAn origin is a date when the rule proposes the next position. Consecutive origins can reflect the same persistent difference.',
+        section=results,chart={'type':'bar','categories':['SPY','QQQ','IWM','EFA','TLT'],'series':[{'name':'Origins with gap ≥5pp','keys':['large300','B_QQQ300large','B_IWM300large','B_EFA300large','B_TLT300large']}],'yTitle':'Origins, out of 272','min':0,'max':60,'majorUnit':10},
+        keys=['origins','large300','B_QQQ300large','B_IWM300large','B_EFA300large','B_TLT300large'],
+        caption='All five funds use five-minute RV and the original fixed risk rule. These are proposed positions.',
+        notes='Full398sessionhistory; lambda.94,target.10,cap1,annualization252,warmup126. QQQ50,IWM9,EFA0,TLT0,SPY0. Counts do not measure losses, independent shocks, or future probabilities. Source: Section6.1,Table3 and A10 original policy. '+a10+' '+a13)
+    risk_keys=['gap60','gap300']
+    risk_table=[['Fund','1-min mean gap, pp','5-min mean gap, pp'],['SPY',d('gap60'),d('gap300')]]
+    for symbol in ['QQQ','IWM','EFA','TLT']:
+        keys=[f'B_{symbol}{grid}capped' for grid in [60,300]];risk_keys.extend(keys)
+        risk_table.append([symbol]+[d(key) for key in keys])
+    add('Average capped gaps differ across funds',
+        'Mean absolute source difference in the proposed position, using the same fixed rule and full calendar. pp means percentage points.',
+        section=results,table=risk_table,keys=risk_keys,
+        caption='“Withheld” preserves an incomplete TLT history; it does not mean a zero difference.',
+        notes='All usable histories have272origins. Missing TLT1m values prevent the specified complete-calendar EWMA; do not compress time or fill missing observations. Fixed126sessionwarmup and initializedstate. These are daily policy inputs rather than returns. Source: Section6.1,Table3. '+a10+' '+a13)
+    add('EFA shows cap masking even at one minute',
+        f'EFA’s mean absolute position gap falls from {d("B_EFA60uncapped")} percentage points before the cap to {d("B_EFA60capped")} after it.\n\nThat is {d("B_EFA60attenuation")}% attenuation.\n\nA small final gap can therefore coexist with a materially larger disagreement before the common limit.',
+        section=results,chart={'type':'bar','categories':['Before cap','After cap'],'series':[{'name':'Mean absolute position gap','keys':['B_EFA60uncapped','B_EFA60capped']}],'yTitle':'Gap, percentage points','min':0,'max':4,'format':'0.000'},
+        keys=['B_EFA60uncapped','B_EFA60capped','B_EFA60attenuation'],
+        caption='Same one-minute inputs and rule; only the cap changes. The gap is not a return difference.',
+        notes='Attenuation is1 minus capped mean gap/uncapped mean gap, using unrounded values. This extends the original SPYfive-minute masking example to another fund/grid. Reference is not truevariance. Source: Section6.1 and Figure8. '+a13)
+    add('The SPY condition mechanism does not explain every fund',
+        f'Restoring modern category-B information removes much of SPY’s original one-minute discrepancy.\n\nFor QQQ, the same restoration leaves {d("B_QQQ60BRVN")} material RV dates. Using all modern conditions with legacy time leaves {d("B_QQQ60CRVN")}.\n\nThis narrows the source-information explanation, while showing that a single category repair does not work uniformly.',
+        section=results,keys=['B_QQQ60BRVN','B_QQQ60CRVN'],
+        caption='Category B has different documented meanings across reporting tapes. Restoration is a diagnostic.',
+        notes='QQQ1mlegacy46/376;Brestore46/376;modernconditionslegacytime4/376. No isolated economic cause or universal treatment of B-coded trades follows. All five crossed constructions are retained. Source: Section2.2 and6.1,AppendixF,NYSE2014condition specification. '+a13)
+    add('The calendar stays fixed when observations are missing',
+        f'TLT has {d("B_TLT60missing")} missing one-minute source pairs. Dropping those days would make the next observed day look like the next trading day.\n\nThat would change the risk rule’s memory and the meaning of a lag. The study instead withholds the incomplete one-minute risk comparison.\n\nDescriptive slope calculations retain the calendar and report how many valid lag endpoints remain.',
+        section=results,keys=['B_TLT60missing'],
+        caption='An unavailable result carries information about the pipeline’s limits.',
+        notes='Incidence denominator366/376,fullhistoryincomplete. No interpolation, carry-forward of dailyRV or calendarcompression. Five-minuteTLThistoryiscomplete. Htablesincludeendpointcountsandcommonendpointcontrasts. Source: Section3.2,6.1,AppendixF. '+a13)
+    extension=slides
+    slides=original[:32]+extension+original[32:]
+    for s in slides:
+        if s['kind']=='cover':
+            s['notes']='This lecture explains the integrated A08/A10/A11/A13 historical case study without assuming finance or university mathematics. Martin directed the project; Codex implemented and drafted it. Independent human review remains open.'
+        if s['title']=='The limits of the current evidence':
+            s['body']='The expanded study covers five funds over one historical source-overlap period. More assets do not provide a new market regime.\n\nThe filter is deliberately strict and the opening price sometimes uses a flagged approximation. Neither source gives verified true volatility.\n\nRelated days and post-result follow-ups limit generalization. Validation from 2017–2019 and the final period from 2020 remain closed.'
+            s['notes']='No latent-H identification, universally best grid, trading profit, new estimator or academic priority claim. The original1250dayforecastcontest remains deferred. A13precededadditionalacquisitionbutfollowedSPYresults. Source: Section7. '+a13
+        if s['title']=='The conclusion':
+            s['body']='An audit should check source information, the volatility measurement, the uncapped risk state and the capped investment input separately.\n\nBroader asset coverage qualifies the SPY result: five-minute sampling leaves a substantial QQQ position discrepancy, while the cap conceals most of EFA’s one-minute gap.\n\nThe practical lesson is to check each step and retain the full comparison, including missing results.'
+            s['notes']='Integrated A08/A10/A11/A13 conclusion. Useful historical case study, without a new-estimator, trading-performance or untouched-regime claim. No options surface is needed for this question. Source: Section9.'
+        if s['title']=='How to read the paper after this lecture':
+            s['body']='Sections 1–2 explain the question and data design. Section 3 defines the measurements and risk rule.\n\nSections 4–6 contain simulation and historical findings, including the four-fund follow-up. Sections 7–9 give limits, verification and conclusions.\n\nAppendices A–C give checks and SPY tables. D derives the mathematics, E explains reproduction, and F gives the complete follow-up counts and slope context.'
+        if s['title']=='Different checks address different mistakes':
+            s['notes']='A10independent900scalars;A11independent10584scalars/96overlaps;A13independent6445scalars. Paper maps272originaland642breadthfacts;655selectedmathchecks. Agreement does not certify truevariance,vendorsemantics,priority or everypossiblebug. Source: Section8,AppendixA,VERIFICATION.md. '+a13
     for i,s in enumerate(slides,1):
         s['slide']=i
         for key in s['sourceKeys']: assert key in facts,key

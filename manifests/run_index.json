@@ -26,5 +26,40 @@
     "metadata_sha256": "a9053b50b9a2161caddda8866cba1ffa868cf92ad718af73535c932f7a7f9dc4",
     "status": "passed_checks",
     "is_current_checkpoint_run": true
+  },
+  {
+    "run_id": "undergraduate_paper_check_20261022T175956Z",
+    "metadata_path": "runs/undergraduate_paper_check_20261022T175956Z/metadata.json",
+    "metadata_sha256": "c69548d067dcb6d44ecf627d41ac99e8f8682600fd817bbc8fb292a37adf0255",
+    "status": "passed_checks",
+    "is_current_checkpoint_run": true
+  },
+  {
+    "run_id": "breadth_paper_inputs_20261022T180205Z",
+    "metadata_path": "runs/breadth_paper_inputs_20261022T180205Z/metadata.json",
+    "metadata_sha256": "7c91452e7d409d524a2a3b1b37b5d3d994fbe0ab4dc4e9a0d78e7866d00477f6",
+    "status": "prepared",
+    "is_current_checkpoint_run": true
+  },
+  {
+    "run_id": "breadth_paper_check_20261022T180206Z",
+    "metadata_path": "runs/breadth_paper_check_20261022T180206Z/metadata.json",
+    "metadata_sha256": "96a7beb24a1cac443148fe592e3800d8b0eb35ba88daceed9acaa34661a0f255",
+    "status": "passed_checks",
+    "is_current_checkpoint_run": true
+  },
+  {
+    "run_id": "university_lecture_check_20261022T180206Z",
+    "metadata_path": "runs/university_lecture_check_20261022T180206Z/metadata.json",
+    "metadata_sha256": "2cde260fefd124f69bf74f1e70c7295c15dae1ea5bd58b77382fffc3b673e43b",
+    "status": "passed_checks",
+    "is_current_checkpoint_run": true
+  },
+  {
+    "run_id": "integrated_study_delivery_review_20261022T180337Z",
+    "metadata_path": "runs/integrated_study_delivery_review_20261022T180337Z/metadata.json",
+    "metadata_sha256": "86d771d49d0334620d554a6e90cfbc47be1d50b194be7423521e18b7f5850fea",
+    "status": "passed_recorded_checks",
+    "is_current_checkpoint_run": true
   }
 ]
