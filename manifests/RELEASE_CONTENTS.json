@@ -1,11 +1,11 @@
 {
   "status": "passed_scoped_checks",
-  "files": 123,
+  "files": 150,
   "zero_output_WRDS_notebooks": 1,
   "licensed_observation_files_included": false,
   "private_local_history_included": false,
   "visibility": "private",
-  "existing_release_HEAD": "91a8fd61c56c957207892bcec97bf759d093f6f9",
+  "existing_release_HEAD": "8f4c6c27da750e2823aaea9283e61fa9fe07d5ec",
   "code_sha256": "995745c9c79b1ec608f5981f2f335db94ee09b2121924935a851b3c6887d48d2",
   "scope": "Staged allowlisted source,synthetic artifacts,paper/lecture and aggregate summaries; scoped path/credential/binary checks, not a universal secret detector",
   "files_sha256": [
@@ -46,8 +46,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2717,
-      "sha256": "43b1af8ed63af2b79b3c64f91af811413dd43b1098613e6fa46d9175e68b9e84"
+      "bytes": 2900,
+      "sha256": "bec0473f705b42e9af1ca770b0da26e98ce587461efa65c2c55d9bbc3710a845"
     },
     {
       "path": "configs/etf_breadth.json",
@@ -70,14 +70,104 @@
       "sha256": "c65dfb5435b2026b1e33d4fcdfd55fbbfac52b4366d119681dc7559cfd2af974"
     },
     {
+      "path": "docs/A13/A13_BREADTH_REPORT.html",
+      "bytes": 364899,
+      "sha256": "bdbbd9460b1057d1310078265f07ed27f3acfcf833b2c72836d72037243e42b2"
+    },
+    {
+      "path": "docs/A13/A13_BREADTH_REPORT.md",
+      "bytes": 4687,
+      "sha256": "0eee4572be5e9064fc27368d847f74c4c9222c686ed976e5fd05e194fae27878"
+    },
+    {
+      "path": "docs/A13/A13_H.csv",
+      "bytes": 88366,
+      "sha256": "74902820d2c3051cdb4d7307daeedc8a20e6ea9f0c23f876064cf0be58b58b09"
+    },
+    {
+      "path": "docs/A13/A13_incidence.csv",
+      "bytes": 11249,
+      "sha256": "c6a6b39bd90e74242ea10e32cefb2ecb67a68dbab2c8c21968355c09ffd06a95"
+    },
+    {
+      "path": "docs/A13/A13_intervals.csv",
+      "bytes": 57464,
+      "sha256": "50043ddf884a1af28cd8340bb6a50db54b2471adfaf3e8463d8022accea22413"
+    },
+    {
+      "path": "docs/A13/A13_risk.csv",
+      "bytes": 12376,
+      "sha256": "3e3f81ff646e79d436f013760536488b3e0abc660bdd60de8c3d21cbf9995c54"
+    },
+    {
+      "path": "docs/A13/figures/cap_comparison.pdf",
+      "bytes": 17375,
+      "sha256": "c40d313bcfb907d0f479d12d4af704e5d2a0f75755fa6ca4c417cfaa3c6c1601"
+    },
+    {
+      "path": "docs/A13/figures/cap_comparison.png",
+      "bytes": 60939,
+      "sha256": "66b62a6c5aee58eb6da7705a7e267e2f31df78fbca624690b015d62339a16b59"
+    },
+    {
+      "path": "docs/A13/figures/crossed_conditions.pdf",
+      "bytes": 17831,
+      "sha256": "01496d8a86c8baa60c79d12da995a249b4970b85e9f8d1b000a45be58aeee4f5"
+    },
+    {
+      "path": "docs/A13/figures/crossed_conditions.png",
+      "bytes": 97683,
+      "sha256": "d4323d0f7f70a32a7dc82f1d84c43ecccfb7dbaacbf67e95227cd1242ad5ea27"
+    },
+    {
+      "path": "docs/A13/figures/finite_band_slopes.pdf",
+      "bytes": 20950,
+      "sha256": "77928d63b891dd2f3ca52d18101d2c08cc7266664eca24e6fb6031b4d056909f"
+    },
+    {
+      "path": "docs/A13/figures/finite_band_slopes.png",
+      "bytes": 185102,
+      "sha256": "37fc53f9cd784651ed71fe399905c0c0f04c0f61cea0c966ed4cabb77470c9c1"
+    },
+    {
+      "path": "docs/A13/figures/incidence_rq.pdf",
+      "bytes": 21791,
+      "sha256": "2faec35b43d239c02c72b9baff455f6302d502e8a7453952fd9e63fcbf6f6b0a"
+    },
+    {
+      "path": "docs/A13/figures/incidence_rq.png",
+      "bytes": 102837,
+      "sha256": "9c66ee5962217a59c3e1f2c44401d5a9e27a6ebb61fddcd8c9c871a7be744d9f"
+    },
+    {
+      "path": "docs/A13/figures/incidence_rv.pdf",
+      "bytes": 21892,
+      "sha256": "81911771c9eb251574195acf139beec6bbc6cd0a4cd02730cb501336a6da1b36"
+    },
+    {
+      "path": "docs/A13/figures/incidence_rv.png",
+      "bytes": 105367,
+      "sha256": "45cf62aa455a78412a07cb24e224820c7f0397b6d278873aeb18063b88491abb"
+    },
+    {
+      "path": "docs/A13/figures/paired_intervals.pdf",
+      "bytes": 16816,
+      "sha256": "b27296e2a8750d888224e21f81af8f28d3849a3c611ab8d67ea013b51f83d38e"
+    },
+    {
+      "path": "docs/A13/figures/paired_intervals.png",
+      "bytes": 34077,
+      "sha256": "c85dde0a9e43079a509132b58f1f4b538299b7d3a532c3545757a14226f48b82"
+    },
+    {
       "path": "docs/OWNERSHIP_REVIEW.md",
       "bytes": 2695,
       "sha256": "e7a9b3fa321620466dd3e99492213ab8f04ef3be1271749d495f9f0e1269b4bc"
     },
     {
       "path": "docs/PROJECT_STATUS.md",
-      "bytes": 1226,
-      "sha256": "22953b291384636aa5783f255f2d5f44de4190e3b2d8c91d9b8712816ac61ba5"
+      "bytes": 1445,
+      "sha256": "ec209a00b6d84720b17e1ecacad203b35f87d20468d3b6b33f514e6c795a99c1"
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
@@ -285,6 +375,46 @@
       "sha256": "92a0c421a5b6c383fb5d91c15f886fee5bbc32815f14f71d5d86667e5f4f264d"
     },
     {
+      "path": "results/etf_breadth_H.csv",
+      "bytes": 128705,
+      "sha256": "c153d20a19efe7f7981ffa952c0806192b067249ea9a971c1cdcff7cfc139cf0"
+    },
+    {
+      "path": "results/etf_breadth_analysis.json",
+      "bytes": 1251,
+      "sha256": "f7bfc204791f63a908d2cd1b2cf269257274815a07576e9208ad4066de26a255"
+    },
+    {
+      "path": "results/etf_breadth_export_verified.json",
+      "bytes": 662,
+      "sha256": "3427981af7f119a4303360298ccfd12e2eb0d591a0e0fb6a818da5db9b162279"
+    },
+    {
+      "path": "results/etf_breadth_incidence.csv",
+      "bytes": 24131,
+      "sha256": "0ff7d2c0125f905488fa28a31973a49dd764bfc1c7b97ad757d9962a27edc234"
+    },
+    {
+      "path": "results/etf_breadth_independent_check.json",
+      "bytes": 480,
+      "sha256": "b182adc0f9ba2b00b10028c370701370dc80729c2a312694976a635d5f91bc42"
+    },
+    {
+      "path": "results/etf_breadth_intervals.csv",
+      "bytes": 148791,
+      "sha256": "665a3d3d99d2f192b1d69fc5e0856eb68fbd81cefd7f8494a5ec9c865c0a5baf"
+    },
+    {
+      "path": "results/etf_breadth_report.json",
+      "bytes": 2586,
+      "sha256": "30d70750884f0f05754a9a2a111d24b2c0e1f07c3dfe193db4c9f7c25da20cd4"
+    },
+    {
+      "path": "results/etf_breadth_risk.csv",
+      "bytes": 33838,
+      "sha256": "535e6cec76370625892df0c3eaf512a84866a2d7e645d56af623b7757f226a42"
+    },
+    {
       "path": "results/paper_derivation_check.json",
       "bytes": 736,
       "sha256": "aea268fc33b1e1b0972d81303ca8a7362a4d7c6d943e354c54eba6ce5111a95e"
@@ -433,6 +563,11 @@
       "path": "scripts/build_demo.py",
       "bytes": 6010,
       "sha256": "354b2ef31d0fb8104a722923e5130c9ff1f13889be138a95180b7ba6f7068a3c"
+    },
+    {
+      "path": "scripts/build_etf_breadth_report.py",
+      "bytes": 14053,
+      "sha256": "06595e00a5ee7381a7e3be250d389d2ee78661ba078461cb93be6131739bca05"
     },
     {
       "path": "scripts/build_lecture_deck.mjs",

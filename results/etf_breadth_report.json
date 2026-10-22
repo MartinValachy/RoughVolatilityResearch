@@ -1,0 +1,35 @@
+{
+  "status": "passed_checks",
+  "analysis_run": "etf_breadth_analysis_20261022T144854Z",
+  "independent_run": "etf_breadth_independent_check_20261022T145028Z",
+  "figures": 6,
+  "source_summary_hashes": {
+    "incidence": "0ff7d2c0125f905488fa28a31973a49dd764bfc1c7b97ad757d9962a27edc234",
+    "H": "c153d20a19efe7f7981ffa952c0806192b067249ea9a971c1cdcff7cfc139cf0",
+    "risk": "535e6cec76370625892df0c3eaf512a84866a2d7e645d56af623b7757f226a42",
+    "intervals": "665a3d3d99d2f192b1d69fc5e0856eb68fbd81cefd7f8494a5ec9c865c0a5baf"
+  },
+  "output_files_sha256": {
+    "figures/incidence_rv.png": "45cf62aa455a78412a07cb24e224820c7f0397b6d278873aeb18063b88491abb",
+    "figures/incidence_rv.pdf": "81911771c9eb251574195acf139beec6bbc6cd0a4cd02730cb501336a6da1b36",
+    "figures/incidence_rq.png": "9c66ee5962217a59c3e1f2c44401d5a9e27a6ebb61fddcd8c9c871a7be744d9f",
+    "figures/incidence_rq.pdf": "2faec35b43d239c02c72b9baff455f6302d502e8a7453952fd9e63fcbf6f6b0a",
+    "figures/crossed_conditions.png": "d4323d0f7f70a32a7dc82f1d84c43ecccfb7dbaacbf67e95227cd1242ad5ea27",
+    "figures/crossed_conditions.pdf": "01496d8a86c8baa60c79d12da995a249b4970b85e9f8d1b000a45be58aeee4f5",
+    "figures/finite_band_slopes.png": "37fc53f9cd784651ed71fe399905c0c0f04c0f61cea0c966ed4cabb77470c9c1",
+    "figures/finite_band_slopes.pdf": "77928d63b891dd2f3ca52d18101d2c08cc7266664eca24e6fb6031b4d056909f",
+    "figures/cap_comparison.png": "66b62a6c5aee58eb6da7705a7e267e2f31df78fbca624690b015d62339a16b59",
+    "figures/cap_comparison.pdf": "c40d313bcfb907d0f479d12d4af704e5d2a0f75755fa6ca4c417cfaa3c6c1601",
+    "figures/paired_intervals.png": "c85dde0a9e43079a509132b58f1f4b538299b7d3a532c3545757a14226f48b82",
+    "figures/paired_intervals.pdf": "b27296e2a8750d888224e21f81af8f28d3849a3c611ab8d67ea013b51f83d38e",
+    "A13_incidence.csv": "c6a6b39bd90e74242ea10e32cefb2ecb67a68dbab2c8c21968355c09ffd06a95",
+    "A13_H.csv": "74902820d2c3051cdb4d7307daeedc8a20e6ea9f0c23f876064cf0be58b58b09",
+    "A13_risk.csv": "3e3f81ff646e79d436f013760536488b3e0abc660bdd60de8c3d21cbf9995c54",
+    "A13_intervals.csv": "50043ddf884a1af28cd8340bb6a50db54b2471adfaf3e8463d8022accea22413",
+    "A13_BREADTH_REPORT.md": "0eee4572be5e9064fc27368d847f74c4c9222c686ed976e5fd05e194fae27878",
+    "A13_BREADTH_REPORT.html": "bdbbd9460b1057d1310078265f07ed27f3acfcf833b2c72836d72037243e42b2"
+  },
+  "code_sha256": "06595e00a5ee7381a7e3be250d389d2ee78661ba078461cb93be6131739bca05",
+  "proprietary_daily_observations_in_delivery": false,
+  "run_id": "etf_breadth_report_20261022T145531Z"
+}

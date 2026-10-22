@@ -1,0 +1,16 @@
+{
+  "status": "passed_checks",
+  "paired_symbol_days": 1592,
+  "reused_January_pairs": 84,
+  "new_symbol_days": 1508,
+  "member_hashes_verified": 6503,
+  "archive_sha256": "1528755826a7c58627891b80ad9c58908c0bac00fcfc71bb5349c5a14595fa78",
+  "rule_hash": "9164c21bc6589b54e1b180f1fd8e3abc703f6f2d2801e65a8f7b685d8c57e437",
+  "source_code_matches_local": true,
+  "independent_calendar": true,
+  "all_daily_checks_present": true,
+  "raw_ticks_downloaded": false,
+  "sealed_observations_opened": false,
+  "code_sha256": "a71cbc6ab65b387a16f9f98265e96bcff0834d4bf49331a4fbb9514715b8f5cf",
+  "run_id": "etf_breadth_export_verified_20261022T144522Z"
+}

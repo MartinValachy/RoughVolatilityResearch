@@ -1,0 +1,11 @@
+{
+  "status": "passed_checks",
+  "analysis_run_id": "etf_breadth_analysis_20261022T144854Z",
+  "scalar_checks": 6445,
+  "planted_incidence_change_detected": true,
+  "independent_convolution_H_incidence_and_segment_bootstrap": true,
+  "all_funds_grids_constructions_reported": true,
+  "code_sha256": "f345728735854ba0b26fd99d5872aa24a3442abf26e8cf211cf284e2db6dd891",
+  "sealed_observations_opened": false,
+  "run_id": "etf_breadth_independent_check_20261022T145028Z"
+}

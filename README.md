@@ -6,7 +6,7 @@ An undergraduate working-paper study of historical trade-source information, rea
 
 Read [the paper](paper/main.pdf), its [editable source](paper/main.tex), or the [explained university lecture](presentation/Rough_or_Just_Noisy_Lecture_Explained.pptx). The lecture defines terms before using them and includes worked examples. The paper explains the research question, construction, assumptions, results, mathematical derivations, verification and limitations.
 
-The current empirical case covers398 SPY sessions in2013-2014 and a one-month four-fund panel. The fixed A13 extension is actively acquiring broader ETF coverage; its independently checked additional results are pending. The original longer forecasting contest remains deferred.
+The current empirical case covers398 SPY sessions in2013-2014 and a one-month four-fund panel. The fixed A13 extension is acquired and independently checked: [read its report and six figures](docs/A13/A13_BREADTH_REPORT.md). It covers1,592 paired ETF-days and qualifies the SPY-only practical conclusion. The integrated paper/lecture revision is still in progress; the linked PDF/PPTX remain the clearly labeled pre-A13 draft. The original longer forecasting contest remains deferred.
 
 ## Run without licensed data
 

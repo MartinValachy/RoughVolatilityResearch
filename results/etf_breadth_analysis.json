@@ -1,0 +1,37 @@
+{
+  "status": "passed_checks",
+  "input_symbol_days": 1592,
+  "calendar_dates": 398,
+  "panel": [
+    "QQQ",
+    "IWM",
+    "EFA",
+    "TLT"
+  ],
+  "primary_eligible_dates_per_fund": 376,
+  "previous_January_pairs": 84,
+  "new_symbol_days": 1508,
+  "independent_export_run": "etf_breadth_export_verified_20261022T144522Z",
+  "source_rule_hash": "9164c21bc6589b54e1b180f1fd8e3abc703f6f2d2801e65a8f7b685d8c57e437",
+  "code_sha256": "6c9661eda4d4d41b8e625d843df3116fcad4b3ec2c5b020095bc5201feee4adb",
+  "config_sha256": "c46836e956ec8a6ec459812dd747b4ac9627000222b34fe209b3e8063625a402",
+  "helper_code_sha256": "89805a2348e51ababde929057592a42874a77ee61c87e8d304428abbf2484b0a",
+  "table_rows": {
+    "incidence": 120,
+    "H": 360,
+    "risk": 120,
+    "intervals": 720
+  },
+  "classification": "Fixed follow-up exploratory breadth study; no latent-H, independent-fund, profitability or untouched-validation claim",
+  "same_bootstrap_calendar_indices_across_all_funds": true,
+  "bootstrap_draws": 3999,
+  "date_blocks": [
+    22,
+    11,
+    44
+  ],
+  "proprietary_daily_rows_in_repo": false,
+  "sealed_observations_opened": false,
+  "published_online": false,
+  "run_id": "etf_breadth_analysis_20261022T144854Z"
+}
