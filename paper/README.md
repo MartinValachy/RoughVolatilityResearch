@@ -1,23 +1,17 @@
-# Rough or Just Noisy? - full undergraduate working paper
+# Rough or Just Noisy? - undergraduate working paper v1.3
 
-The reviewed version 1.2 PDF integrates the checked four-fund A13 follow-up. It has 27 pages, eight figures, nine tables and a mathematical derivation appendix. Editable sources include main.tex, theory.tex, breadth.tex and breadth_appendix.tex. The companion university lecture has 49 slides with essential definitions and worked examples. See VERIFICATION.md for the exact review and numerical checks. Independent human review remains open.
+The 35-page paper is rewritten for second-year students. It starts with a reader's guide and glossary, then explains the question, data, calculations and findings in plain language. Worked examples show RV/RQ, the variance update, the investment rule, percentage points and cap masking. Each advanced derivation has a purpose statement; Appendix D is optional for a first reading. The empirical results, all eight figures and nine tables, generated facts and formal derivation equations are preserved. The lecture remains at version 1.2 and was not edited.
 
-## Research question
-How does changing historical source time/condition information affect realized measures and a fixed risk input, and how can an exposure cap hide that disagreement?
+## Reading order
 
-## Evidence
-The paper combines the A08 known-truth baseline, A10 controlled SPY source comparison, A11 explicitly post-result policy sensitivity and A13 fixed exploratory follow-up. The union covers 1,990 distinct fund-days over the same historical calendar. QQQ qualifies the reassuring SPY five-minute result; EFA illustrates strong cap masking. Incomplete TLT comparisons are withheld. The original longer forecast contest remains deferred; no option observations were needed.
+Start with the abstract and reader's guide (pages 1-3), then Sections 1-3 for the question, data and calculation steps. Sections 4-6 explain the findings. Sections 7-9 discuss limits, checks and conclusions. Appendices A-C/F retain full audit tables; Appendix D supplies advanced derivations and Appendix E explains reproduction. See REVIEW_GUIDE.md for questions to test your understanding.
+
+## Evidence and limits
+
+The paper combines the A08 known-truth baseline, A10 controlled SPY source comparison, A11 explicitly post-result policy sensitivity and A13 fixed exploratory follow-up. These labels identify research stages, not concepts the reader must already know. The union covers 1,990 distinct fund-days in one historical window. QQQ qualifies the reassuring SPY five-minute result; EFA illustrates cap masking; incomplete TLT comparisons are withheld. This is a reproducible historical case study, not a forecast winner or a trading-profit claim. Source agreement is not true integrated variance; the finite-band statistic is not latent H. Independent human review remains open and AI assistance is disclosed.
 
 ## Reproduction
-To compile the supplied manuscript, run LaTeX twice on main.tex from this folder; no vendor observations are required. To check the supplied aggregate claims, run `python scripts/check_undergraduate_paper.py`, `python scripts/check_breadth_paper.py` and `python scripts/check_paper_derivations.py` from the repository root. The project also opens in Codex's built-in LaTeX editor. Local compilation used `--disable-installer --interaction=nonstopmode --halt-on-error` without system package installation.
 
-Full empirical regeneration requires separately licensed inputs. The original `prepare_undergraduate_paper.py` also uses the private A10 derivative to regenerate displayed weight paths. `prepare_breadth_paper.py` rebuilds A13 facts/tables from supplied aggregate summaries and checked report figures, with optional `--report-directory` (default docs/A13). Independent checkers use csv/json/math, verify every numerical macro/selector and reject planted changes. A data-free checkout audits the supplied outputs and compiles the paper; it cannot recreate the empirical extraction.
+Compile main.tex twice from this folder. Editable content is in main.tex, reader_guide.tex, study.tex, breadth.tex, breadth_appendix.tex and theory.tex. Supplied vector figures and generated facts/tables require no vendor observations for compilation.
 
-## Claim boundaries
-Source agreement is not true integrated variance; finite-band H-tilde is not latent H; weights are inputs, not an economic backtest. A11 is after the original results, not untouched validation. Numerical verification is not independent human peer review. Martin's comprehension/code review remains open and the AI contribution is disclosed in the paper.
-
-## For an undergraduate portfolio
-The defensible output is a complete reproducible case-study working paper with a practical source/state/constraint audit, not a claim to journal acceptance or a new estimator. The separate synthetic candidate remains the basis for an eventual authorized data-free release. Restricted observations, private manifests and this repository's historical Git objects are not a public-release package.
-
-## Analytical treatment
-The full derivation appendix develops RV/RQ moments and units, q-hat finite-sample interpretation, price versus daily log-proxy noise, OU/finite-band slopes, crossed-source interactions, initialized EWMA persistence, cap masking and paired block resampling. The mathematics explains the empirical design; it does not turn illustrative assumptions into fitted market facts.
+From the repository root, run `python scripts/check_undergraduate_paper.py`, `python scripts/check_breadth_paper.py`, `python scripts/check_student_examples.py` and `python scripts/check_paper_derivations.py`. These check supplied aggregate claims and selected mathematical/teaching calculations; they do not recreate the empirical extraction. See VERIFICATION.md for exact run IDs, scope and artifact hashes. Full empirical regeneration requires separately licensed source inputs. Validation 2017-2019 and final 2020+ remain closed; the original longer forecasting contest is deferred.

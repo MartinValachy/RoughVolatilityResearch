@@ -18,5 +18,6 @@ jobs:
       - run: python scripts/check_breadth_paper.py
       - run: python scripts/check_lecture_presentation.py --presentation presentation/Rough_or_Just_Noisy_Lecture_v1_2.pptx
       - run: python scripts/check_paper_derivations.py
+      - run: python scripts/check_student_examples.py
       - run: python scripts/source_audit_demo.py
       - run: python scripts/run_study.py --pilot

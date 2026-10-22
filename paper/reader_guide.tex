@@ -1,0 +1,30 @@
+\section*{Reader's guide}
+\addcontentsline{toc}{section}{Reader's guide}
+This paper is written for a second-year student who knows basic algebra, averages and variance. Knowledge of high-frequency trading data or stochastic calculus is not needed to follow the main argument. The more advanced derivations remain in Appendix~\ref{app:identities}, where they can be read separately.
+
+\subsection*{The question in everyday language}
+Imagine that two files describe the same sequence of recorded trades, but store their times and trade labels differently. We use each file to estimate how much prices moved. We then feed each estimate into the same rule for deciding how much to invest. The question is whether the choice of file changes the result, and whether a limit on the investment amount hides some of that change.
+
+The study follows four steps: recorded trades, a daily volatility estimate, an estimate that averages information across days, and a proposed investment amount. It checks each step separately. Agreement in the last step does not automatically mean agreement in the earlier steps.
+
+\subsection*{Terms used throughout the paper}
+\begin{description}
+\item[Volatility] The size of price fluctuations. Prices can fluctuate strongly even if they finish near where they started.
+\item[Return] A price change relative to the starting price. A price rising from 100 to 101 has a simple return of 1\%. The calculations use log returns, defined in Section~\ref{sec:methods}.
+\item[Realized variance (RV)] A daily measure made by adding squared price returns. Taking its square root puts it on a volatility scale.
+\item[Data source] A particular file or representation of the recorded trades. Neither source is treated as a perfectly accurate record of true volatility.
+\item[Trade condition] A label attached to a trade. A filter uses these labels to decide which recorded trades enter a calculation.
+\item[Sampling interval or grid] The schedule used to select prices, such as once every minute or once every five minutes.
+\item[Estimated state] A smoothed variance estimate that combines today's RV with earlier RV values. It is the estimate remembered by the investment rule.
+\item[Weight or position] The proposed share of capital invested in the fund. A weight of 0.50 means 50\% of capital.
+\item[Cap] The largest position the rule allows. A cap of 1 means at most 100\% of capital in the fund.
+\item[Origin] An evaluation date: the end of a session when information becomes available for the next session's proposed position.
+\end{description}
+
+\subsection*{A small example of what a cap can hide}
+Suppose two estimates lead to proposed investments of 120\% and 150\% of capital. These are invented amounts, used only to explain the calculation. Before applying a limit, the proposals differ by 30 percentage points. If both proposals face a 100\% cap, the final amounts are both 100\%. The final difference is zero, even though the estimates behind the proposals differed.
+
+\textbf{Percent versus percentage points.} A change from 50\% invested to 55\% invested is a difference of 5 percentage points, written 5pp. Relative to the initial 50\%, it is a 10\% increase. This paper reports differences between investment weights in percentage points. These are not investment returns.
+
+\subsection*{Where to read first}
+Sections~\ref{sec:data}--\ref{sec:methods} explain the data and calculations. Sections~\ref{sec:results}--\ref{sec:cap} explain the findings, including the additional funds. Section~\ref{sec:limits} sets out the limitations. The appendices supply complete tables, detailed mathematics and the record of checks. Codes such as A10 or A13 name stages of the research; they are not models that the reader needs to learn.

@@ -53,7 +53,7 @@ def check():
     else:raise AssertionError('Planted altered paper fact not rejected')
     macros=(paper/'generated/facts.tex').read_text(encoding='utf-8')
     for f in facts:assert '\\csname fact@'+f['key']+'\\endcsname{'+f['display']+'}' in macros
-    narrative=['main.tex','theory.tex']+[name for name in ['breadth.tex','breadth_appendix.tex'] if (paper/name).exists()]
+    narrative=['main.tex','theory.tex']+[name for name in ['reader_guide.tex','study.tex','breadth.tex','breadth_appendix.tex'] if (paper/name).exists()]
     content='\n'.join((paper/name).read_text(encoding='utf-8') for name in narrative)
     sources=[paper/name for name in narrative]+list((paper/'generated').glob('*_table.tex'))
     refs=set(re.findall(r'\\Fact\{([^}]+)\}','\n'.join(p.read_text(encoding='utf-8') for p in sources)))
@@ -80,6 +80,7 @@ def check():
         unique_facts_referenced=len(refs),all_printed_macros_match_sources=True,planted_altered_fact_rejected=True,
         bibliography_entries=len(bibkeys),citations_resolve=True,tex_references_resolve=True,
         code_sha256=sha(__file__),paper_source_sha256=sha(paper/'main.tex'),theory_source_sha256=sha(paper/'theory.tex'),
+        narrative_sources_sha256={name:sha(paper/name) for name in narrative},
         source_check='csv/json/math independent of pandas fact preparation',
         human_peer_review_completed=False,published_online=False,sealed_data_opened=False)
     run=record_run('undergraduate_paper_check',summary)

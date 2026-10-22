@@ -1,18 +1,13 @@
-# Review guide
+# Reading and review guide
 
-Read the abstract, Sections 5-7, and Appendix A first. The technical contribution is the controlled chain from source information to measurements, a causal EWMA input and exposure saturation. The modest scope is intentional and appropriate for a focused undergraduate working paper.
+Start with the reader's guide and glossary on pages 2-3. Read Sections 1-3 slowly: they explain why the question matters, what was compared and how each calculation works. Work through the invented three-return example and the variance-to-investment example yourself. Sections 4-6 then interpret the figures; Sections 7-9 explain the limits and conclusion. You can leave the advanced Appendix D for a second reading.
 
-## Five questions to answer before describing it on a CV
-1. What exactly is matched across the historical representations, and why is that weaker than unique execution identity?
-2. Why can equal literal flags have different information, and why is B restoration not a universal cleaning rule?
-3. Why does the finite-band statistic fail to identify local latent H?
-4. Why can a cap make different states produce the same weight, and what does the uncapped ratio remove?
-5. What did independent arithmetic check, and what did it leave unverified?
+## Five questions to answer in your own words
 
-The assistant has not answered these on Martin's behalf or marked ownership complete. The paper's disclosure distinguishes AI implementation from human direction and review.
+1. What is held the same when the two historical trade files are compared? Why does matching ordered price/size/venue records not prove that every record is a uniquely identified execution?
+2. Why can the same condition label carry different information in two files? Why is restoring B-category information a diagnostic experiment rather than a universal cleaning rule?
+3. What does the fitted roughness statistic summarize? How can noisy measurements change its slope without proving a different underlying market model?
+4. Starting from daily RV, how do we obtain a smoothed variance estimate, annual volatility and a proposed investment amount? How can the cap hide a difference between two estimates?
+5. What changes when QQQ and EFA are examined? Which calculations were checked independently, and what still needs human judgment?
 
-## What the current evidence supports
-A reproducible historical source-compatibility case study, with all grids/constructions/settings retained and a practical cap-masking diagnostic. It is suitable as a complete draft for undergraduate portfolio/research review. Academic priority, trading edge and current-market generalization remain unestablished; they are not needed to make the case study worth presenting honestly.
-
-## Remaining research limits
-No verified latent variance, no inferred market H, a strict diagnostic filter, an opening approximation, one historical overlap regime, dependent/episodic effects, resampling assumptions and post-result follow-ups. Expanded asset coverage does not provide a new source regime. QQQ qualifies the five-minute SPY result; missing TLT histories remain withheld. These limits are stated in the paper.
+The assistant has not answered these on Martin's behalf or marked ownership complete. The contribution is a reproducible historical audit of data, measurements and decision inputs. Academic priority, trading edge and current-market generalization remain unestablished. The paper explains these boundaries and discloses the AI contribution.

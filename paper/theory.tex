@@ -1,7 +1,11 @@
 \section{Derivations and interpretation}\label{app:identities}
 This appendix supplies the mathematical bridge from a sampled price to a reported decision input. The arguments below are conditional calculations under stated assumptions, not fitted models of the historical sample. They explain what the diagnostics can reveal and why the empirical comparisons do not identify latent market volatility.
 
+\textbf{Reading the mathematics.} This optional appendix uses probability and calculus beyond the algebra needed for the main text. $\mathbb E$ means an average over repeated outcomes in the model; $\operatorname{Var}$ measures variation around that average. A statement conditional on a variance path holds that path fixed while averaging over price shocks. The symbol $\sum$ adds discrete terms, while an integral adds contributions continuously over time. The continuous-time model motivates the calculation; the finite-grid steps show exactly how the displayed RV and RQ formulas arise.
+
 \subsection{From price increments to realized variance and quarticity}\label{app:moments}
+\textbf{Purpose.} We ask what squared and fourth-power returns average to under an ideal model. This explains the measurement formulas without assuming that a real trade file perfectly satisfies the model. The central step is to write an interval return as its standard deviation times a standardized random shock.
+
 Use a trading-session clock $u\in[0,1]$, with the actual session rescaled to unit length. In an ideal continuous-price model,
 \begin{equation}
  dp_u=b_u\,du+\sigma_u\,dW_u,\qquad
@@ -30,6 +34,8 @@ The session clock also explains why $M$ must follow the actual session. If a com
 For decimal log returns, RV has squared-return units and RQ has fourth-power units. Converting all returns to percentage units multiplies RV by $100^2$ and RQ by $100^4$; changing the currency denomination of every price leaves log returns unchanged. Multiplying a daily RV by an annualization factor $A$ is another explicit transformation. A daily RQ can be multiplied by $A^2$ to express the corresponding fourth-power scale; it does not then become an estimate of the integral of quarticity over an observed year. Units and observation windows must both agree before reconciliation.
 
 \subsection{What a relative measurement diagnostic does and does not estimate}\label{app:qhat}
+\textbf{Purpose.} We compare uncertainty in RV with the size of RV itself. This produces a scale-free ratio. Because its denominator is also random, the average of the ratio need not equal the ratio of two averages. That distinction explains the finite-sample result below.
+
 The preceding conditional-variance identity motivates the dimensionless diagnostic
 \begin{equation}
  \widehat q=\frac{2\RQ}{M\RV^2}
@@ -46,6 +52,8 @@ Even the constant-variance Gaussian case illustrates the distinction between a r
 In contrast, $\operatorname{Var}(\RV\mid IV)/IV^2=2/M$. The finite-sample discrepancy is a consequence of the random denominator. This diagnostic is supporting methodology, not an extra empirical endpoint of A10/A11. In particular, no empirical variogram is ``corrected'' by subtracting it.
 
 \subsection{Two different places where observation noise enters}\label{app:noise}
+\textbf{Purpose.} Error can enter the recorded price before returns are calculated, or enter a daily volatility estimate after prices have been aggregated. These are different assumptions. We derive each effect separately so that a formula for one is not silently applied to the other.
+
 First consider price-level noise on a fixed grid: $y_i=p_i+\eta_i$, where independent centered errors have variance $\omega^2$ and are independent of the efficient price. Observed returns are $\widetilde r_i=r_i+\eta_i-\eta_{i-1}$. Expansion gives
 \begin{equation}
  \mathbb E[\widetilde\RV\mid a]=IV+2M\omega^2.\label{eq:pricenoise}
@@ -65,6 +73,8 @@ The second model concerns a daily log-variance proxy: $Y_t=X_t+e_t$. If $e_t$ is
 To derive this, expand the square, drop the cross term by independence, and use $\operatorname{Var}(e_{t+k}-e_t)=2q$. For stationary but correlated independent measurement error, the addition instead equals $2[\gamma_e(0)-\gamma_e(k)]$. If the error is related to $X$, an additional cross term remains. Price-level noise and daily log-proxy noise therefore cannot be identified with each other merely because both can flatten a plot.
 
 \subsection{Why the finite-band statistic is not latent roughness}\label{app:slope}
+\textbf{Purpose.} A local roughness exponent describes behavior as a time gap becomes very small. Our fitted slope instead summarizes a fixed range of daily gaps. The equations below show how noise and the curvature of a model's variance-of-changes function can separate those two quantities.
+
 For a positive population variogram, define a local scale diagnostic
 \begin{equation}
  H_{\mathrm{eff}}(\tau)=\frac12\frac{d\log V(\tau)}{d\log\tau}
@@ -95,6 +105,8 @@ It recovers $H$ for an exact power law on that band, but otherwise summarizes th
 Multiplying every daily RV by the same positive constant adds a constant to every log RV and leaves all increments and $\widetilde H_K$ unchanged. A source discrepancy that changes the slope must therefore have more structure than a constant variance-unit multiplier. This invariance does not identify which source is economically preferable.
 
 \subsection{Controlled source contrasts and interactions}\label{app:cross}
+\textbf{Purpose.} Changing a time field can have a different effect depending on which condition field accompanies it. The interaction term records this dependence. It explains why counts from separate changes cannot simply be added to assign economic causes.
+
 Let $F(T,C)$ be any positive daily measurement produced by the entire fixed pipeline from time representation $T$ and condition representation $C$. The crossed construction changes inputs to this function while retaining the observed price/size/venue sequence. On log scale, define
 \begin{align}
  D_T&=\log F(L,M)-\log F(M,M),\\
@@ -104,6 +116,8 @@ Let $F(T,C)$ be any positive daily measurement produced by the entire fixed pipe
 Then the legacy/reference log difference equals $D_T+D_C+I$ by algebra. An additive representation would set $I=0$, but the pipeline provides no reason to assume this. Changing conditions can change retained-venue counts, the selected venue, same-time medians and previous-tick endpoints. Moreover, the materiality indicator thresholds an absolute difference, so incidence counts cannot be added as if they were signed effects. The paper reports the complete crossed constructions rather than claiming an additive causal decomposition. B restoration is a further controlled diagnostic within this function, not a universally justified trade deletion.
 
 \subsection{State propagation, initialization and persistence}\label{app:state}
+\textbf{Purpose.} Repeated substitution turns the update rule into an explicit weighted sum of the initial observation and later observations. This shows why an old difference can remain in today's estimate, and why the first observation needs a different coefficient from later updates.
+
 Starting from $s_0=\RV_0$, repeated substitution into Equation~\eqref{eq:weight} gives
 \begin{equation}
  s_t=\lambda^t\RV_0+(1-\lambda)\sum_{i=1}^t\lambda^{t-i}\RV_i.\label{eq:convolution}
@@ -120,6 +134,8 @@ For evaluated origins $\mathcal T$, put $a_{t,0}=\lambda^t$ and $a_{t,i}=(1-\lam
 The right-hand summands define the absolute propagation-potential shares. They omit signed cancellation and precede the nonlinear state-to-weight transformation. Their concentration is informative about sensitivity, but is not an allocation of actual portfolio losses.
 
 \subsection{From variance states to weights and cap masking}\label{app:weights}
+\textbf{Purpose.} The rule first takes a square root to convert variance to volatility, then divides the target by that volatility to obtain an investment amount. We examine how differences pass through those operations and when a shared cap makes two final amounts equal.
+
 Let $s_t>0$ be a daily variance state, $A$ a common annualization factor, $v_*>0$ an annual volatility target and $c>0$ a cap. Equating an unconstrained position's estimated annual volatility to its target gives
 \begin{equation}
  u_t\sqrt{A s_t}=v_*,\qquad
@@ -145,6 +161,8 @@ Within this region the constrained weight is locally insensitive to the state. I
 The aggregate attenuation is defined as one minus the mean capped absolute gap divided by the mean uncapped absolute gap, when the latter is positive. Its value depends on the chosen target and cap. This makes the uncapped state-ratio diagnostic necessary for interpreting apparent decision agreement. It does not turn either estimated state into true risk or establish an optimal portfolio policy.
 
 \subsection{What the block intervals quantify}\label{app:resampling}
+\textbf{Purpose.} We explain how the affected-date fraction is recalculated after blocks of calendar dates are sampled. Keeping the numerator, valid denominator and source pairs on the same sampled dates preserves the intended comparison. It does not create fresh independent market episodes.
+
 For a source pair and grid, let $J_t$ indicate a valid comparison and $I_t$ indicate both validity and a discrepancy above the fixed threshold. The empirical incidence is $\widehat p=\sum_t I_t/\sum_t J_t$, with the two discovery dates ineligible for both sums. Resampling the numerator and denominator on the same calendar indices preserves this definition; resampling only discrepancies or compressing to valid dates changes the experiment.
 
 The stationary bootstrap~\cite{politis} starts at a uniformly drawn calendar index. Each subsequent index restarts uniformly with probability $1/L$, or continues to the next circular calendar index otherwise. Thus $\Pr(B=b)=(1-1/L)^{b-1}/L$ for block length $B$, with mean $L$. Using identical indices across paired objects retains their contemporaneous dependence. Recomputing the incidence on each resample yields the displayed percentile intervals; block-length sensitivities assess one aspect of dependence handling.

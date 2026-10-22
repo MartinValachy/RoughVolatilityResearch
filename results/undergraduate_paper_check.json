@@ -8,12 +8,20 @@
   "bibliography_entries": 10,
   "citations_resolve": true,
   "tex_references_resolve": true,
-  "code_sha256": "5067b17f65959dfd3daefac9bb618cc1f966cbcf6a0f6bc4a5ad238ed0b1c906",
-  "paper_source_sha256": "4ab1957944879a0c703dcbddcc65ce61a49867866fbb147ef63f857ef3acbeca",
-  "theory_source_sha256": "8974adb5929da3bc28989205752c9d2e4fe0656883b8afd66b3bdc20bbb08759",
+  "code_sha256": "0dc4e5408e4fce5dd0ce41ea9d7e30cf264af2b66472f9417754dfa46974d651",
+  "paper_source_sha256": "eebb255648a6ca8fc5189602045763dfb42c9694afb95f66824b6ca250bf4d83",
+  "theory_source_sha256": "52b5bb59dd8b981803b13c11bda6998e7a8d779440573eaea76e2dcf3d75c489",
+  "narrative_sources_sha256": {
+    "main.tex": "eebb255648a6ca8fc5189602045763dfb42c9694afb95f66824b6ca250bf4d83",
+    "theory.tex": "52b5bb59dd8b981803b13c11bda6998e7a8d779440573eaea76e2dcf3d75c489",
+    "reader_guide.tex": "5607c7d9a00448ca39e1b8c927de90eeab96be509c4007ac50b7fe9fc46039b9",
+    "study.tex": "0c6316b1f763ea5b327fc6aaf4bcb9a4a9c012cb1cfcb28598e371dac72263b8",
+    "breadth.tex": "3dc37fc8a312711cf7ea003c9f1142247c8ac9f55af23e2305bf2e80fdec494e",
+    "breadth_appendix.tex": "8acce2575587be3f73cf5512f72d2794f652b5b8982b062413fc96644885e9fd"
+  },
   "source_check": "csv/json/math independent of pandas fact preparation",
   "human_peer_review_completed": false,
   "published_online": false,
   "sealed_data_opened": false,
-  "run_id": "undergraduate_paper_check_20261022T175956Z"
+  "run_id": "undergraduate_paper_check_20261022T210613Z"
 }

@@ -1,4 +1,16 @@
-# Current version 1.2 integrated review
+# Current paper version 1.3 - student readability review
+
+Review: student_paper_readability_review_20261022T211121Z. PDF SHA-256: 7af967f864b89942ac1aa43c2675541530b1d99654ae6b67c3df9e3a6c76eea0.
+
+The paper-only revision has 35 pages, eight figures and nine tables. It adds a reader's guide, glossary, plain-language methods/results, worked arithmetic examples and purpose statements before the advanced derivations. All generated empirical facts/tables, figure files and formal Appendix D equation blocks are unchanged from version 1.2. All tracked lecture files are byte-identical; no lecture revision was requested.
+
+The PDF compiled twice locally with automatic package installation disabled and passed the desktop compiler. All 35 pages were rendered and individually inspected. Fonts are embedded; no overfull boxes or unresolved citations/references remain. The local suite passed 87 tests in 20.58 seconds.
+
+Original facts: undergraduate_paper_check_20261022T210613Z (272 checked,263 referenced). Additional facts: breadth_paper_check_20261022T210613Z (642 checked,635 referenced). Teaching examples: student_paper_example_check_20261022T210612Z (23 selected arithmetic checks). Formal derivations: paper_derivation_check_20261022T205653Z (655 selected identity/boundary checks). The empirical run IDs and underlying scientific limitations are unchanged. These checks do not establish independent human comprehension, peer review, economic truth or the absence of every possible error.
+
+No observations were acquired or changed. Validation 2017-2019 and final 2020+ remain closed; the longer forecast contest is deferred. Human comprehension/code review remains open. The records below describe earlier artifacts only.
+
+# Historical version 1.2 integrated review
 
 Review: integrated_study_delivery_review_20261022T180337Z. PDF SHA-256: 7b6e975bac1aa61bc7a2a0239b2f3d8e2a49a30b66134188074b803863d1843b.
 

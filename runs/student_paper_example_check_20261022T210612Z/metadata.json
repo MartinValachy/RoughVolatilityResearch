@@ -1,0 +1,12 @@
+{
+  "status": "passed_checks",
+  "selected_arithmetic_checks": 23,
+  "examples": "Invented RV/RQ,EWMA,target weight,percentage points,cap,two-lag slope,warmup and strict reciprocal thresholds",
+  "empirical_observations_used": false,
+  "study_sha256": "0c6316b1f763ea5b327fc6aaf4bcb9a4a9c012cb1cfcb28598e371dac72263b8",
+  "reader_guide_sha256": "5607c7d9a00448ca39e1b8c927de90eeab96be509c4007ac50b7fe9fc46039b9",
+  "code_sha256": "e57130cd69b8f2d7a915e14be763e63e790ee2bcb73f5b5095a6933b17319c26",
+  "boundary": "Selected teaching arithmetic and printed literals, not an empirical result or general error-free guarantee",
+  "run_id": "student_paper_example_check_20261022T210612Z",
+  "captured_utc": "2026-10-22T21:06:12.785255+00:00"
+}
